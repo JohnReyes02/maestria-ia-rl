@@ -951,7 +951,7 @@ wheels = [
 ]
 
 [[package]]
-name = "maestria-ia-aprendizaje-refuerzo"
+name = "maestria-ia-rl"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
