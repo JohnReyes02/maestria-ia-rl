@@ -1,0 +1,22 @@
+---
+title: "Aprendizaje por Refuerzo"
+---
+
+# Bienvenido
+
+Curso de Coursera - Maestría en IA
+
+## Contenido del curso
+
+- [Módulo 1](modulo_1.qmd)
+- [Módulo 2](modulo_2.qmd)
+- [Módulo 3](modulo_3.qmd)
+- [Módulo 4](modulo_4.qmd)
+- [Módulo 5](modulo_5.qmd)
+- [Módulo 6](modulo_6.qmd)
+- [Módulo 7](modulo_7.qmd)
+- [Módulo 8](modulo_8.qmd)
+
+## Calendario del curso
+
+<!-- Agregar aquí las fechas importantes del curso. -->

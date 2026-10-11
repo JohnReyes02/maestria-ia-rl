@@ -1,0 +1,4 @@
+/* Force chapter reference lists to be visible in book output. */
+#refs.references {
+  display: block !important;
+}

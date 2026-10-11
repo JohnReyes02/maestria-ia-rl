@@ -1,0 +1,60 @@
+project:
+  type: book
+  output-dir: docs
+
+lang: es
+
+execute:
+  freeze: auto
+
+book:
+  title: "Aprendizaje por Refuerzo"
+  author: "Edwin John Fredy Reyes Aguirre"
+  reader-mode: false
+  date: last-modified
+  search: true
+
+  sidebar:
+    style: docked
+    collapse-level: 1
+
+  chapters:
+    - index.qmd
+    - part: "Módulo 1"
+      chapters:
+        - modulo_1.qmd
+    - part: "Módulo 2"
+      chapters:
+        - modulo_2.qmd
+    - part: "Módulo 3"
+      chapters:
+        - modulo_3.qmd
+    - part: "Módulo 4"
+      chapters:
+        - modulo_4.qmd
+    - part: "Módulo 5"
+      chapters:
+        - modulo_5.qmd
+    - part: "Módulo 6"
+      chapters:
+        - modulo_6.qmd
+    - part: "Módulo 7"
+      chapters:
+        - modulo_7.qmd
+    - part: "Módulo 8"
+      chapters:
+        - modulo_8.qmd
+
+format:
+  html:
+    css: styles.css
+    theme:
+      light: cosmo
+      dark: darkly
+    callout-appearance: simple
+    toc: true
+    toc-title: "Contenido"
+    number-sections: false
+    code-copy: true
+    code-overflow: wrap
+    fig-align: center

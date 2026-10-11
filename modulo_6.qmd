@@ -1,0 +1,103 @@
+---
+title: "Módulo 6"
+week: 6
+course: "Aprendizaje por Refuerzo"
+bibliography: references_modulo_6.bib
+reference-location: section
+link-citations: false
+nocite: "@*"
+---
+
+## 🎯 Objetivos de la Semana
+
+> ¿Qué debo ser capaz de hacer al finalizar esta semana?
+
+- [ ] Objetivo 1
+- [ ] Objetivo 2
+
+## Fechas y entregables
+
+- **Semana:** Por completar
+- **Entregables:** Por completar
+
+------------------------------------------------------------------------
+
+## 📚 Fundamentos Teóricos
+
+### Conceptos Clave
+
+::: {.callout-note}
+## Definición
+
+Espacio para definir términos.
+:::
+
+### 🧮 Matemáticas del Modelo
+
+Escribe aquí la formulación matemática del modelo de esta semana:
+
+$$
+f(x) = \\ldots
+$$
+
+------------------------------------------------------------------------
+
+## 🔬 Práctica y Experimentación
+
+El código y los ejercicios se encuentran en los notebooks. Aquí se analizan los resultados.
+
+| Recurso | Enlace | ¿Completado? |
+| :--- | :---: | :---: |
+| **Laboratorio** | Próximamente | ⬜ |
+| **Taller** | Próximamente | ⬜ |
+
+### 🧠 Hallazgos del Laboratorio
+
+> ¿Qué comportamientos interesantes mostró el agente?
+
+- *Observación 1...*
+- *Observación 2...*
+
+------------------------------------------------------------------------
+
+## 📝 Recursos de la Semana
+
+### 🎙️ Sesión Síncrona
+
+::: {.callout-important}
+## 🎥 Grabación de la Clase
+
+- **Enlace a la grabación:** Por completar
+- **Contraseña:** Por completar
+- **Presentación:** Por completar
+:::
+
+### 🎥 Sesiones complementarias
+
+- **Grabación de la sesión complementaria:** Por completar
+
+### 📺 Videos
+
+| Concepto | Enlace | Notas breves |
+| :--- | :---: | :--- |
+| Video 1 | Por completar | ... |
+
+### 📖 Lecturas
+
+- [ ] Lectura 1
+
+------------------------------------------------------------------------
+
+## 🧠 Síntesis (Feynman)
+
+*Explica el concepto central de esta semana como si se lo contaras a un principiante:*
+
+...
+
+------------------------------------------------------------------------
+
+## 📚 Referencias
+
+::: {#refs}
+:::
+
