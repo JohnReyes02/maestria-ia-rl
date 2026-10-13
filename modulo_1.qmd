@@ -82,12 +82,15 @@ El código y los ejercicios se encuentran en los notebooks. Aquí se analizan lo
 
 ### 📺 Videos
 
-| Concepto                                        |    Enlace     | Notas breves |
-|:------------------------------------------------|:-------------:|:-------------|
-| Bienvenida y preparación del curso              | Por completar | ...          |
-| Introducción a la Semana 1                      |               |              |
-| Motivación y Teoría de aprendizaje por refuerzo |               |              |
-| Componentes de aprendizaje con refuerzo         |               |              |
+| Concepto                                        |  Enlace   | Notas breves |
+|:------------------------------------------------|:---------:|:-------------|
+| Bienvenida y preparación del curso              | Terminado | ...          |
+| Introducción a la Semana 1                      | Terminado |              |
+| Motivación y Teoría de aprendizaje por refuerzo | Terminado |              |
+| Componentes de aprendizaje con refuerzo         | Teminado  |              |
+| Modelos                                         |           |              |
+| Videojuegos                                     |           |              |
+| Ciudades Inteligentes                           |           |              |
 
 ### 📖 Lecturas
 
