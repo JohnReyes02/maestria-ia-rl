@@ -3,69 +3,41 @@
 ## Punto de control
 
 - **Actualizado:** 2026-10-12, zona horaria America/Bogota.
-- **Rama:** `main`.
-- **Commit base:** `7592be4` — `docs: add shared Codex project context`.
-- **Sincronización:** al iniciar, el árbol de trabajo estaba limpio. Tras actualizar el remoto, había `0` commits locales y `1` remoto pendiente. Se integró `origin/main` mediante `git merge --ff-only origin/main`, desde `70d742c` hasta `7592be4`; comparación final: `0 0`.
-- **Estado de la validación:** se leyeron `AGENTS.md`, `PROJECT.md` y `STATUS.md`, se sincronizó la rama y se verificó el entorno sin ejecutar entrenamientos. La revisión posterior confirmó que el cambio se limita a este archivo y contiene información técnica para la continuidad del proyecto; el usuario autorizó su commit y push con el mensaje `docs: validate Mac mini environment`.
+- **Rama y commit base:** `main`, `4b2f20a` — `docs: validate Mac mini environment`.
+- **Sincronización VPS:** árbol inicialmente limpio; `git pull --ff-only` integró `35ae916` → `4b2f20a`. `git fetch --prune origin` posterior correcto; comparación `HEAD...origin/main`: `0 0`.
+- Se leyeron `AGENTS.md`, `PROJECT.md` y `STATUS.md`. MacBook y Mac mini ya validados; GitHub sigue siendo la fuente de verdad.
+- Esta validación modifica únicamente `STATUS.md` entre los archivos versionados; sin commit ni push. La sincronización también actualizó un paquete dentro de `.venv/` (ignorado).
 
 ## Estado académico observado
 
-- El libro tiene una portada y ocho módulos declarados en `_quarto.yml`.
-- `modulo_1.qmd` está en desarrollo: contiene objetivos concretos y una lista de videos parcialmente marcada como terminada, pero aún conserva campos y secciones por completar.
-- `modulo_2.qmd` a `modulo_8.qmd` conservan la plantilla inicial con objetivos, fechas, recursos, notas y síntesis pendientes.
-- Los nueve archivos `.bib` solo contienen marcadores; aún no hay entradas bibliográficas.
-- `laboratorios/` no contiene laboratorios todavía.
-- No existen notebooks, datasets ni scripts Python versionados.
-- El PDF `S2C2_aprendizaje-por-refuerzo.pdf` está versionado. El punto de control anterior registró 3 páginas sin texto extraíble; no se volvió a inspeccionar en esta sesión.
+- Libro con portada y ocho módulos; módulo 1 en desarrollo, módulos 2–8 con plantilla pendiente.
+- Bibliografías con marcadores; `laboratorios/` vacío salvo `.gitkeep`. Sin notebooks, datasets ni scripts Python versionados.
+- PDF académico versionado; el punto de control anterior registró 3 páginas sin texto extraíble. No se volvió a inspeccionar.
+- No se editaron fuentes académicas ni se renderizó el libro durante la validación del VPS.
 
-## Verificaciones realizadas
+## Validación del VPS
 
-- `git fetch --prune origin`: remoto actualizado.
-- Integración por avance directo, sin conflictos ni descarte de trabajo; comparación final `HEAD...origin/main`: `0 0`.
-- `uv lock --check`: correcta; resolvió 153 paquetes.
-- `uv sync --locked --dry-run`: el entorno no requería cambios; comprobó 131 paquetes instalados.
-- `uv pip check`: los 131 paquetes instalados son compatibles.
-- `uv export --locked --format requirements.txt --no-hashes`: las 152 líneas de requisitos coinciden con `requirements.txt` al excluir comentarios y líneas vacías. Solo difiere el comentario del comando de generación; no se modificó la exportación.
-- Importaciones mediante `uv run --locked python`, con backend gráfico no interactivo: todas correctas y con versiones idénticas al lock.
+- **Sistema:** Ubuntu 20.04.6 LTS, `aarch64` (ARM64), glibc 2.31; CPU ARM Neoverse-N1, 4 CPU lógicas.
+- **Recursos:** 23 GiB RAM (17 GiB disponibles al inicio), 4 GiB swap; disco de 194 GiB con aproximadamente 102 GiB libres al finalizar. `.venv/`: 5.7 GiB.
+- **Herramientas:** Python del proyecto 3.12.15; Python global 3.8.10 (`python` global ausente); uv 0.13.0 nativo ARM64; Quarto 1.10.19. Usar `uv run ...`.
+- `uv lock --check`: correcto, 153 paquetes resueltos.
+- Revisión previa del lock: wheels Linux ARM64 para las dependencias nativas revisadas, incluyendo torch, pygame y Triton; requisitos manylinux compatibles con glibc 2.31. El lock selecciona también paquetes NVIDIA/CUDA en Linux CPU-only; los wheels nativos ARM64 suman aproximadamente 3 GiB comprimidos. Había espacio suficiente.
+- `uv sync --locked --dry-run`: proponía reinstalar únicamente `nvidia-cusparselt-cu13==0.8.1`.
+- `uv sync --locked`: correcto; reinstaló ese paquete, sin modificar `pyproject.toml` ni `uv.lock` ni configurar CUDA.
+- Importaciones correctas: Gymnasium 1.4.0, Jupyter 1.1.1, matplotlib 3.11.2, NumPy 2.5.4, pandas 3.0.6, pygame 2.6.1, scikit-learn 1.9.1, seaborn 0.13.2 y TensorBoard 2.21.0. Matplotlib probado con backend `Agg`.
+- **PyTorch:** 2.14.1+cu130; importación aislada y suma de tensor en CPU correctas. Compilado con CUDA 13.0, pero CUDA no disponible, 0 dispositivos CUDA y MPS no disponible. CPU es el dispositivo validado.
+- **Gymnasium:** `CartPole-v1`, `render_mode=None`, `reset(seed=42)` y un `step(0)` correctos; observaciones válidas, recompensa 1.0. Sin recursos externos.
+- **pygame:** importación, inicialización de display/font y operación sobre `Surface` correctas con `SDL_VIDEODRIVER=dummy` y audio dummy; SDL 2.28.4, sin crear ventana ni superficie de pantalla.
+- PPO/DQN/A2C, `SummaryWriter`, ipykernel, nbformat y jupyterlab importan correctamente en proceso separado con torch primero; no se crearon agentes ni se ejecutaron entrenamientos.
 
-  | Dependencia | Versión instalada |
-  | --- | --- |
-  | gymnasium | 1.4.0 |
-  | jupyter | 1.1.1 |
-  | matplotlib | 3.11.2 |
-  | numpy | 2.5.4 |
-  | pandas | 3.0.6 |
-  | pygame | 2.6.1 |
-  | scikit-learn | 1.9.1 |
-  | seaborn | 0.13.2 |
-  | stable-baselines3 | 2.9.0 |
-  | tensorboard | 2.21.0 |
-  | torch | 2.14.1 |
+## Limitaciones y pendientes
 
-- Importaciones adicionales de `PPO`, `DQN`, `A2C`, `torch.utils.tensorboard.SummaryWriter`, `ipykernel`, `nbformat` y `jupyterlab`: correctas, sin crear agentes ni iniciar entrenamientos.
-- Entorno del proyecto: CPython `3.12.15`, arquitectura `arm64`, ejecutado desde `.venv/`; cumple `.python-version` y el rango `>=3.12,<3.13`.
-- Herramientas locales: `uv 0.13.0` y Quarto `1.8.27`. La versión de Quarto registrada anteriormente (`1.10.18`) corresponde al punto de control previo.
-- `quarto check`, con `QUARTO_PYTHON` apuntando temporalmente al Python del proyecto: instalación, dependencias binarias, render básico de Markdown e integración/render de Jupyter correctos. R no está instalado; no se requiere para el proyecto actual.
-- No se renderizó el libro completo en esta sesión, ya que no cambiaron sus fuentes. El render de las 9 páginas registrado anteriormente no se volvió a validar.
-- `git diff --check`: correcto; revisión del diff limitada a `STATUS.md`.
-
-## Hallazgos de entorno y portabilidad
-
-- Equipo verificado: Apple M4, macOS `26.6.2`, arquitectura nativa `arm64` y 24 GiB de memoria. Los ejecutables de Python del proyecto y `uv` son nativos `arm64`.
-- El Python global observado es `3.13.7`, fuera del rango del proyecto. Usar `uv run ...`, que selecciona correctamente Python `3.12.15`; no se modificó el Python global.
-- PyTorch informa MPS compilado y disponible; CUDA no disponible en este equipo. Solo se consultó disponibilidad, sin realizar cálculos ni entrenamiento en GPU.
-- El entorno `.venv/` local ocupa aproximadamente 1.1 GB y no está versionado; la sincronización simulada no requiere instalaciones ni cambios.
-- Quarto es una dependencia externa y no tiene una versión fijada dentro del repositorio.
-- En Linux, el lock y la exportación actual de PyTorch incluyen dependencias CUDA. Esto puede ser costoso en un VPS sin GPU.
-- `pygame` y el renderizado visual de entornos pueden necesitar configuración adicional en un VPS sin interfaz gráfica.
-- La carpeta `docs/` se usa como salida de Quarto, pero está ignorada y no existe automatización de GitHub Pages o CI/CD.
-- El árbol de trabajo estaba limpio al iniciar. No se modificaron archivos académicos, configuración ni dependencias.
-
-## Alcance revisado
-
-- `AGENTS.md` y `PROJECT.md` ya están versionados en el commit base traído desde `origin/main`.
-- `STATUS.md`: único archivo incluido en el commit autorizado de la validación del Mac mini. No hay cambios de dependencias pendientes.
+- **TLS estático / orden de importación:** después de importar otras librerías numéricas, torch y Stable Baselines fallaron con `cannot allocate memory in static TLS block` en `libc10.so`. Con torch primero, PyTorch y Stable Baselines funcionan, pero scikit-learn falla después con el mismo error en su `libgomp`. Las importaciones aisladas pasan; el uso conjunto de estas librerías en un proceso aún requiere diagnóstico. No se aplicaron cambios de entorno persistentes ni soluciones al lock.
+- **Etiqueta de plataforma NVIDIA:** `uv pip check` comprobó 149 paquetes y reportó una incompatibilidad: `nvidia-cusparselt-cu13` construido para otra plataforma. Su wheel declara `py3-none-manylinux2014_sbsa`, aunque la biblioteca ELF es AArch64 (183). La reinstalación no elimina el aviso; no equivale a un fallo observado en la pequeña prueba CPU de torch.
+- El VPS es CPU-only/headless: renderizado gráfico real, audio y GPU no validados. No se instalaron librerías del sistema, ejecutaron entrenamientos, descargaron datasets/recursos externos ni configuraron CUDA.
+- Quarto disponible; integración Jupyter y render completo no probados en el VPS. El Mac mini había validado Quarto 1.8.27 y Python 3.12.15 con MPS disponible.
+- `git diff --check`: correcto. Sin cambios locales en `AGENTS.md`, `PROJECT.md`, dependencias ni archivos académicos.
 
 ## Siguiente paso
 
-El entorno está listo para continuar con el módulo 1 mediante `uv run ...`. En el siguiente equipo, actualizar desde `origin/main` y comprobar el entorno antes de continuar. Antes de modificar contenido del libro, verificar los pendientes académicos con el estudiante; después de editar las fuentes, ejecutar `quarto render`.
+El VPS permite pruebas básicas CPU y entornos sin renderizado, pero no está plenamente validado para combinar PyTorch y scikit-learn en el mismo proceso. Consultar al usuario antes de cambiar dependencias o aplicar soluciones para TLS/ARM64. Para retomar desde otro equipo, actualizar desde GitHub; este `STATUS.md` permanece local hasta que se autorice su publicación. Continuar módulo 1 según pendientes académicos y ejecutar `quarto render` después de editar fuentes.
