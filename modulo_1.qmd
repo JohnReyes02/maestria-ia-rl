@@ -14,13 +14,15 @@ En este módulo se inicia el estudio de los conceptos fundamentales del aprendiz
 
 > ¿Qué debo ser capaz de hacer al finalizar esta semana?
 
-- [ ] Objetivo 1
-- [ ] Objetivo 2
+-   [ ] Analizar las limitaciones del aprendizaje por refuerzo.
+-   [ ] Entender los diferentes dominios de aplicación del aprendizaje por refuerzo.
+-   [ ] Identificar las técnicas del aprendizaje por refuerzo, sus necesidades y limitaciones.
+-   [ ] Identificar los tres componentes fundamentales de los sistemas de aprendizaje por refuerzo.
 
 ## Fechas y entregables
 
-- **Semana:** Por completar
-- **Entregables:** Por completar
+-   **Semana:** Por completar
+-   **Entregables:** Por completar
 
 ------------------------------------------------------------------------
 
@@ -28,7 +30,7 @@ En este módulo se inicia el estudio de los conceptos fundamentales del aprendiz
 
 ### Conceptos Clave
 
-::: {.callout-note}
+::: callout-note
 ## Definición
 
 Espacio para definir términos.
@@ -48,17 +50,17 @@ $$
 
 El código y los ejercicios se encuentran en los notebooks. Aquí se analizan los resultados.
 
-| Recurso | Enlace | ¿Completado? |
-| :--- | :---: | :---: |
-| **Laboratorio** | Próximamente | ⬜ |
-| **Taller** | Próximamente | ⬜ |
+| Recurso         |    Enlace    | ¿Completado? |
+|:----------------|:------------:|:------------:|
+| **Laboratorio** | Próximamente |      ⬜      |
+| **Taller**      | Próximamente |      ⬜      |
 
 ### 🧠 Hallazgos del Laboratorio
 
 > ¿Qué comportamientos interesantes mostró el agente?
 
-- *Observación 1...*
-- *Observación 2...*
+-   *Observación 1...*
+-   *Observación 2...*
 
 ------------------------------------------------------------------------
 
@@ -66,27 +68,30 @@ El código y los ejercicios se encuentran en los notebooks. Aquí se analizan lo
 
 ### 🎙️ Sesión Síncrona
 
-::: {.callout-important}
+::: callout-important
 ## 🎥 Grabación de la Clase
 
-- **Enlace a la grabación:** Por completar
-- **Contraseña:** Por completar
-- **Presentación:** Por completar
+-   **Enlace a la grabación:** Por completar
+-   **Contraseña:** Por completar
+-   **Presentación:** Por completar
 :::
 
 ### 🎥 Sesiones complementarias
 
-- **Grabación de la sesión complementaria:** Por completar
+-   **Grabación de la sesión complementaria:** Por completar
 
 ### 📺 Videos
 
-| Concepto | Enlace | Notas breves |
-| :--- | :---: | :--- |
-| Video 1 | Por completar | ... |
+| Concepto                                        |    Enlace     | Notas breves |
+|:------------------------------------------------|:-------------:|:-------------|
+| Bienvenida y preparación del curso              | Por completar | ...          |
+| Introducción a la Semana 1                      |               |              |
+| Motivación y Teoría de aprendizaje por refuerzo |               |              |
+| Componentes de aprendizaje con refuerzo         |               |              |
 
 ### 📖 Lecturas
 
-- [ ] Lectura 1
+-   [ ] Lectura 1
 
 ------------------------------------------------------------------------
 
@@ -102,4 +107,3 @@ El código y los ejercicios se encuentran en los notebooks. Aquí se analizan lo
 
 ::: {#refs}
 :::
-

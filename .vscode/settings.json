@@ -3,11 +3,5 @@
     "python-envs.alwaysUseUv": true,
     "python-envs.workspaceSearchPaths": [
         "./.venv"
-    ],
-    "python-envs.pythonProjects": [
-        {
-            "path": ".",
-            "envManager": "ms-python.python:venv"
-        }
     ]
 }
