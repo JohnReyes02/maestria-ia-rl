@@ -1,5 +1,14 @@
 # STATUS.md
 
+## Revisión de resultados en Mac mini — 2026-10-16
+
+- Base de esta revisión: `main`, `143d312` (`docs: complete Pacman experiment results`), integrado desde `f233f35` por avance directo, con árbol inicialmente limpio y comparación posterior con `origin/main`: `0 0`.
+- Se contrastaron las siete filas de `resultados/resumen.csv` con sus salidas originales: 20 cortes de entrenamiento y 10 partidas de evaluación por configuración. Coinciden los promedios de las primeras y últimas 100 partidas, los promedios de evaluación y las victorias/derrotas; los promedios de evaluación también se recalcularon desde los puntajes individuales.
+- Mejor evaluación observada: `05_alpha_alto`, epsilon 0.10, alpha 0.80, gamma 0.70; promedio 501.6 y 10/10 victorias. El caso base obtuvo 500.5 y 10/10. La diferencia de 1.1 puntos no establece superioridad general con una sola corrida por configuración.
+- `02_epsilon_bajo` obtuvo el mejor promedio de las últimas 100 partidas de entrenamiento (449.04) y del entrenamiento completo (135.36), con evaluación 500.2 y 10/10. Comparar entrenamiento y evaluación requiere distinguir las políticas: el código original desactiva epsilon y alpha al terminar el entrenamiento.
+- Durante esta revisión no se ejecutaron entrenamientos ni se editaron salidas, CSV, reporte o dependencias. El usuario autorizó publicar esta actualización de `STATUS.md` en `origin/main`.
+- Siguiente paso: completar las observaciones visuales y el análisis propio pendientes. Si se desea comprobar la robustez del orden observado, repetir las configuraciones con varias semillas antes de concluir que una es superior de forma general.
+
 ## Punto de control
 
 - **Actualizado:** 2026-10-16, zona horaria America/Bogota.
