@@ -24,3 +24,6 @@ ENV/
 /_site/
 
 **/*.quarto_ipynb
+
+# Extracted third-party course material (recreated from the preserved ZIP)
+/laboratorios/modulo_1/pacman/AI-Pacman-Projects-master/

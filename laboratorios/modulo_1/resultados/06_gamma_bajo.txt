@@ -1,0 +1,117 @@
+Beginning 2000 episodes of Training
+Reinforcement Learning Status:
+	Completed 100 out of 2000 training episodes
+	Average Rewards over all training: -510.27
+	Average Rewards for last 100 episodes: -510.27
+	Episode took 0.11 seconds
+Reinforcement Learning Status:
+	Completed 200 out of 2000 training episodes
+	Average Rewards over all training: -510.72
+	Average Rewards for last 100 episodes: -511.17
+	Episode took 0.15 seconds
+Reinforcement Learning Status:
+	Completed 300 out of 2000 training episodes
+	Average Rewards over all training: -507.76
+	Average Rewards for last 100 episodes: -501.85
+	Episode took 0.16 seconds
+Reinforcement Learning Status:
+	Completed 400 out of 2000 training episodes
+	Average Rewards over all training: -489.10
+	Average Rewards for last 100 episodes: -433.09
+	Episode took 0.19 seconds
+Reinforcement Learning Status:
+	Completed 500 out of 2000 training episodes
+	Average Rewards over all training: -473.51
+	Average Rewards for last 100 episodes: -411.16
+	Episode took 0.18 seconds
+Reinforcement Learning Status:
+	Completed 600 out of 2000 training episodes
+	Average Rewards over all training: -459.78
+	Average Rewards for last 100 episodes: -391.12
+	Episode took 0.20 seconds
+Reinforcement Learning Status:
+	Completed 700 out of 2000 training episodes
+	Average Rewards over all training: -442.83
+	Average Rewards for last 100 episodes: -341.14
+	Episode took 0.22 seconds
+Reinforcement Learning Status:
+	Completed 800 out of 2000 training episodes
+	Average Rewards over all training: -432.45
+	Average Rewards for last 100 episodes: -359.81
+	Episode took 0.20 seconds
+Reinforcement Learning Status:
+	Completed 900 out of 2000 training episodes
+	Average Rewards over all training: -420.03
+	Average Rewards for last 100 episodes: -320.68
+	Episode took 0.20 seconds
+Reinforcement Learning Status:
+	Completed 1000 out of 2000 training episodes
+	Average Rewards over all training: -407.91
+	Average Rewards for last 100 episodes: -298.79
+	Episode took 0.20 seconds
+Reinforcement Learning Status:
+	Completed 1100 out of 2000 training episodes
+	Average Rewards over all training: -400.84
+	Average Rewards for last 100 episodes: -330.13
+	Episode took 0.20 seconds
+Reinforcement Learning Status:
+	Completed 1200 out of 2000 training episodes
+	Average Rewards over all training: -389.03
+	Average Rewards for last 100 episodes: -259.20
+	Episode took 0.20 seconds
+Reinforcement Learning Status:
+	Completed 1300 out of 2000 training episodes
+	Average Rewards over all training: -383.76
+	Average Rewards for last 100 episodes: -320.47
+	Episode took 0.22 seconds
+Reinforcement Learning Status:
+	Completed 1400 out of 2000 training episodes
+	Average Rewards over all training: -372.05
+	Average Rewards for last 100 episodes: -219.83
+	Episode took 0.23 seconds
+Reinforcement Learning Status:
+	Completed 1500 out of 2000 training episodes
+	Average Rewards over all training: -365.99
+	Average Rewards for last 100 episodes: -281.18
+	Episode took 0.24 seconds
+Reinforcement Learning Status:
+	Completed 1600 out of 2000 training episodes
+	Average Rewards over all training: -353.68
+	Average Rewards for last 100 episodes: -168.91
+	Episode took 0.23 seconds
+Reinforcement Learning Status:
+	Completed 1700 out of 2000 training episodes
+	Average Rewards over all training: -351.71
+	Average Rewards for last 100 episodes: -320.23
+	Episode took 0.23 seconds
+Reinforcement Learning Status:
+	Completed 1800 out of 2000 training episodes
+	Average Rewards over all training: -344.88
+	Average Rewards for last 100 episodes: -228.85
+	Episode took 0.23 seconds
+Reinforcement Learning Status:
+	Completed 1900 out of 2000 training episodes
+	Average Rewards over all training: -330.26
+	Average Rewards for last 100 episodes: -67.07
+	Episode took 0.23 seconds
+Reinforcement Learning Status:
+	Completed 2000 out of 2000 training episodes
+	Average Rewards over all training: -317.16
+	Average Rewards for last 100 episodes: -68.34
+	Episode took 0.24 seconds
+Training Done (turning off epsilon and alpha)
+---------------------------------------------
+Pacman died! Score: -521
+Pacman emerges victorious! Score: 503
+Pacman emerges victorious! Score: 503
+Pacman emerges victorious! Score: 499
+Pacman died! Score: -508
+Pacman emerges victorious! Score: 495
+Pacman died! Score: -509
+Pacman emerges victorious! Score: 495
+Pacman emerges victorious! Score: 495
+Pacman emerges victorious! Score: 499
+Average Score: 195.1
+Scores:        -521.0, 503.0, 503.0, 499.0, -508.0, 495.0, -509.0, 495.0, 495.0, 499.0
+Win Rate:      7/10 (0.70)
+Record:        Loss, Win, Win, Win, Loss, Win, Loss, Win, Win, Win

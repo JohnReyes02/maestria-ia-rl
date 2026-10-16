@@ -2,11 +2,16 @@
 
 ## Punto de control
 
-- **Actualizado:** 2026-10-14, zona horaria America/Bogota.
-- **Rama y commit base:** `main`, `eecdd91` — `docs: validate VPS environment`.
+- **Actualizado:** 2026-10-15, zona horaria America/Bogota.
+- **Rama y commit base:** `main`, `5c0b113`.
 - **Sincronización MacBook:** árbol inicialmente limpio; `git fetch --prune origin` correcto; comparación `HEAD...origin/main`: `0 0`.
 - Se leyeron `AGENTS.md`, `PROJECT.md` y `STATUS.md`. GitHub sigue siendo la fuente de verdad.
-- Esta actualización registra el calendario de entregables, las sesiones recurrentes, el avance hasta la semana 2 y el contenido observado de los módulos 1 y 2 a partir de la información aportada por el estudiante. Modifica únicamente `STATUS.md`.
+- Se creó la estructura reproducible `laboratorios/modulo_1` a `laboratorios/modulo_8`; cada módulo incluye `originales/` para conservar sin cambios los archivos base descargados de la plataforma. Las copias de trabajo y entregables se guardarán en la raíz del módulo correspondiente.
+- Se validó y guardó `AI-Pacman-Projects.zip` en `laboratorios/modulo_1/originales/`; su copia de trabajo se extrajo en `laboratorios/modulo_1/pacman/` y el procedimiento quedó documentado en `laboratorios/modulo_1/README.md`. La copia extraída se ignora en Git porque es material derivado reproducible y el código original contiene numerosos problemas de espacios finales.
+- Se consolidaron el enunciado, la preparación, el comando, el resultado de ejemplo y la lista de comprobación de la actividad en `laboratorios/modulo_1/INSTRUCCIONES.md`, sin resolver el análisis solicitado al estudiante.
+- Se preparó la estructura de experimentación en `laboratorios/modulo_1/PRUEBAS.md`, `resultados/` y `reporte/`: siete comandos con semilla fija, una matriz CSV vacía y un borrador del reporte con preguntas guía.
+- El estudiante ejecutó las siete configuraciones de Pacman con la opción `-f` y confirmó explícitamente el uso de semilla fija. Las siete salidas están completas en `laboratorios/modulo_1/resultados/`, con 20 cortes de entrenamiento y 10 partidas de evaluación por caso. La matriz `resultados/resumen.csv` y las observaciones visuales siguen pendientes de completar.
+- No se modificaron fuentes académicas ni resultados generados de Quarto.
 
 ## Estado académico observado
 
@@ -166,4 +171,4 @@
 
 ## Siguiente paso
 
-El VPS permite pruebas básicas CPU y entornos sin renderizado, pero no está plenamente validado para combinar PyTorch y scikit-learn en el mismo proceso. Consultar al usuario antes de cambiar dependencias o aplicar soluciones para TLS/ARM64. Para retomar desde otro equipo, actualizar desde GitHub. Completar la evaluación pendiente del módulo 1 antes del 20 de octubre y planificar el módulo 2 dando margen suficiente a sus dos actividades de programación de 3 h, que vencen junto con otras cuatro evaluaciones el 27 de octubre. Ejecutar `quarto render` después de editar fuentes académicas.
+Completar `laboratorios/modulo_1/resultados/resumen.csv` con las métricas ya verificadas y las observaciones visuales del estudiante; después, desarrollar el análisis propio en `reporte/reporte_pacman.md`, exportarlo a PDF y revisar la entrega antes del 20 de octubre. Las siete configuraciones se ejecutaron con `-f`; una única semilla permite reproducibilidad y comparación controlada, pero no mide variabilidad entre corridas. Después, guardar los notebooks originales de las prácticas de bandidos en `laboratorios/modulo_2/originales/` y trabajar sobre copias en `laboratorios/modulo_2/`. El VPS permite pruebas básicas CPU y entornos sin renderizado, pero no está plenamente validado para combinar PyTorch y scikit-learn en el mismo proceso. Consultar al usuario antes de cambiar dependencias o aplicar soluciones para TLS/ARM64. Para retomar desde otro equipo, actualizar desde GitHub. Planificar el módulo 2 dando margen suficiente a sus dos actividades de programación de 3 h, que vencen junto con otras cuatro evaluaciones el 27 de octubre. Ejecutar `quarto render` después de editar fuentes académicas.
