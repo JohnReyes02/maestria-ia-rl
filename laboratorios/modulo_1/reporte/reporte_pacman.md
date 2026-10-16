@@ -28,17 +28,19 @@
 
 ## 3. Resultados
 
-[Transferir aquí los datos registrados en `../resultados/resumen.csv`. Presentar primero los resultados sin anticipar las conclusiones.]
+Datos extraídos de las siete salidas originales en `../resultados/` y consolidados en [resumen.csv](../resultados/resumen.csv). “Primeras 100” y “Últimas 100” corresponden a las recompensas promedio de los episodios de entrenamiento 1–100 y 1901–2000, respectivamente. El promedio de evaluación, las victorias y las derrotas corresponden a las 10 partidas posteriores al entrenamiento, con epsilon y alpha desactivados.
 
-| Caso | Primeras 100 | Últimas 100 | Promedio de evaluación | Victorias | Observación visual |
-|---|---:|---:|---:|---:|---|
-| Base | | | | | |
-| Epsilon bajo | | | | | |
-| Epsilon alto | | | | | |
-| Alpha bajo | | | | | |
-| Alpha alto | | | | | |
-| Gamma bajo | | | | | |
-| Gamma alto | | | | | |
+| Caso | Primeras 100 | Últimas 100 | Promedio de evaluación | Victorias | Derrotas | Observación visual |
+|---|---:|---:|---:|---:|---:|---|
+| Base | -509.49 | -15.11 | 500.5 | 10 | 0 | Pendiente |
+| Epsilon bajo | -510.71 | 449.04 | 500.2 | 10 | 0 | Pendiente |
+| Epsilon alto | -509.46 | -490.58 | -506.4 | 0 | 10 | Pendiente |
+| Alpha bajo | -510.23 | -158.84 | 494.2 | 10 | 0 | Pendiente |
+| Alpha alto | -509.51 | 23.42 | 501.6 | 10 | 0 | Pendiente |
+| Gamma bajo | -510.27 | -68.34 | 195.1 | 7 | 3 | Pendiente |
+| Gamma alto | -499.85 | 125.37 | 499.4 | 10 | 0 | Pendiente |
+
+Las observaciones visuales están pendientes de completar por el estudiante; en el CSV esos campos permanecen vacíos. Cada configuración corresponde a una corrida con semilla fija; estos datos no miden variabilidad entre corridas.
 
 ## 4. Análisis
 
