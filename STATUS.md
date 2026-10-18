@@ -1,5 +1,146 @@
 # STATUS.md
 
+## Planeación conjunta con Deep Learning — 2026-10-18
+
+- Se revisaron `AGENTS.md`, `PROJECT.md` y `STATUS.md` de la materia hermana `deep-learning`, además del seguimiento actual de Refuerzo. Ambos repositorios tienen cambios locales en `STATUS.md`; se preservan. Sus referencias locales de `main` coinciden con `origin/main`; Deep Learning no se volvió a consultar al remoto en esta revisión, por lo que no se afirma una sincronización nueva con GitHub.
+- **Semana a planear:** 19–25 de octubre. La propuesta anterior de recuperación de Refuerzo debe ajustarse a la carga conjunta y a los turnos laborales, todavía no disponibles en los documentos consultados. Se solicitó al estudiante la rotación o los turnos diarios con entrada/salida, traslados y descanso tras turnos nocturnos. No hay calendario por horas confirmado.
+- **Urgente, 20 oct.:** subir PDF de Pacman y completar cuestionario sumativo de fundamentos de redes neuronales en Deep Learning (45 min), según el avance más reciente. El STATUS de Deep Learning conserva además un pendiente histórico de cuestionario de introducción del módulo 1 (30 min) y lecturas: confirmar si continúa vigente, sin darlo por completado ni ignorarlo por asumir que pertenece al cierre del módulo 2.
+- **27 oct.:** cinco evaluaciones pendientes de bandidos (el formulario del equipo ya fue enviado); cuestionario de CNN (45 min) y Laboratorio CNN Parte 2 (3 h). Incluir la preparación y Laboratorio CNN Parte 1 (3 h).
+- **3 nov.:** cuestionario y Laboratorio MDPs de Refuerzo; Miniproyecto 1, cuestionario RNN y Laboratorio RNN Parte 2 de Deep Learning. Evitar trasladar todo el inicio del miniproyecto a la semana de entrega.
+- **Carga provisional, no disponibilidad:** recuperación de Refuerzo propuesta en 13 h + módulo CNN con miniproyecto registrado en 11 h 14 min + cuestionario anterior de 45 min + primera aproximación a MDPs de 1 h = aproximadamente 26 h de trabajo individual. Las duraciones de plataforma del miniproyecto no garantizan cubrir diseño, experimentación y reporte; faltan lecturas finales de Refuerzo, carga histórica por confirmar y sesiones en vivo.
+- **Sesiones fijas registradas, America/Bogota:** Deep Learning miércoles 21, 07:00–08:30; Refuerzo jueves 22, 07:00–08:30. Tutorías disponibles: Deep Learning lunes/martes 17:30–19:00; Refuerzo lunes/jueves/viernes 19:00–20:00. Seleccionar tutorías según dudas y turnos; no asumir asistencia a todas ni disponibilidad fuera de los turnos.
+- **Grupos diferentes:** Refuerzo, equipo de dos con Deisy y formulario enviado. Deep Learning, grupo 37 con dos integrantes y búsqueda de una tercera persona según su STATUS actual; no trasladar automáticamente las reglas de un curso al otro.
+- **Criterio provisional:** asegurar primero cierres del 20; distribuir bandidos y CNN durante la semana; abrir enunciados de programación temprano para detectar bloqueos; reservar una primera revisión de MDPs y coordinación del miniproyecto. Ajustar metas y uso del 26–27 a la capacidad real, sin sacrificar descanso para encajar el plan anterior.
+- **Verificación:** actualización solo en este STATUS, revisión del diff y `git diff --check`; no se modifica el repositorio de Deep Learning ni se hacen commits, push o renderizados. **Siguiente paso:** recibir los turnos laborales y resolver el pendiente histórico de introducción de Deep Learning para preparar el calendario conjunto viable.
+
+## Contenido del módulo 4 — 2026-10-18
+
+- **Base:** `main`, `2a44caa`; se conservan las ediciones locales de seguimiento de esta sesión. Fuente: dos capturas aportadas por el estudiante hoy.
+- **Título:** Planeación. Resumen mostrado: 32 min de videos, 2 h 30 min de lecturas y dos evaluaciones calificadas pendientes. No se observan marcas de completado en los recursos listados; el resaltado de Introducción no se interpreta como finalización.
+- **Objetivos:** evaluar las técnicas de progreso de aprendizaje por medio de evaluación e iteración de políticas; desarrollar la técnica de programación dinámica para resolver MDPs.
+
+| Sección | Recurso | Tipo y duración | Vencimiento o estado observado |
+|---|---|---|---|
+| Introducción | Introducción | Video, 2 min | Sin marca de completado visible |
+| Introducción | Lecturas de referencia de la semana | Lectura, 40 min | Sin marca de completado visible |
+| Programación dinámica | Programación dinámica | Video, 13 min | Sin marca de completado visible |
+| Funciones de valor | Iteración de valores | Video, 5 min | Sin marca de completado visible |
+| Funciones de valor | Tutorial Iteración de valores | Laboratorio, 2 h | Sin marca de completado visible |
+| Funciones de valor | Ejercicio iteración de valores | Programación, 3 h | Pendiente; 10 nov., 23:59 (-05); peso previo: 6 % |
+| Iteración de políticas | Iteración de políticas | Video, 8 min | Sin marca de completado visible |
+| Iteración de políticas | Tutorial Iteración de políticas | Laboratorio, 2 h | Sin marca de completado visible |
+| Iteración de políticas | Comparación entre valores y políticas | Complemento no calificado, 15 min | Sin marca de completado visible |
+| Iteración de políticas | Ejercicio iteración de políticas | Programación, 3 h | Pendiente; 10 nov., 23:59 (-05); peso previo: 6 % |
+| Iteración de políticas | Solución Assignment MDPs | Lectura, 10 min | Sin marca de completado visible |
+| Cierre de la semana | Cierre | Video, 2 min | Sin marca de completado visible |
+| Cierre de la semana | Sesiones de discusión | Lectura, 1 h 30 min | Sin marca de completado visible |
+| Cierre de la semana | Grabación Sesión 4 | Lectura, 10 min | Sin marca de completado visible |
+
+- Las duraciones individuales de videos suman 30 min frente a 32 min del resumen; se conservan ambos valores sin explicar la diferencia. Las lecturas suman 2 h 30 min, coincidentes con el resumen.
+- **Carga nominal:** 13 h 17 min usando el resumen de videos, lecturas, 4 h de tutoriales, 6 h de evaluaciones y complemento de 15 min. Tiempo orientativo de plataforma; no incluye margen adicional de aprendizaje o depuración. Las fechas no muestran año; se mantiene 2026 como interpretación provisional.
+- Las dos evaluaciones se muestran pendientes en las capturas nuevas; sustituyen el estado bloqueado del calendario anterior. No se han recibido enunciados detallados ni notebooks de estas actividades.
+- **Implicación para el plan (sugerencia):** priorizar módulo 2 y abrir módulo 3 durante el 19–25 de octubre; concentrar MDPs del 26 de octubre al 1 de noviembre (unas 7 h 26 min nominales, descontando lo adelantado); reservar del 2 al 8 de noviembre para Planeación (unas 13 h 17 min nominales), con margen el 9–10. No son bloques confirmados por el estudiante y deben conciliarse con módulos posteriores, tutorías, proyecto y disponibilidad. Aprovechar los conceptos de MDPs para el diseño del proyecto con Deisy.
+- **Verificación:** cambio documental únicamente; revisión del diff y `git diff --check`, sin renderizado, commit ni push. **Continuación:** conocer disponibilidad real, ajustar el plan conjunto y recibir los enunciados de las prácticas de módulo 2 para comenzar la recuperación.
+
+## Registro del equipo y contenido del módulo 3 — 2026-10-18
+
+- **Base:** `main`, `2a44caa`; se conservan las ediciones locales anteriores de este archivo. Sin integración ni publicación.
+- **Equipo:** el estudiante confirma que Deisy ya envió el formulario de integrantes. Conformación y envío completados según su confirmación; no hay evidencia de calificación todavía. Este dato reemplaza los pendientes anteriores sobre envío del formulario.
+- **Fuente del módulo 3:** dos capturas de la plataforma compartidas hoy. Título: **MDPs**. Resumen mostrado: 31 min de videos, 1 h 20 min de lecturas y dos evaluaciones calificadas pendientes. Las fechas no muestran año; se mantiene la interpretación provisional de 2026.
+
+### Objetivos de aprendizaje del módulo 3
+
+1. Definición de los sistemas de recompensas y su uso dentro de los MDP.
+2. Expresar el aprendizaje y objetivo de un agente como un problema de recompensa.
+3. Definir el problema de aprendizaje como un proceso de Markov.
+
+### Secciones y recursos observados
+
+| Sección | Recurso | Tipo y duración | Estado o vencimiento visible |
+|---|---|---|---|
+| Introducción | Introducción | Video, 1 min | Sin marca de completado visible |
+| Introducción | Lecturas de referencia de la semana | Lectura, 40 min | Sin marca de completado visible |
+| MDPs | Procesos de decisión de Markov | Video, 6 min | Sin marca de completado visible |
+| MDPs | Pen & paper: MDPs | Práctica, 15 min | Sin calificación visible |
+| MDPs | MDPs y recompensas | Video, 12 min | Sin marca de completado visible |
+| MDPs | Aprendizaje por refuerzo o no? | Tarea calificable, 20 min | Pendiente; 3 nov., 23:59 (-05); peso previo: 1 % |
+| Ejercicios Practicos | Construcción de Agentes | Video, 8 min | Sin marca de completado visible |
+| Ejercicios Practicos | Tutorial construcción de MDPs: ambiente de Gridworld | Laboratorio, 2 h | Sin marca de completado visible |
+| Ejercicios Practicos | Laboratorio MDPs | Programación, 3 h | Pendiente; 3 nov., 23:59 (-05); peso previo: 5 % |
+| Ejercicios Practicos | Solución Assignment Bandidos | Lectura, 20 min | Sin marca de completado visible |
+| Cierre de la semana | Cierre | Video, 2 min | Sin marca de completado visible |
+| Cierre de la semana | Sesión de discusión | Lectura, 10 min | Sin marca de completado visible |
+| Cierre de la semana | Grabación sesión 3 | Lectura, 10 min | Sin marca de completado visible |
+
+- Las duraciones individuales visibles de videos suman 29 min, mientras el resumen muestra 31 min; se conservan ambos datos sin inferir la causa. Las lecturas suman 80 min y coinciden con el resumen.
+- **Carga nominal estimada:** 7 h 26 min usando los 31 min del resumen, 80 min de lecturas, práctica de 15 min, tutorial de 2 h y evaluaciones de 3 h 20 min. Es una suma orientativa de tiempos de plataforma, no una garantía de esfuerzo real.
+- Las dos evaluaciones ya se muestran pendientes, en lugar del estado bloqueado observado en las capturas anteriores. Actualizar el calendario general con esa evidencia.
+- **Relación sugerida con el proyecto:** aprovechar estados, acciones y recompensas de MDPs/Gridworld para preparar la caracterización de la entrega parcial; no se ha definido ni implementado aún la solución del proyecto.
+- **Plan provisional:** mantener la recuperación del módulo 2 como prioridad; reservar esta semana un primer bloque de 60–90 min para introducción a MDPs y lectura del enunciado del laboratorio. Ajustar el calendario combinado al recibir módulo 4 y disponibilidad. La actividad de registro del equipo ya no requiere tiempo de ejecución, solo conservar su confirmación.
+- **Verificación y continuación:** revisión documental del diff y `git diff --check`, sin renderizado. No se han recibido los enunciados detallados ni archivos del laboratorio del módulo 3. Siguiente paso: recibir módulo 4 y disponibilidad para concretar la planificación. Sin commit ni push.
+
+## Equipo confirmado por el estudiante — 2026-10-18
+
+- **Base:** `main`, `2a44caa`; se conservan las actualizaciones locales anteriores de este archivo.
+- El estudiante confirma que ya tiene equipo con su compañera; buscar compañero deja de ser un pendiente.
+- **Compañera:** Deisy Yamile Cantor Gómez.
+- Los datos institucionales de contacto e identificación se omiten del repositorio por privacidad.
+- **Fuente:** captura compartida por el estudiante en esta conversación. No se ha confirmado el envío del formulario de registro del grupo; mantenerlo como asunto por verificar, con un solo envío por equipo según el enunciado.
+- **Verificación:** revisión del diff y `git diff --check`; cambio documental, sin renderizado, commit ni push. Siguiente paso: confirmar si el grupo ya quedó registrado y recibir las actividades de los módulos 3 y 4 para ajustar el plan de recuperación.
+
+## Recuperación del módulo 2 y ampliación del proyecto — 2026-10-18
+
+- **Base:** `main`, `2a44caa`. Se conserva la edición local de este archivo realizada en el turno anterior; no hay integración ni sobrescritura de trabajo. La comparación con GitHub se verificó en esta misma sesión.
+- **Avance confirmado:** el estudiante no ha empezado el contenido de la semana 2 / módulo 2. Informa que mañana, 19 de octubre, inicia la semana 3. Compartirá a continuación las actividades de los módulos 3 y 4 para ajustar la planificación.
+- **Fuente nueva del proyecto:** tres capturas de «Definición del proyecto» compartidas hoy. Complementan el ambiente de obstáculos descrito abajo.
+- Los estudiantes deben implementar el problema en su totalidad. Las etapas incluyen formar equipo, diseñar ambiente/acciones/recompensas y estrategia de solución, e implementar con casos de prueba y análisis.
+- **Equipo:** exactamente dos personas; no se permiten grupos individuales. Se reporta mediante Google Forms con un solo envío por grupo. La URL del formulario no es recuperable de la captura. La tabla indica semanas 1–2, pero el texto fija conformación al final de la semana 3: hay una discrepancia interna que debe verificarse junto con el vencimiento previamente registrado del 27 de octubre.
+- **Entrega parcial, semana 5:** caracterización de la solución con conjunto de estados explícito (descripción, tipo, rango de valores y otras características), todas las acciones y estados donde cada una es aplicable, y función de recompensa con situaciones estado–acción y valores numéricos.
+- **Entrega final, semana 8:** video de la aplicación funcionando, Q-tabla con los valores de estados y acciones, y código completo con funciones para guardar y cargar la Q-tabla. El pequeño reporte de pruebas sigue exigido por la descripción previa del ambiente.
+- **Evaluación:** equipo 1 %, definición inicial 13 % y entrega final 31 %; suman 45 % de la nota del curso.
+- **Asesoría:** canal dedicado en Slack y tutorías; el texto menciona posibles sesiones síncronas para dudas en semanas 3, 5 y 7. Esta mención no sustituye la tabla de entregas ni establece fechas nuevas.
+
+### Estrategia provisional de recuperación — sugerencia, pendiente de disponibilidad
+
+- Objetivo: cerrar módulo 2 el domingo 25 de octubre y reservar 26–27 para contingencias, antes del plazo registrado del 27. Mantener contacto con el módulo 3 durante esta semana; ajustar su tiempo al recibir las actividades.
+- Carga nominal conocida del módulo 2: 7 h 5 min de evaluaciones, 2 h 22 min de videos/lecturas, tutorial de 1 h y dos prácticas de 15 min: aproximadamente 11 h. Proponer 13 h con margen, sin incluir lecturas finales del módulo 1 ni trabajo adicional del módulo 3. Las duraciones de plataforma son orientativas y no garantizan el tiempo real.
+- Lunes 19 (2 h): fundamentos de bandidos, estimación de valor y exploración/explotación; iniciar tutorial, descargar y revisar ambos enunciados de programación; comenzar gestión de compañero si aún falta.
+- Martes 20 (1 h 30 min): terminar tutorial y práctica P&P1, quiz «Tipos de aprendizaje». Subir también el PDF de Pacman antes del plazo; asignarle un bloque adicional breve.
+- Miércoles 21 y jueves 22 (2 h cada día): repasar epsilon decay y desarrollar su actividad de programación, comprobar resultados y completar el quiz «Exploración v. Explotación».
+- Viernes 23 y sábado 24 (2 h cada día): bandidos no estacionarios, P&P2 y su actividad de programación; conservar tiempo para ejecución y revisión de resultados.
+- Domingo 25 (1 h 30 min): lectura y tarea de ética, confirmar registro del equipo, revisar y completar entregas del módulo 2. Distribuir las lecturas de referencia en los bloques temáticos anteriores; si no caben, usar el margen del 26–27 y reajustar.
+- Los bloques son propuestas, no compromisos del estudiante. Revisarlos si las prácticas toman más tiempo; priorizar detectar dudas en los notebooks desde el lunes y llevarlas a tutoría.
+- **Verificación y continuación:** actualización documental únicamente, revisión del diff y `git diff --check`; sin renderizado, commit ni push. Recibir actividades de módulos 3 y 4 y disponibilidad del estudiante para convertir esta propuesta en un plan combinado.
+
+## Actualización del estudiante y proyecto del curso — 2026-10-18
+
+- **Base:** `main`, `2a44caa`; árbol limpio antes de esta actualización. En esta sesión se ejecutó `git fetch --prune origin` y se comprobó `HEAD...origin/main`: `0 0`.
+- **Módulo 1:** el estudiante confirma que solo falta subir el informe en PDF y completar algunas lecturas finales. Esta confirmación reemplaza los pendientes anteriores de elaboración del informe. No se ha recibido ni revisado el PDF final; el borrador local conserva su contenido anterior y no representa necesariamente la versión final del estudiante. Falta identificar cuáles lecturas siguen pendientes.
+- **Entrega:** sigue registrada la fecha del 20 de octubre, 23:59 (`-05`), pendiente de comprobar en la plataforma; no se ha confirmado la subida.
+- **Fuente del proyecto:** dos capturas de «Proyecto del curso» compartidas por el estudiante el 2026-10-18. Los siguientes puntos recogen el enunciado, no una implementación ni resultados realizados.
+
+### Requisitos observados del proyecto
+
+- Construir y entrenar un agente de aprendizaje por refuerzo, evaluar su ejecución y validar la efectividad del aprendizaje.
+- Ambiente: cuarto de 8 × 8; inicio del agente en `(0,0)`, esquina superior izquierda; objetivo en `(7,7)`, esquina inferior derecha.
+- Hay cinco obstáculos que aparecen aleatoriamente y se mueven aleatoriamente en cada paso, posiblemente hacia una nueva posición, al mismo tiempo que el agente decide su acción.
+- El agente debe alcanzar el objetivo sin chocar con los obstáculos. Una colisión termina el episodio.
+- Movimientos descritos: girar 90° a la izquierda, girar 90° a la derecha o avanzar a la casilla inmediatamente al frente, si es posible.
+- El equipo debe definir acciones, estados y sistema de recompensas.
+- El entrenamiento debe poder exportarse y cargarse en un agente; el programa debe guardar la memoria del agente, descrita como la Q-tabla.
+- Conservar la información de las distintas pruebas y presentar sus resultados en un pequeño reporte.
+
+### Aspectos por precisar antes de implementar
+
+- Orientación inicial, observación disponible para el agente y representación del estado, incluida la orientación y la información de los obstáculos.
+- Reglas exactas de movimiento de obstáculos, límites, ocupación de inicio/meta y resolución de colisiones o cruces durante movimientos simultáneos.
+- Recompensas y posibles límites de pasos; el fragmento no especifica sus valores ni reglas completas de terminación.
+- Código base, rúbrica, formato de entrega y requisitos concretos de cada hito: no aparecen en estas capturas.
+- El calendario previo registra conformación de equipos el 27 de octubre, «Ambiente, estados y acciones» el 17 de noviembre (13 %) y entrega final el 4 de diciembre (31 %). Estas fechas provienen de las capturas anteriores, no de la descripción nueva.
+
+- **Trabajo de esta actualización:** se corrigió el seguimiento del módulo 1 y se registraron requisitos y dudas del proyecto en este archivo. Sin cambios al reporte, experimentos, dependencias ni fuentes Quarto. Verificación documental: revisión del diff y `git diff --check`; no requiere renderizado. Sin commit ni push.
+- **Continuación:** subir el PDF del módulo 1 y completar las lecturas finales; después, avanzar las actividades del módulo 2 y la conformación del equipo, teniendo presentes los requisitos del proyecto.
+
 ## Revisión de resultados en Mac mini — 2026-10-16
 
 - Base de esta revisión: `main`, `143d312` (`docs: complete Pacman experiment results`), integrado desde `f233f35` por avance directo, con árbol inicialmente limpio y comparación posterior con `origin/main`: `0 0`.
@@ -144,11 +285,11 @@
 | 27 oct. | Ética en la evaluación de instrucciones | Tarea calificable | 1 % | Sin calificación visible |
 | 27 oct. | K-Bandidos con epsilon decay | Actividad de programación | 6 % | Sin calificación visible |
 | 27 oct. | K-bandidos no estacionarios | Actividad de programación | 6 % | Sin calificación visible |
-| 27 oct. | Conformación equipos de trabajo | Tarea calificable | 1 % | Sin calificación visible |
-| 3 nov. | Aprendizaje por refuerzo o no? | Tarea calificable | 1 % | Bloqueado |
-| 3 nov. | Laboratorio MDPs | Actividad de programación | 5 % | Bloqueado |
-| 10 nov. | Ejercicio iteración de valores | Actividad de programación | 6 % | Bloqueado |
-| 10 nov. | Ejercicio iteración de políticas | Actividad de programación | 6 % | Bloqueado |
+| 27 oct. | Conformación equipos de trabajo | Tarea calificable | 1 % | Formulario enviado por Deisy, confirmado por el estudiante el 18 oct.; calificación no confirmada |
+| 3 nov. | Aprendizaje por refuerzo o no? | Tarea calificable | 1 % | Pendiente, visible en captura del 18 oct. |
+| 3 nov. | Laboratorio MDPs | Actividad de programación | 5 % | Pendiente, visible en captura del 18 oct. |
+| 10 nov. | Ejercicio iteración de valores | Actividad de programación | 6 % | Pendiente, visible en captura del 18 oct. |
+| 10 nov. | Ejercicio iteración de políticas | Actividad de programación | 6 % | Pendiente, visible en captura del 18 oct. |
 | 17 nov. | Diferencias entre enfoques basados en modelos y libres de modelos | Tarea calificable | 1 % | Bloqueado |
 | 17 nov. | Agentes de Monte Carlo | Actividad de programación | 5 % | Bloqueado |
 | 17 nov. | Ambiente, estados y acciones | Tarea en equipo calificable | 13 % | Bloqueado |
@@ -182,4 +323,4 @@
 
 ## Siguiente paso
 
-Completar las observaciones visuales del estudiante en `laboratorios/modulo_1/resultados/resumen.csv` y en la tabla de `reporte/reporte_pacman.md`; las métricas numéricas ya están completas y verificadas. Después, desarrollar la introducción, metodología, análisis propio y conclusiones del reporte, exportarlo a PDF y revisar la entrega antes del 20 de octubre. Las siete configuraciones se ejecutaron con `-f`; una única semilla permite reproducibilidad y comparación controlada, pero no mide variabilidad entre corridas. Después, guardar los notebooks originales de las prácticas de bandidos en `laboratorios/modulo_2/originales/` y trabajar sobre copias en `laboratorios/modulo_2/`. El VPS permite pruebas básicas CPU y entornos sin renderizado, pero no está plenamente validado para combinar PyTorch y scikit-learn en el mismo proceso. Consultar al usuario antes de cambiar dependencias o aplicar soluciones para TLS/ARM64. Para retomar desde otro equipo, actualizar desde GitHub. Planificar el módulo 2 dando margen suficiente a sus dos actividades de programación de 3 h, que vencen junto con otras cuatro evaluaciones el 27 de octubre. Ejecutar `quarto render` después de editar fuentes académicas.
+Según la confirmación del estudiante del 2026-10-18, subir el informe PDF del módulo 1 antes del plazo registrado del 20 de octubre y completar algunas lecturas finales aún sin identificar. El borrador local no se actualizó con la versión final. Después, guardar los notebooks originales de las prácticas de bandidos en `laboratorios/modulo_2/originales/` y trabajar sobre copias en `laboratorios/modulo_2/`. Planificar el módulo 2 dando margen a sus dos actividades de programación de 3 h, que vencen junto con otras tres evaluaciones pendientes el 27 de octubre; el formulario de conformación del equipo ya fue enviado. Tener presente la descripción del proyecto registrada al inicio de este archivo y precisar sus reglas antes de implementar. El VPS permite pruebas básicas CPU y entornos sin renderizado, pero no está plenamente validado para combinar PyTorch y scikit-learn en el mismo proceso. Consultar al usuario antes de cambiar dependencias o aplicar soluciones para TLS/ARM64. Para retomar desde otro equipo, actualizar desde GitHub. Ejecutar `quarto render` después de editar fuentes académicas.
