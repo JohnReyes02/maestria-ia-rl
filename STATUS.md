@@ -1,5 +1,46 @@
 # STATUS.md
 
+## Revisión integral y publicación autorizada — 2026-10-20
+
+- **Base:** `main`, `9239b55`; `git fetch --prune origin` correcto y comparación previa con `origin/main`: `0 0`.
+- El estudiante autorizó revisar y publicar el conjunto completo de cambios locales: RL Lab de autoaprendizaje, dependencia Streamlit y archivos derivados, documentación, transcripciones de trabajo de Pen & Paper y conversión mecánica de los dos notebooks calificables a Quarto. Se mantiene la restricción de no usar IA para resolver esos laboratorios.
+- **Verificación de cierre:** 12 pruebas automatizadas correctas; `uv lock --check` y `uv sync --locked --dry-run` correctos; `requirements.txt` coincide con una exportación nueva de `uv`; los tres archivos Python de trabajo compilan; los dos `.qmd` coinciden exactamente con una conversión nueva mediante Quarto; renderizado completo del libro correcto; búsqueda de credenciales sin hallazgos; `git diff --check` y estado final revisados antes de guardar.
+- **Siguiente paso concreto:** usar el RL Lab como material de autoaprendizaje y desarrollar las evaluaciones calificables de forma independiente, respetando el código de ética de la plataforma.
+
+## Conversión fiel de notebooks calificables a Quarto — 2026-10-20
+
+- **Base:** `main`, `9239b55`; `git fetch --prune origin` correcto y comparación con `origin/main`: `0 0`. Se preservan sin modificar todos los cambios locales anteriores.
+- **Restricción académica confirmada por el estudiante:** las instrucciones de ambos laboratorios incluyen una declaración de no haber utilizado inteligencia artificial ni otros medios no autorizados para resolver la evaluación. En consecuencia, la asistencia queda limitada a la conversión mecánica de formato ya solicitada; no se completarán, corregirán, diagnosticarán ni sugerirán respuestas para estos ejercicios. Los conceptos generales solo podrán estudiarse mediante ejemplos independientes que no resuelvan el material evaluable.
+- Se convirtieron mecánicamente `laboratorios/modulo_2/originales/bandidos_epsilon.ipynb` y `laboratorios/modulo_2/originales/bandidos-variables.ipynb` a archivos `.qmd` en el mismo directorio mediante Quarto 1.10.18. No se ejecutaron para la validación final, no se completaron respuestas y no se corrigieron textos, código, pruebas ni metadatos de calificación.
+- **Inconsistencias observadas, no corregidas:** ambos documentos referencian `Banner.jpg`, ausente del directorio; el notebook de epsilon contiene errores tipográficos y dice que reducir epsilon inicia la exploración; el de recompensas variables alterna nombres singulares/plurales de funciones, escribe `cummulative_rewards` en el texto aunque la versión anterior usa `cumulative_rewards`, y su descripción de la sumatoria combina el rango 1 a n con los primeros n-1 valores. Los metadatos de los notebooks registran Python 3.10.6, mientras el proyecto usa Python 3.12.x.
+- **Verificación:** las salidas guardadas coinciden byte por byte con `quarto convert`; ambas copias temporales renderizaron correctamente a HTML con `--no-execute`. Los notebooks originales permanecen sin cambios y todas sus celdas carecen de salidas y conteos de ejecución. La conversión inversa conserva las 10 y 12 celdas, respectivamente, así como el texto y los metadatos `nbgrader` de las celdas de código; Quarto no conserva los metadatos `nbgrader` de las celdas Markdown. `git diff --check` es correcto para los archivos versionados; los `.qmd` mantienen espacios finales presentes en las fuentes por fidelidad. Diff final revisado. Sin commit ni push.
+- **Siguiente paso concreto:** el estudiante puede trabajar sobre los `.qmd` conservando los `.ipynb` originales como referencia; si la plataforma exige entrega `nbgrader`, confirmar el formato aceptado antes de sustituir los notebooks.
+
+## Segunda práctica de bandidos preparada — 2026-10-20
+
+- **Base:** `main`, `9239b55`; se preservan sin modificar los cambios locales anteriores y la práctica Bandidos 1.
+- Se creó `laboratorios/modulo_2/pen_and_paper_bandidos_2/` para la práctica **Pen & Paper: Bandidos 2**, identificada por el estudiante. El README conserva el escenario de recomendación de cuatro películas a 20 clientes, los clientes sin recompensa, la secuencia de recomendaciones, el valor inicial 10, `alpha = 0.1` y las formas expandida e incremental de la actualización con paso constante.
+- El archivo Python contiene los datos suministrados y la variable `movies`, pero deja sin resolver la respuesta evaluable. Se señala para confirmación la interpretación de la recompensa como valor base más propina.
+- **Verificación:** archivo Python compilado y `git diff --check` correcto. No se modificaron Bandidos 1, `modulo_2.qmd`, dependencias, resultados previos ni material original. Sin commit ni push.
+- **Siguiente paso concreto:** construir la tabla cliente–película–recompensa y aplicar una actualización secuencial únicamente al valor de la película recomendada.
+
+## Práctica de bandidos del módulo 2 preparada — 2026-10-20
+
+- **Base:** `main`, `9239b55`; `git fetch --prune origin` correcto y comparación con `origin/main`: `0 0`. Se preservan sin modificar los cambios locales previos de RL Lab, dependencias y documentación.
+- A petición del estudiante se creó `laboratorios/modulo_2/pen_and_paper_bandidos_1/` con una transcripción de trabajo de los dos ejercicios de la práctica **Pen & Paper: Bandidos 1** observados en las capturas: estimación de recompensas de cuatro caminos y variante con `epsilon = 0.5`.
+- El README relaciona el escenario con agente, entorno, estado, acciones, recompensas, dinámica, valor y política; conserva las fórmulas de promedio muestral y actualización incremental y señala las convenciones que deben confirmarse. Los dos archivos Python contienen constantes y la variable `arms`, pero dejan las respuestas evaluables sin resolver.
+- **Verificación:** archivos revisados, compilación de ambos módulos Python y `git diff --check`. No se modificaron `modulo_2.qmd`, la estructura de los ocho módulos, dependencias, resultados previos ni material original. Sin commit ni push.
+- **Siguiente paso concreto:** construir la tabla hora–factorización–camino–recompensa del ejercicio 1 y confirmar si el intervalo 7–20 incluye ambos extremos antes de calcular `arms`.
+
+## RL Lab independiente de autoaprendizaje — 2026-10-20
+
+- **Base:** `main`, `9239b55`; árbol limpio al inicio, `git fetch --prune origin` correcto y comparación con `origin/main`: `0 0`.
+- Se creó `autoaprendizaje/rl_lab/` como aplicación web local en español, separada del libro Quarto. Incluye fundamentos con comprobación guiada, análisis de solo lectura de los once casos de Pacman, cuatro comparaciones guiadas de bandidos y un sandbox con historial de sesión y descargas CSV/JSON en memoria.
+- El núcleo Python independiente de Streamlit implementa configuraciones reproducibles, políticas greedy, epsilon-greedy y epsilon decay, promedio muestral y alpha constante, bandidos estacionarios y no estacionarios con deriva aleatoria, métricas por paso y resúmenes. La app no escribe resultados automáticamente.
+- Se añadió `streamlit>=1.66.0` mediante `uv`; `pyproject.toml` y `uv.lock` son canónicos y `requirements.txt` fue regenerado con `uv export`. `PROJECT.md` y el README propio de la app documentan la arquitectura y ejecución. No se modificaron `_quarto.yml`, los ocho módulos, bibliografías, estilos, `docs/`, código de Pacman ni resultados académicos.
+- **Verificación:** 12 pruebas automatizadas correctas, incluidas reproducibilidad, actualizaciones, epsilon decay, deriva no estacionaria, métricas, contrato de los once casos de Pacman, apertura de Streamlit, comparación guiada no estacionaria y descargas del sandbox. Revisión visual local de las cuatro secciones y corrección de cuadrícula/contraste. `uv lock --check`, `uv sync --locked --dry-run`, compilación de los módulos y `git diff --check` correctos; la sincronización seca no propone cambios.
+- **Pendiente:** revisión y uso personal del estudiante para decidir ajustes didácticos. No se realizó commit ni push. **Siguiente paso concreto:** iniciar con `uv run streamlit run autoaprendizaje/rl_lab/app.py`, recorrer Fundamentos y ejecutar la comparación «Adaptarse a la no estacionariedad» antes de usar el sandbox; futuras extensiones de MDP/Gridworld permanecerán separadas del libro.
+
 ## Cierre del taller de Pacman y autorización de publicación — 2026-10-19
 
 - **Base:** `main`, `f6c2d10`; `git fetch --prune origin` correcto y comparación con `origin/main`: `0 0` antes de guardar. El estudiante autoriza actualizar el repositorio con los cambios de esta sesión, incluido commit y push.

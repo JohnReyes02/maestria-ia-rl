@@ -12,6 +12,7 @@ dependencies = [
     "scikit-learn",
     "seaborn",
     "stable-baselines3",
+    "streamlit>=1.66.0",
     "tensorboard",
     "torch",
 ]

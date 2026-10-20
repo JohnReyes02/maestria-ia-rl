@@ -21,6 +21,7 @@
 ├── references_modulo_*.bib      # Bibliografía por módulo
 ├── styles.css                   # Estilos del libro
 ├── laboratorios/                # Ocho módulos; Pacman y sus pruebas en modulo_1/
+├── autoaprendizaje/rl_lab/      # App local de fundamentos y bandidos
 ├── S2C2_aprendizaje-por-refuerzo.pdf
 │                                # Documento académico fuente de 3 páginas
 ├── pyproject.toml               # Metadatos y dependencias Python directas
@@ -37,11 +38,23 @@ Directorios locales generados e ignorados:
 - `docs/`: salida HTML del libro, configurada mediante `output-dir`.
 - `_site/`: salida alternativa de Quarto, si llega a generarse.
 
-No hay actualmente notebooks, scripts Python independientes, datasets, pruebas automatizadas, flujo de CI/CD, contenedor ni `Makefile` versionados. `laboratorios/` contiene la estructura de los ocho módulos; `modulo_1/` incluye el ZIP original de Pacman, README, instrucciones, plan de once pruebas, salidas, resumen CSV y borrador del informe. La copia extraída del código original permanece ignorada por Git.
+No hay actualmente notebooks, datasets, flujo de CI/CD, contenedor ni `Makefile` versionados. `autoaprendizaje/rl_lab/` contiene una aplicación Streamlit independiente del libro, un núcleo Python reutilizable y pruebas automatizadas. `laboratorios/` contiene la estructura de los ocho módulos; `modulo_1/` incluye el ZIP original de Pacman, README, instrucciones, plan de once pruebas, salidas, resumen CSV e informe. La copia extraída del código original permanece ignorada por Git.
 
 El experimento comparativo de Pacman conserva siete configuraciones en `smallGrid` y dos en cada uno de `mediumGrid` y `mediumClassic`, con 2000 episodios de entrenamiento, diez de evaluación y `-f`. Las métricas están consolidadas y el informe `.qmd` contiene análisis, limitaciones y conclusiones, pendientes de lectura final del estudiante. Las capturas ilustran los tableros; no se inventaron observaciones de trayectorias. Consultar `STATUS.md` para el punto de continuación y `laboratorios/modulo_1/PRUEBAS.md` para los comandos.
 
 El entregable de Pacman se redacta en `laboratorios/modulo_1/reporte/reporte_pacman.qmd`. Su configuración local de Quarto genera un PDF con Typst en `reporte/_salida/`, ignorado por Git, sin modificar el libro del curso. El `.md` previo se conserva como referencia. Consultar `reporte/README.md` para completar y exportar la plantilla.
+
+## RL Lab de autoaprendizaje
+
+`autoaprendizaje/rl_lab/` es una aplicación web local en español, separada de la navegación y las fuentes Quarto. Incluye fundamentos, análisis de solo lectura de los once casos de Pacman, comparaciones guiadas de bandidos estacionarios y no estacionarios y un sandbox con descargas CSV/JSON generadas en memoria.
+
+El motor de simulación conserva configuraciones, semillas y métricas sin depender de Streamlit. La aplicación no escribe resultados automáticamente. Para iniciarla desde la raíz:
+
+```bash
+uv run streamlit run autoaprendizaje/rl_lab/app.py
+```
+
+Las instrucciones y pruebas están documentadas en `autoaprendizaje/rl_lab/README.md`.
 
 ## Configuración de Quarto
 
@@ -75,6 +88,7 @@ Dependencias directas declaradas:
 - `scikit-learn`
 - `seaborn`
 - `stable-baselines3`
+- `streamlit`
 - `tensorboard`
 - `torch`
 
