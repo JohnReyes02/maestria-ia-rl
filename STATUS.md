@@ -1,5 +1,112 @@
 # STATUS.md
 
+## Cierre del taller de Pacman y autorización de publicación — 2026-10-19
+
+- **Base:** `main`, `f6c2d10`; `git fetch --prune origin` correcto y comparación con `origin/main`: `0 0` antes de guardar. El estudiante autoriza actualizar el repositorio con los cambios de esta sesión, incluido commit y push.
+- **Estado confirmado por el estudiante:** el taller está terminado y solo queda subir el PDF a la plataforma. No se registra como entregado todavía. Considera posibles ajustes de palabras a su estilo; no solicita cambios adicionales de redacción en este cierre.
+- Se guardan el informe Quarto completo y su configuración, las capturas, las cuatro pruebas adicionales, el resumen de once casos y la documentación actualizada. Se preserva la salida actual del caso 07, cuya diferencia respecto a HEAD se verificó como tiempos de ejecución únicamente. Los PDF generados y cachés permanecen ignorados; en otro equipo debe regenerarse el PDF con el comando del README del informe.
+- **Verificación de cierre:** renderizado Quarto/Typst correcto, métricas de los once casos y tablas verificadas durante esta sesión, PDF de seis páginas revisado visualmente, revisión del diff y `git diff --check`. Sin cambios de dependencias ni a la estructura de los ocho módulos.
+- **Siguiente paso único del taller:** subir `laboratorios/modulo_1/reporte/_salida/reporte_pacman.pdf` a la plataforma antes del plazo registrado del 20 de octubre, 23:59 (-05), y confirmar el envío. Después retomar los pendientes del módulo 2 conforme al plan académico; no se consideran completados por este cierre.
+
+## Informe completado para revisión del estudiante — 2026-10-19
+
+- **Base:** `main`, `f6c2d10`; fetch correcto y comparación con `origin/main`: `0 0`. Se preservaron los cambios locales acumulados. Se verificó que la edición previa de `07_gamma_alto.txt` cambia únicamente los tiempos de ejecución; puntajes y recompensas coinciden con la versión de HEAD.
+- El estudiante solicitó ayuda explícita para terminar el informe por cansancio y bloqueo, sin referencias a otros archivos dentro de la redacción. Se completaron los cinco apartados de análisis, las limitaciones y las conclusiones en el `.qmd`; se retiraron las instrucciones entre corchetes, comentarios de plantilla, referencias a archivos y el apartado de evidencias que remitía a ellos. Se corrigió «agendes» en el título y se usó «juegos» al describir las evaluaciones.
+- No se inventaron observaciones de movimientos. Las tres imágenes se mantienen como ilustraciones de los tableros durante evaluación. La discusión distingue resultados observados de explicaciones posibles, y limita las conclusiones a una semilla y diez juegos por configuración. Se actualizaron PROJECT y los README del laboratorio/informe para reflejar el texto completo.
+- **Verificación:** se contrastaron las once filas con las salidas actuales: primeras/últimas 100 recompensas, promedio recalculado de diez puntajes y conteos de victorias/derrotas. Las tablas del `.qmd` se comprobaron contra el CSV; se verificó ausencia de marcadores pendientes y referencias a archivos en el texto. Renderizado Quarto/Typst correcto, PDF revisado visualmente con Poppler, con tabla de resultados completa en una página. Revisión de diff y `git diff --check`. Sin nuevos entrenamientos, cambios de métricas, dependencias, commit ni push.
+- **Continuación:** lectura final del estudiante, confirmar alcance exacto de tutoría y plazo en plataforma, y subir el PDF. No se ha confirmado entrega. Las entradas anteriores de redacción pendiente son históricas y quedan reemplazadas por este estado.
+
+## Retiro del aviso de borrador — 2026-10-19
+
+- A petición del estudiante, se retiró el aviso visible «BORRADOR DE TRABAJO» del `.qmd`. Se mantienen las guías de las secciones pendientes; el retiro del aviso no implica que el informe esté terminado.
+- **Verificación:** renderizado Quarto/Typst y `git diff --check`. Sin commit ni push. **Continuación:** completar las observaciones, el análisis y las conclusiones con redacción que el estudiante comprenda y pueda explicar.
+
+## Metodología ajustada al alcance introductorio — 2026-10-19
+
+- A petición del estudiante, se simplificó «Agente, entorno y aprendizaje» en el `.qmd`: descripción de los elementos visibles de los tableros, estado y acciones en lenguaje introductorio y separación conceptual de entrenamiento/evaluación. Se retiraron detalles de la representación interna, actualización Q, comportamiento programado de fantasmas y valores exactos de recompensas. Se mantiene que las capturas ilustrativas no demuestran cómo aprende el agente.
+- Se eliminó la referencia a nombres `.txt` en «Parámetros y configuraciones» y se simplificó la definición de alpha. Se conservaron las once configuraciones y sus métricas.
+- **Base:** `main`, `f6c2d10`; se preservan los cambios locales anteriores. **Verificación:** renderizado Quarto/Typst y `git diff --check`. Sin cambios de resultados, experimentos, dependencias, commit ni push.
+- **Continuación:** revisar con el estudiante esta versión introductoria y avanzar en el análisis de los parámetros.
+
+## Metodología completada con la implementación suministrada — 2026-10-19
+
+- **Base:** `main`, `f6c2d10`; fetch correcto y comparación con `origin/main`: `0 0`. Se preservaron los cambios locales, incluida la modificación previa en `resultados/07_gamma_alto.txt`, no editada ni revalidada en esta tarea.
+- A solicitud del estudiante, se completó la metodología del `.qmd`: diseño de las once configuraciones, semilla `cs188` aplicada por `-f`, agente tabular, entorno y `RandomGhost`, estado, acciones legales, recompensa como cambio de puntaje, reglas de puntuación, actualización de valores Q, política epsilon-greedy y separación entrenamiento/evaluación. Se definieron epsilon, alpha y gamma y se describió el alcance de las métricas.
+- Se contrastó la explicación con `qlearningAgents.py`, `learningAgents.py`, `pacman.py` y `game.py` de la copia suministrada. Se retiraron únicamente las dos guías de metodología ya resueltas; análisis, observaciones y conclusiones siguen pendientes. Los empates aleatorios entre acciones máximas se distinguen de la exploración epsilon-greedy.
+- **Verificación:** renderizado Quarto/Typst, revisión visual de metodología y `git diff --check`. Sin cambios a código original, métricas, dependencias, commit ni push.
+- **Continuación:** leer y ajustar esta metodología con las palabras del estudiante; redactar el análisis de epsilon usando las métricas observadas. Las capturas siguen siendo ilustraciones de tableros tomadas durante evaluación.
+
+## Propósito y fase de las capturas confirmados — 2026-10-19
+
+- **Base:** `main`, `f6c2d10`; fetch correcto y comparación con `origin/main`: `0 0`. Se preservaron todos los cambios locales, incluida una modificación preexistente en `resultados/07_gamma_alto.txt`, ajena a esta edición y no validada en este turno.
+- El estudiante confirma que las tres imágenes fueron capturadas durante evaluación y son representativas de los tableros, no evidencia comparativa de comportamiento. Se creó la sección «Tableros utilizados», se simplificaron sus pies y se aclaró que epsilon y alpha estaban en cero y que los puntajes visibles no son promedios de evaluación. Se retiró la pregunta sobre la fase. Las observaciones propias del comportamiento siguen pendientes en su apartado.
+- **Verificación:** renderizado Quarto/Typst y `git diff --check`; se conservaron las imágenes y métricas sin cambios. Sin commit ni push.
+- **Continuación:** completar metodología y análisis; no inferir decisiones o superioridad del agente a partir de estas capturas ilustrativas.
+
+## Captura adicional del caso 07 — 2026-10-19
+
+- El estudiante identifica la nueva y última imagen (`reporte/images/paste-4.png`) como caso 07. Se inspeccionó: puntaje mostrado 495. Se añadió encabezado y pie para `smallGrid`, gamma alto, con parámetros de entrenamiento epsilon 0.10, alpha 0.30 y gamma 0.95, centrado y ancho del 38 %. Se conservaron las figuras de los casos 11 y 09.
+- **Base:** `main`, `f6c2d10`; se preservan los cambios locales. **Verificación:** renderizado Quarto/Typst, revisión visual de la figura y `git diff --check`. Sin cambios a métricas, experimentos, commit ni push.
+- **Pendiente:** confirmar la fase y si el puntaje mostrado corresponde al final de la partida; no se infiere victoria únicamente desde la captura. Completar las observaciones propias.
+
+## Identificación y presentación de capturas — 2026-10-19
+
+- **Base:** `main`, `f6c2d10`; fetch correcto y comparación con `origin/main`: `0 0`. Se conservaron los cambios locales del estudiante y los archivos de imagen originales.
+- Según la identificación del estudiante, la primera imagen del informe (`images/paste-1.png`) corresponde al caso 11, `mediumClassic`, con puntaje parcial 132; la segunda (`images/paste-3.png`) al caso 09, `mediumGrid`, con puntaje parcial -33. Se inspeccionaron ambas imágenes.
+- Se ajustaron los tamaños manteniendo las proporciones (70 % y 38 % del ancho), el centrado y los pies numerados con identificadores propios. Se retiraron el pie provisional y la instrucción de inserción ya resuelta. Los parámetros se describen como valores de entrenamiento; sigue pendiente confirmar la fase de cada captura.
+- **Verificación:** renderizado Quarto/Typst, revisión visual de las figuras y `git diff --check`. Sin modificar píxeles, resultados o dependencias, ni hacer commit o push.
+- **Continuación:** confirmar entrenamiento/evaluación para cada captura y completar las observaciones propias y la metodología pendientes.
+
+## Espacio para captura del caso 11 — 2026-10-19
+
+- **Base:** `main`, `f6c2d10`; consulta al remoto correcta y comparación con `origin/main`: `0 0`. Se preservan los cambios locales anteriores.
+- Se añadió en Observaciones del `.qmd` un espacio para la captura de `mediumClassic` que el estudiante identifica como caso 11, con puntaje parcial de 132. Incluye pie propuesto, parámetros usados para entrenar y una nota pendiente para identificar entrenamiento o evaluación. La imagen no se insertó todavía; el comentario del editor indica dónde guardarla y cómo incorporarla sin referencias activas a archivos inexistentes.
+- **Verificación:** renderizado Quarto/Typst y `git diff --check`; sin modificar resultados, ejecutar experimentos, commit ni push.
+- **Continuación:** insertar la imagen y confirmar la fase de la partida; continuar la redacción propia de metodología y observaciones.
+
+## Revisión de introducción y objetivo — 2026-10-19
+
+- **Base:** `main`, `f6c2d10`; `git fetch --prune origin` correcto y comparación con `origin/main`: `0 0`. Se preservan los cambios locales acumulados, incluida la redacción y los ajustes de metadatos realizados por el estudiante en el `.qmd`.
+- Se revisó y conservó la introducción redactada por el estudiante. Se retiró su instrucción entre corchetes, se corrigieron «agente de Q-learning» y «desempeño», se precisó «tableros» y se separó el objetivo en un párrafo. Las guías de secciones pendientes y el aviso general de borrador permanecen.
+- **Verificación:** renderizado del `.qmd` con Quarto/Typst, revisión de la sección y `git diff --check`. Sin cambios a resultados, experimentos, dependencias, commit ni push.
+- **Siguiente paso:** redactar la descripción de agente, entorno, estados, acciones y recompensas en metodología; revisar esa sección antes de retirar su guía. La introducción y el objetivo ya cuentan con texto propio revisado.
+
+## Plantilla Quarto para el entregable PDF — 2026-10-19
+
+- **Base:** `main`, `f6c2d10`; consulta nueva con `git fetch --prune origin` correcta y comparación `HEAD...origin/main`: `0 0`. Se preservaron los cambios locales y las cuatro salidas nuevas de las tareas anteriores.
+- A solicitud del estudiante, se creó `laboratorios/modulo_1/reporte/reporte_pacman.qmd` como fuente editable del entregable: metadatos por completar, metodología, las dos tablas de once casos, observaciones y preguntas guía para análisis, limitaciones y conclusiones. No se completó el razonamiento académico ni se inventaron observaciones.
+- Se añadió configuración local `reporte/_quarto.yml` para generar el documento independiente con Typst, y `reporte/README.md` con instrucciones. `.gitignore` excluye `_salida/` y la caché local. Se señalaron la fuente nueva y el carácter histórico del `.md` en los README, instrucciones y PROJECT.
+- **Verificación:** Quarto 1.8.27 y Typst 0.13.0 disponibles; `quarto render laboratorios/modulo_1/reporte/reporte_pacman.qmd --to typst` correcto. PDF de tres páginas A4 revisado visualmente mediante Poppler; tablas completas y legibles. Se comprobaron las tablas contra el CSV, exclusión de salidas generadas y `git diff --check`. Sin cambios al libro, experimentos, dependencias, commit ni push.
+- **Siguiente paso concreto:** editar el `.qmd`, completar nombre, fecha y todos los textos entre corchetes con la redacción y observaciones del estudiante, quitar el aviso de borrador y volver a renderizar/revisar el PDF antes de entregar. El PDF generado ahora es una vista de la plantilla, no un informe listo para subir. Sigue pendiente confirmar el alcance exacto indicado en tutoría y la entrega en plataforma.
+
+## Documentación actualizada tras ampliar los tableros — 2026-10-19
+
+- **Base:** `main`, `f6c2d10`; consulta nueva con `git fetch --prune origin` correcta, comparación `HEAD...origin/main`: `0 0`. Se conservaron las ediciones locales de STATUS/CSV y las cuatro salidas nuevas, sin integrar ni sobrescribir trabajo previo.
+- Se actualizaron `laboratorios/modulo_1/PRUEBAS.md`, `README.md`, `INSTRUCCIONES.md` y `resultados/README.md`: once comandos, correspondencia de casos/tableros, presupuesto constante, entrenamiento desde cero, semilla fija, límites de comparación y conservación de salidas al repetir. La indicación de variar el grid se atribuye al reporte del estudiante sobre la tutoría; la pregunta original del entregable se conserva.
+- El README distingue la ejecución preliminar sin semilla de los once casos comparativos. Se corrigió `PROJECT.md`, que todavía describía `laboratorios/` como vacío.
+- Se actualizaron metodología, configuraciones, tabla de resultados y enlaces del borrador `reporte/reporte_pacman.md`. Se añadieron preguntas guía para tableros y alpha por entorno; las observaciones visuales, explicaciones y conclusiones siguen pendientes del estudiante. No se generó ni revisó un PDF final.
+- **Verificación:** con `uv run --no-sync python` se comprobaron once comandos contra parámetros y tableros del CSV, primeras/últimas 100 partidas, promedio calculado desde diez puntajes y victorias/derrotas de las once salidas, correspondencia exacta de ambas tablas del informe, enlaces locales y cierre de bloques de código. Revisión de `git diff` y `git diff --check`. Cambios Markdown únicamente en esta tarea, sin necesidad de renderizar Quarto; sin entrenamientos, cambios de dependencias, commit ni push.
+- **Continuación vigente:** completar las observaciones propias y el análisis del informe; confirmar el alcance exacto de la aclaración de tutoría, revisar/exportar el PDF y subirlo antes del plazo registrado del 20 de octubre, 23:59 (-05), previa comprobación en plataforma. Las entradas anteriores describen avances históricos; ya están consolidadas las cuatro pruebas adicionales y actualizados los documentos que aún figuraban pendientes.
+
+## Consolidación de once pruebas de Pacman — 2026-10-19
+
+- **Base:** `main`, `f6c2d10`; `git fetch --prune origin` correcto y comparación con `origin/main`: `0 0`. Se preservan el seguimiento local anterior y las cuatro salidas nuevas sin versionar.
+- A solicitud del estudiante, se agregaron los casos 08–11 a `laboratorios/modulo_1/resultados/resumen.csv`, con parámetros según los comandos propuestos en esta conversación, criterio de semilla fija `-f`, métricas de primeras/últimas 100 partidas, promedio de evaluación y victorias/derrotas. Las salidas no registran los argumentos de ejecución; la configuración se identifica por los comandos y nombres de archivo de esta conversación.
+- Se añadió `tablero` al final del CSV: `smallGrid` para los siete casos anteriores, `mediumGrid` para 08–09 y `mediumClassic` para 10–11. Se conservaron las métricas originales y las observaciones visuales vacías.
+- **Verificación:** cada salida nueva contiene 20 cortes de entrenamiento hasta 2000 episodios, cierre de entrenamiento y 10 evaluaciones; los promedios se recalcularon desde los puntajes y los conteos coinciden con `Record` y `Win Rate`. CSV releído: 11 casos únicos y 12 columnas. Revisión de `git diff` y `git diff --check`, sin cambios de dependencias, renderizado, commit ni push.
+- **Siguiente paso:** completar observaciones propias e incorporar los nuevos tableros y resultados al informe. El borrador del informe todavía presenta solo siete pruebas; el README de resultados y el plan inicial también describen las siete originales.
+
+## Aclaración de tutoría sobre Pacman — 2026-10-19
+
+- **Base:** `main`, `f6c2d10`; árbol inicialmente limpio. `git fetch --prune origin` correcto y comparación `HEAD...origin/main`: `0 0`.
+- El estudiante informa que en tutoría indicaron incluir variaciones del grid en el entregable de mañana, 20 de octubre. Se registra como información reportada por el estudiante; falta precisar cuáles tableros y cuántas combinaciones requieren.
+- Las siete pruebas existentes utilizan `smallGrid`. El enunciado local menciona también `mediumGrid` y `mediumClassic`, pero la pregunta de entrega transcrita no exige explícitamente una matriz de parámetros por tablero. El plan anterior fijó `smallGrid` para aislar el efecto de los parámetros; debe complementarse según la aclaración de tutoría.
+- **Sugerencia, no requisito confirmado:** conservar las siete pruebas y comparar primero los otros tableros con los parámetros del caso base, entrenando desde cero en cada uno con el mismo presupuesto y criterio de semilla. No hay ejecuciones nuevas ni resultados adicionales.
+- **Verificación:** revisión documental del diff y `git diff --check`; sin cambios a experimentos, informe o fuentes Quarto, sin renderizado, commit ni push.
+- **Siguiente paso:** precisar si la tutoría exige variar parámetros en cada tablero o solamente comparar tableros; después completar la experimentación y actualizar el informe antes de exportar/subir el PDF. El estado anterior de «solo falta subir» queda sujeto a esta nueva aclaración.
+- **Avance posterior en esta conversación:** aparecen cuatro salidas nuevas sin versionar, preservadas sin cambios. Sus resúmenes finales muestran: `mediumGrid` base, promedio -503.7 y 0/10 victorias; alpha alto, -414.7 y 1/10; `mediumClassic` base, -401.4 y 0/10; alpha alto, -384.7 y 0/10. Todas muestran cierre de entrenamiento y diez resultados de evaluación. Estas métricas todavía no se incorporan al CSV ni al borrador local del informe.
+- **Alcance de la evidencia:** las once pruebas permiten discutir parámetros y tableros, sin demostrar superioridad general con una sola corrida y diez evaluaciones por caso. Se recomienda conservar el presupuesto de entrenamiento para la comparación principal; cualquier aumento sería una prueba adicional con archivo propio. Continuación actual: consolidar las cuatro salidas, añadir observaciones propias y completar el análisis del informe; confirmar el alcance exacto pedido en tutoría.
+
 ## Planeación conjunta con Deep Learning — 2026-10-18
 
 - Se revisaron `AGENTS.md`, `PROJECT.md` y `STATUS.md` de la materia hermana `deep-learning`, además del seguimiento actual de Refuerzo. Ambos repositorios tienen cambios locales en `STATUS.md`; se preservan. Sus referencias locales de `main` coinciden con `origin/main`; Deep Learning no se volvió a consultar al remoto en esta revisión, por lo que no se afirma una sincronización nueva con GitHub.

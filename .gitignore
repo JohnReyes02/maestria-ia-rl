@@ -23,6 +23,10 @@ ENV/
 /docs/
 /_site/
 
+# Standalone Pacman report: generated PDFs and Quarto cache
+/laboratorios/modulo_1/reporte/_salida/
+/laboratorios/modulo_1/reporte/.quarto/
+
 **/*.quarto_ipynb
 
 # Extracted third-party course material (recreated from the preserved ZIP)

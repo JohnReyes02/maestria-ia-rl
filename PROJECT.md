@@ -20,7 +20,7 @@
 ├── references.bib               # Bibliografía general, aún como marcador
 ├── references_modulo_*.bib      # Bibliografía por módulo
 ├── styles.css                   # Estilos del libro
-├── laboratorios/                # Reservado para laboratorios; hoy solo .gitkeep
+├── laboratorios/                # Ocho módulos; Pacman y sus pruebas en modulo_1/
 ├── S2C2_aprendizaje-por-refuerzo.pdf
 │                                # Documento académico fuente de 3 páginas
 ├── pyproject.toml               # Metadatos y dependencias Python directas
@@ -37,7 +37,11 @@ Directorios locales generados e ignorados:
 - `docs/`: salida HTML del libro, configurada mediante `output-dir`.
 - `_site/`: salida alternativa de Quarto, si llega a generarse.
 
-No hay actualmente notebooks, scripts Python, datasets, pruebas automatizadas, flujo de CI/CD, contenedor, `Makefile` ni `README` versionados. `laboratorios/` está vacío salvo por `.gitkeep`.
+No hay actualmente notebooks, scripts Python independientes, datasets, pruebas automatizadas, flujo de CI/CD, contenedor ni `Makefile` versionados. `laboratorios/` contiene la estructura de los ocho módulos; `modulo_1/` incluye el ZIP original de Pacman, README, instrucciones, plan de once pruebas, salidas, resumen CSV y borrador del informe. La copia extraída del código original permanece ignorada por Git.
+
+El experimento comparativo de Pacman conserva siete configuraciones en `smallGrid` y dos en cada uno de `mediumGrid` y `mediumClassic`, con 2000 episodios de entrenamiento, diez de evaluación y `-f`. Las métricas están consolidadas y el informe `.qmd` contiene análisis, limitaciones y conclusiones, pendientes de lectura final del estudiante. Las capturas ilustran los tableros; no se inventaron observaciones de trayectorias. Consultar `STATUS.md` para el punto de continuación y `laboratorios/modulo_1/PRUEBAS.md` para los comandos.
+
+El entregable de Pacman se redacta en `laboratorios/modulo_1/reporte/reporte_pacman.qmd`. Su configuración local de Quarto genera un PDF con Typst en `reporte/_salida/`, ignorado por Git, sin modificar el libro del curso. El `.md` previo se conserva como referencia. Consultar `reporte/README.md` para completar y exportar la plantilla.
 
 ## Configuración de Quarto
 

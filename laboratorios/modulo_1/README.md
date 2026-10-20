@@ -18,7 +18,18 @@ unzip laboratorios/modulo_1/originales/AI-Pacman-Projects.zip \
   -d laboratorios/modulo_1/pacman
 ```
 
-## Ejecución
+## Archivos de trabajo y avance
+
+- [INSTRUCCIONES.md](INSTRUCCIONES.md): enunciado conservado, aclaración de tutoría y comprobaciones para la entrega.
+- [PRUEBAS.md](PRUEBAS.md): comandos reproducibles de los once casos con `-f`, 2000 episodios de entrenamiento y 10 de evaluación.
+- [Resultados](resultados/README.md) y [resumen.csv](resultados/resumen.csv): siete casos en `smallGrid`, dos en `mediumGrid` y dos en `mediumClassic`, con métricas consolidadas.
+- [Informe](reporte/reporte_pacman.qmd) y [guía para generar el PDF](reporte/README.md): metodología, tablas, imágenes ilustrativas, análisis, limitaciones y conclusiones de los once casos, pendientes de lectura final del estudiante. El `.md` anterior se conserva como referencia histórica.
+
+La ampliación de tableros incorpora lo informado por el estudiante tras la tutoría del 19 de octubre de 2026. Falta confirmar si se exige un número concreto de combinaciones por tablero. La entrega registrada es un PDF para el 20 de octubre a las 23:59 (-05), pendiente de comprobar en plataforma.
+
+## Ejecución preliminar sin semilla
+
+El siguiente comando y sus resultados corresponden a una prueba inicial, separada de los once casos comparativos con semilla fija. Para reproducir estos últimos, usar `PRUEBAS.md`.
 
 Desde `pacman/AI-Pacman-Projects-master/Reinforcement/`:
 

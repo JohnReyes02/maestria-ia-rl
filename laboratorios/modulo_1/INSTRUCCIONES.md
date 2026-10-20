@@ -95,6 +95,16 @@ Los resultados pueden variar entre ejecuciones debido a la aleatoriedad del entr
 
 ## Trabajo que debe realizar el estudiante
 
+### Aclaración de tutoría y diseño adoptado — 19 de octubre de 2026
+
+El estudiante informó que en tutoría indicaron variar también el grid para el entregable del 20 de octubre. Este dato complementa el enunciado transcrito arriba; no se dispone de una rúbrica nueva ni de una cantidad obligatoria de combinaciones por tablero.
+
+Se conservaron las siete pruebas de parámetros en `smallGrid` y se añadieron cuatro: caso base y alpha alto en `mediumGrid` y `mediumClassic`. Los once comandos están en [PRUEBAS.md](PRUEBAS.md) y las métricas en [resumen.csv](resultados/resumen.csv). Todas mantienen 2000 episodios de entrenamiento, 10 de evaluación y `-f`, con entrenamiento desde cero por caso. Cambiar el tablero modifica el entorno; cambiar epsilon, alpha o gamma modifica el aprendizaje del agente.
+
+Este diseño permite comparar parámetros dentro de `smallGrid`, el caso base entre tres tableros y alpha base/alto dentro de cada tablero. No prueba todos los valores de epsilon y gamma en los otros mapas. Confirmar el alcance exacto pedido en tutoría antes de considerar cubierta la exigencia.
+
+### Procedimiento de trabajo
+
 1. Definir varias combinaciones de `epsilon`, `alpha` y `gamma`.
 2. Mantener constantes los demás elementos cuando se quiera estudiar el efecto de un parámetro.
 3. Ejecutar el agente con cada combinación.
@@ -102,6 +112,8 @@ Los resultados pueden variar entre ejecuciones debido a la aleatoriedad del entr
 5. Observar el comportamiento de Pacman durante las partidas de evaluación.
 6. Comparar los resultados y explicar las diferencias observadas.
 7. Preparar y exportar el reporte final en formato PDF.
+
+Al comparar tableros, mantener constantes los parámetros y el presupuesto de entrenamiento. Las once ejecuciones ya están consolidadas; resta completar las observaciones y el análisis. Si se aumenta `-x`, ajustar `-n` para conservar la cantidad de evaluaciones (`n - x`) y registrar la prueba como un caso adicional, sin sustituir resultados anteriores.
 
 ## Datos que conviene registrar
 
@@ -120,19 +132,21 @@ Para cada combinación:
 
 Tabla de trabajo sugerida:
 
-| Caso | Epsilon | Alpha | Gamma | Primeras 100 | Últimas 100 | Promedio de evaluación | Victorias | Observaciones |
-|---|---:|---:|---:|---:|---:|---:|---:|---|
-| 1 | | | | | | | | |
-| 2 | | | | | | | | |
-| 3 | | | | | | | | |
-| 4 | | | | | | | | |
+| Caso | Tablero | Epsilon | Alpha | Gamma | Primeras 100 | Últimas 100 | Promedio de evaluación | Victorias | Observaciones |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---|
+| 1 | | | | | | | | | |
+| 2 | | | | | | | | | |
+| 3 | | | | | | | | | |
+| 4 | | | | | | | | | |
 
 ## Estructura sugerida para el reporte
+
+La fuente editable para preparar el entregable es [reporte/reporte_pacman.qmd](reporte/reporte_pacman.qmd). La [guía de exportación](reporte/README.md) explica cómo completar la plantilla y generar el PDF con Quarto y Typst. El `.md` anterior se conserva como referencia, sin sincronización automática.
 
 1. **Introducción:** objetivo de la experimentación.
 2. **Metodología:** entorno, agente, parámetros, número de episodios y control de la aleatoriedad.
 3. **Resultados:** tabla comparativa y evidencias relevantes.
-4. **Análisis:** explicación del efecto observado al cambiar cada parámetro.
+4. **Análisis:** explicación del efecto observado al cambiar cada parámetro y el tablero. Distinguir observaciones de hipótesis y considerar las diferencias de comida y recorrido al comparar puntajes entre mapas.
 5. **Conclusiones:** principales aprendizajes y limitaciones del experimento.
 6. **Anexo opcional:** comandos y salidas completas.
 
@@ -140,6 +154,8 @@ Tabla de trabajo sugerida:
 
 - [ ] Se probaron distintas combinaciones de parámetros.
 - [ ] Cada combinación está identificada claramente.
+- [ ] Se identifica el tablero de cada caso y se analiza la comparación entre entornos indicada en tutoría.
+- [ ] Se confirmó si la tutoría exige combinaciones adicionales por tablero.
 - [ ] Los resultados pertenecen a ejecuciones propias.
 - [ ] El reporte explica los resultados y no se limita a copiarlos.
 - [ ] Se distingue entre entrenamiento y evaluación.
