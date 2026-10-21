@@ -2,7 +2,7 @@
 title: "Uso de agentes de aprendizaje por refuerzo"
 subtitle: "Aprendizaje por Refuerzo · Maestría en Inteligencia Artificial"
 author: "Edwin John Fredy Reyes Aguirre"
-date: today
+date: 2026-10-20
 lang: es
 format:
   typst:
@@ -13,7 +13,7 @@ format:
       y: 22mm
     number-sections: true
     toc: false
-    output-file: reporte_pacman.pdf
+    output-file: reporte_pacman_edwin.pdf
 execute:
   enabled: false
 ---
@@ -26,7 +26,7 @@ El objetivo fue observar cómo estos cambios se reflejan en las recompensas dura
 
 # Metodología
 
-Se utilizó `PacmanQAgent`, un agente de Q-learning, con 2000 episodios de entrenamiento y 10 de evaluación por configuración. Cada episodio corresponde a un juego completo de Pacman. En cada ejecución, el agente se entrenó desde cero y se utilizó una semilla aleatoria fija. No se reutilizaron los valores aprendidos entre configuraciones.
+Se utilizó `PacmanQAgent`, un agente de Q-learning, con 2000 episodios de entrenamiento y 10 de evaluación por configuración. Cada episodio corresponde a un juego completo de Pacman. En cada ejecución, el agente se entrenó desde cero y se utilizó una semilla aleatoria fija mediante la opción `-f`, que establece la semilla `cs188` en esta implementación. No se reutilizaron los valores aprendidos entre configuraciones.
 
 El caso 01 corresponde a la configuración base; los casos 02-07 mantienen `smallGrid` y modifican un parámetro respecto a ella. Los casos 08-11 utilizan `mediumGrid` y `mediumClassic`, con los parámetros base y con alpha alto. Para comparar tableros con los mismos parámetros se utilizan los casos 01, 08 y 10. El efecto de alpha dentro de cada tablero se compara mediante los pares 01/05, 08/09 y 10/11. Se mantuvo el mismo número de episodios en todos los casos. No se evaluaron todas las combinaciones de parámetros en todos los tableros.
 

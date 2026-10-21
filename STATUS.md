@@ -1,5 +1,40 @@
 # STATUS.md
 
+## Cierre de sesión y publicación autorizada — 2026-10-20
+
+- **Base:** `main`, `b94993c`; fetch correcto y comparación con `origin/main`: `0 0`. El estudiante solicita actualizar el repositorio y cerrar la sesión, autorizando commit y push de los tres archivos pendientes.
+- Se guardan la fecha fija, el nombre personalizado y la precisión de semilla del informe, su guía actualizada y el seguimiento de entrega y calificaciones. Pacman figura como enviado; las dos primeras actividades tienen 100 % cada una. La nota de Pacman no está confirmada.
+- **Verificación:** renderizado Quarto/Typst y revisión visual de las seis páginas completados en esta sesión; la versión con nombre personalizado es visualmente idéntica. Diff revisado y `git diff --check` correcto. No se incluyen PDF ni cachés generados.
+- **Continuación:** retomar los pendientes del módulo 2 para el 27 de octubre, respetando las restricciones académicas ya registradas. Las lecturas finales del módulo 1 siguen pendientes de identificar y confirmar.
+
+## Calificaciones confirmadas en plataforma — 2026-10-20
+
+- **Fuente:** captura de la plataforma aportada por el estudiante. «Definición del aprendizaje por refuerzo» y «Caracterización del aprendizaje por refuerzo» figuran como **Calificado**, ambas con **100 %** y peso de **1 %** cada una. «Uso de agentes de aprendizaje por refuerzo» figura como **Enviado**, con peso de **1 %** y sin calificación visible (`--`). La captura confirma el envío del informe de Pacman.
+- **Base:** `main`, `b94993c`; fetch correcto y comparación con `origin/main`: `0 0`. Se preservan los cambios locales anteriores.
+- **Verificación:** registro documental contrastado con la captura, diff revisado y `git diff --check` correcto. Sin commit ni push.
+- **Siguiente paso:** retomar los pendientes del módulo 2; la nota de Pacman queda pendiente de confirmación.
+
+## Informe de Pacman entregado — 2026-10-20
+
+- **Confirmación del estudiante:** el informe `reporte_pacman_edwin.pdf` ya fue entregado en la plataforma. La actividad «Uso de agentes de aprendizaje por refuerzo» queda registrada como entregada; calificación pendiente de confirmación. Esta confirmación reemplaza los pendientes históricos de subir el informe.
+- **Base:** `main`, `b94993c`; fetch correcto y comparación con `origin/main`: `0 0`. Se preservan los cambios locales anteriores del informe y su documentación.
+- **Verificación:** actualización documental, diff revisado y `git diff --check` correcto. Sin commit ni push.
+- **Siguiente paso:** retomar los pendientes del módulo 2 para el 27 de octubre, respetando las restricciones académicas registradas para los laboratorios calificables. Las lecturas finales del módulo 1 siguen pendientes de identificar y confirmar.
+
+## Nombre personalizado del PDF de Pacman — 2026-10-20
+
+- **Base:** `main`, `b94993c`; fetch correcto y comparación con `origin/main`: `0 0`. Se preservan los tres archivos con cambios locales de la revisión anterior.
+- A petición del estudiante, el nombre de salida y la guía se ajustaron a `reporte_pacman_edwin.pdf`. PDF regenerado con Quarto/Typst y comprobado con Poppler: seis páginas A4. `git diff --check` correcto; diff revisado. Sin commit ni push.
+- **Siguiente paso:** subir `laboratorios/modulo_1/reporte/_salida/reporte_pacman_edwin.pdf` y confirmar el envío.
+
+## Revisión final y regeneración del PDF de Pacman — 2026-10-20
+
+- **Base:** `main`, `b94993c`; árbol limpio al inicio, `git fetch --prune origin` correcto y comparación con `origin/main`: `0 0`.
+- A solicitud del estudiante se revisó el informe completo contra el enunciado local, el plan de pruebas, el CSV y las once salidas originales. Coinciden los parámetros documentados, los 220 cortes de entrenamiento, las 110 evaluaciones, las recompensas iniciales/finales, los promedios recalculados y las victorias/derrotas. Ambas tablas coinciden con el CSV y las tres imágenes existen. No se encontraron marcadores pendientes ni inconsistencias en el análisis; se distinguen resultados e hipótesis y se conservan las limitaciones de una semilla y diez evaluaciones por caso.
+- Se fijó la fecha del informe en `2026-10-20` y se precisó que `-f` aplica la semilla `cs188`, comprobado en la implementación suministrada. Se actualizó la indicación de fecha en el README. No se modificaron métricas, experimentos ni código del agente.
+- **Verificación:** Quarto 1.8.27, renderizado independiente con Typst correcto; PDF de seis páginas A4 sin cifrado, inspeccionado visualmente en su totalidad con Poppler. Tablas, imágenes, texto y numeración legibles, sin recortes ni superposiciones. `git diff --check` correcto y diff revisado. PDF y cachés permanecen ignorados. Sin commit ni push.
+- **Siguiente paso concreto:** subir el PDF regenerado en `laboratorios/modulo_1/reporte/_salida/reporte_pacman.pdf` y confirmar el envío. Esta revisión usa el enunciado conservado localmente; no se volvió a consultar la plataforma ni se confirmó una rúbrica adicional de tutoría. El envío sigue pendiente.
+
 ## Revisión integral y publicación autorizada — 2026-10-20
 
 - **Base:** `main`, `9239b55`; `git fetch --prune origin` correcto y comparación previa con `origin/main`: `0 0`.
@@ -427,7 +462,7 @@
 |---|---|---|---:|---|
 | 20 oct. | Definición del aprendizaje por refuerzo | Tarea calificable | 1 % | Calificado: 100 % |
 | 20 oct. | Caracterización del aprendizaje por refuerzo | Tarea calificable | 1 % | Calificado: 100 % |
-| 20 oct. | Uso de agentes de aprendizaje por refuerzo | Tarea calificable | 1 % | Sin calificación visible |
+| 20 oct. | Uso de agentes de aprendizaje por refuerzo | Tarea calificable | 1 % | Entregado, confirmado por el estudiante el 20 oct.; calificación pendiente de confirmación |
 | 27 oct. | Tipos de aprendizaje | Tarea calificable | 1 % | Sin calificación visible |
 | 27 oct. | Exploración v. Explotación | Tarea calificable | 1 % | Sin calificación visible |
 | 27 oct. | Ética en la evaluación de instrucciones | Tarea calificable | 1 % | Sin calificación visible |
@@ -471,4 +506,4 @@
 
 ## Siguiente paso
 
-Según la confirmación del estudiante del 2026-10-18, subir el informe PDF del módulo 1 antes del plazo registrado del 20 de octubre y completar algunas lecturas finales aún sin identificar. El borrador local no se actualizó con la versión final. Después, guardar los notebooks originales de las prácticas de bandidos en `laboratorios/modulo_2/originales/` y trabajar sobre copias en `laboratorios/modulo_2/`. Planificar el módulo 2 dando margen a sus dos actividades de programación de 3 h, que vencen junto con otras tres evaluaciones pendientes el 27 de octubre; el formulario de conformación del equipo ya fue enviado. Tener presente la descripción del proyecto registrada al inicio de este archivo y precisar sus reglas antes de implementar. El VPS permite pruebas básicas CPU y entornos sin renderizado, pero no está plenamente validado para combinar PyTorch y scikit-learn en el mismo proceso. Consultar al usuario antes de cambiar dependencias o aplicar soluciones para TLS/ARM64. Para retomar desde otro equipo, actualizar desde GitHub. Ejecutar `quarto render` después de editar fuentes académicas.
+El estudiante confirmó el 2026-10-20 que entregó el informe de Pacman del módulo 1; no queda pendiente subirlo. La calificación no está confirmada. Retomar los pendientes del módulo 2 para el 27 de octubre, con los notebooks originales ya conservados y convertidos mecánicamente a Quarto; respetar la restricción registrada de no usar IA para resolver los laboratorios calificables. El formulario de conformación del equipo ya fue enviado. Las lecturas finales del módulo 1 siguen pendientes de identificar y confirmar. Consultar las entradas más recientes para el estado vigente y actualizar desde GitHub al retomar en otro equipo.
