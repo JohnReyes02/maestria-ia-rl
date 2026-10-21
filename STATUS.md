@@ -1,5 +1,12 @@
 # STATUS.md
 
+## Tutorial de bandidos conservado y publicación autorizada — 2026-10-20
+
+- **Base:** `main`, `2f5d754`; `git fetch --prune origin` correcto y comparación con `origin/main`: `0 0`. El único archivo pendiente era `laboratorios/modulo_2/originales/Tutorial-bandidos.ipynb`. El estudiante solicita guardar y actualizar el repositorio, autorizando commit y push.
+- Se incorpora el notebook tal como estaba en el directorio de originales, sin modificarlo ni ejecutarlo. Su incorporación no implica que el tutorial ni las evaluaciones del módulo 2 estén completados.
+- **Verificación:** formato validado con `nbformat` mediante `uv run --no-sync python`: 14 celdas, nueve de código y ninguna con salidas. SHA-256 del original: `2c65d619a573a2941a3a6e2212ab67aef746ece24fb0717ed057610ebe4f45cb`. Revisión del diff y comprobación de espacios antes del commit; no cambian dependencias ni fuentes Quarto, por lo que no se requiere renderizado.
+- **Pendientes y siguiente paso:** retomar el tutorial y los pendientes del módulo 2 para el 27 de octubre, respetando la restricción académica registrada para los laboratorios calificables. Continúan pendientes de confirmación la nota de Pacman y las lecturas finales del módulo 1.
+
 ## Cierre de sesión y publicación autorizada — 2026-10-20
 
 - **Base:** `main`, `b94993c`; fetch correcto y comparación con `origin/main`: `0 0`. El estudiante solicita actualizar el repositorio y cerrar la sesión, autorizando commit y push de los tres archivos pendientes.
