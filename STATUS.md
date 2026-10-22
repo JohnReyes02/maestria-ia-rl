@@ -1,5 +1,14 @@
 # STATUS.md
 
+## Lectura de retos integrada y publicación autorizada — 2026-10-22
+
+- **Base:** `main`, sincronizada con `origin/main` (`0 0`) y árbol limpio al inicio.
+- Se ajustó e integró en `modulo_1.qmd` la lectura aportada por el estudiante sobre nueve retos del aprendizaje por refuerzo en el mundo real. Se corrigieron redacción, ortografía y terminología; se organizó el contenido por reto, se añadió una síntesis que conecta agente, entorno, estado, acción, recompensa, política, valor y dinámica, y se incorporaron cinco preguntas de comprensión. Tras un guardado externo que reemplazó temporalmente la sección, se restauró la lectura conservando las marcas de videos completados por el estudiante.
+- Se sustituyó el marcador «Lectura 1» por un enlace interno a la lectura y se registraron en `references_modulo_1.bib` las dos referencias indicadas en el texto fuente. En la revisión posterior se verificaron y completaron el evento de 2019 y las páginas y DOI del artículo de 2021 con las fichas académicas disponibles.
+- El estudiante solicita actualizar el repositorio y autoriza el commit y push de `modulo_1.qmd`, `references_modulo_1.bib` y `STATUS.md`.
+- **Verificación:** Quarto 1.10.18; renderizado completo del libro correcto y citas resueltas en la salida HTML. `git diff --check` y revisión final del diff correctos.
+- **Siguiente paso:** lectura y validación académica del estudiante; después, marcarla como completada cuando corresponda.
+
 ## Tutorial de bandidos conservado y publicación autorizada — 2026-10-20
 
 - **Base:** `main`, `2f5d754`; `git fetch --prune origin` correcto y comparación con `origin/main`: `0 0`. El único archivo pendiente era `laboratorios/modulo_2/originales/Tutorial-bandidos.ipynb`. El estudiante solicita guardar y actualizar el repositorio, autorizando commit y push.

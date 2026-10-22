@@ -14,35 +14,99 @@ En este módulo se inicia el estudio de los conceptos fundamentales del aprendiz
 
 > ¿Qué debo ser capaz de hacer al finalizar esta semana?
 
--   [ ] Analizar las limitaciones del aprendizaje por refuerzo.
--   [ ] Entender los diferentes dominios de aplicación del aprendizaje por refuerzo.
--   [ ] Identificar las técnicas del aprendizaje por refuerzo, sus necesidades y limitaciones.
--   [ ] Identificar los tres componentes fundamentales de los sistemas de aprendizaje por refuerzo.
+- [ ] Analizar las limitaciones del aprendizaje por refuerzo.
+- [ ] Entender los diferentes dominios de aplicación del aprendizaje por refuerzo.
+- [ ] Identificar las técnicas del aprendizaje por refuerzo, sus necesidades y limitaciones.
+- [ ] Identificar los tres componentes fundamentales de los sistemas de aprendizaje por refuerzo.
 
 ## Fechas y entregables
 
--   **Semana:** Por completar
--   **Entregables:** Por completar
+- **Semana:** Por completar
+- **Entregables:** Por completar
 
 ------------------------------------------------------------------------
 
 ## 📚 Fundamentos Teóricos
 
-### Conceptos Clave
+### Retos del aprendizaje por refuerzo {#sec-retos-aprendizaje-refuerzo}
 
 ::: callout-note
-## Definición
+## Idea central
 
-Espacio para definir términos.
+El aprendizaje por refuerzo ha avanzado con rapidez en simulaciones y experimentos controlados, pero trasladarlo al mundo real sigue siendo difícil. La brecha aparece porque los entornos reales suelen ser parcialmente desconocidos, estar mal especificados y presentar restricciones que una simulación no siempre reproduce.
 :::
 
-### 🧮 Matemáticas del Modelo
+A continuación se presentan nueve retos identificados en la literatura [@dulacarnold2019challenges; @dulacarnold2021challenges]. Superarlos de manera conjunta es necesario para lograr aplicaciones confiables del aprendizaje por refuerzo en sistemas reales.
 
-Escribe aquí la formulación matemática del modelo de esta semana:
+#### 1. Aprender a partir de pocas muestras durante la operación
 
-$$
-f(x) = \\ldots
-$$
+El comportamiento de un agente suele describirse mediante dos procesos: **exploración** y **explotación**. Durante la exploración, el agente descubre el entorno y obtiene experiencia sobre estados, acciones y recompensas. En la explotación, utiliza lo aprendido para elegir las acciones que considera más convenientes según su política.
+
+En aplicaciones reales, estos procesos rara vez pueden separarse por completo. Por lo general, se espera que el agente opere de forma continua y aprenda con pocas interacciones, sin disponer de una etapa extensa de entrenamiento antes de actuar. El problema se acentúa en espacios de estados grandes, donde visitar nuevamente un estado particular puede requerir mucho tiempo y hacer que el entrenamiento sea costoso.
+
+Para afrontar este reto, los agentes deben aprovechar mejor la experiencia disponible. Una línea de trabajo relacionada es el metaaprendizaje, por ejemplo, *Model-Agnostic Meta-Learning* (MAML).
+
+#### 2. Manejar demoras desconocidas en sensores, actuadores o recompensas
+
+El modelo básico de aprendizaje por refuerzo suele representar la interacción entre el agente y el entorno como un ciclo sin interrupciones. En un sistema real, sin embargo, pueden existir demoras entre una acción y su efecto, entre el cambio del entorno y la lectura de un sensor, o entre una decisión y la recompensa que permite evaluarla. Por ejemplo, la tala de árboles no produce de inmediato todos sus efectos sobre la erosión del terreno.
+
+Estas demoras dificultan atribuir correctamente una consecuencia a la acción que la produjo. Por ello, se requieren algoritmos capaces de aprender con retroalimentación retardada. RUDDER es una propuesta orientada a redistribuir recompensas tardías dentro de una trayectoria.
+
+#### 3. Aprender en espacios de estados de alta dimensionalidad
+
+Los espacios de estados de alta dimensionalidad y los espacios de acciones continuos elevan el costo computacional del aprendizaje. En aprendizaje por refuerzo, este problema es especialmente importante porque el agente debe tomar una decisión ante cada nueva observación del entorno.
+
+Las redes neuronales permiten aproximar políticas o funciones de valor sin representar cada estado de forma tabular. DQN es un ejemplo de esta aproximación para espacios de estados complejos con acciones discretas. Aun así, se necesitan métodos que mejoren la precisión de la política y reduzcan el costo de entrenamiento e inferencia.
+
+#### 4. Razonar sobre las restricciones del entorno
+
+Los sistemas físicos y de software están sujetos a restricciones de seguridad, operación e interacción. Un agente debe respetarlas tanto mientras explora como cuando explota lo aprendido; no basta con verificar las restricciones únicamente después de tomar una decisión.
+
+Una forma de representar este problema consiste en extender los procesos de decisión de Markov mediante los **procesos de decisión de Markov restringidos** (*Constrained Markov Decision Processes*, CMDP). Estos modelos incorporan costos o restricciones asociados con las decisiones del agente, además del objetivo expresado mediante recompensas.
+
+#### 5. Interactuar con sistemas parcialmente observables, no estacionarios o estocásticos
+
+Todo modelo computacional es una abstracción del sistema real. En aprendizaje por refuerzo aparecen, al menos, dos fuentes de información incompleta: la definición del espacio de estados puede omitir variables relevantes y, además, el agente puede observar solo una parte del estado representado en cada instante.
+
+Los **procesos de decisión de Markov parcialmente observables** (*Partially Observable Markov Decision Processes*, POMDP) modelan esta situación mediante observaciones que aportan información probabilística sobre el estado subyacente. La no estacionariedad y la aleatoriedad del entorno añaden otra dificultad: la dinámica puede cambiar con el tiempo o producir resultados diferentes ante una misma acción.
+
+#### 6. Aprender con objetivos múltiples o especificaciones incompletas
+
+El aprendizaje por refuerzo busca optimizar el objetivo expresado mediante la recompensa. Sin embargo, una recompensa mal especificada puede producir un comportamiento no deseado. Por ejemplo, si a un vehículo autónomo solo se le recompensa por evitar colisiones, podría decidir no moverse y cumplir literalmente ese objetivo sin realizar la tarea esperada.
+
+En otros problemas existen varios objetivos que pueden entrar en conflicto, como rapidez, seguridad y consumo de energía. El aprendizaje por refuerzo multiobjetivo estudia cómo representar y equilibrar estas metas. También pueden incorporarse medidas de riesgo, como el **valor en riesgo condicional** (*Conditional Value at Risk*, CVaR), para prestar atención a resultados adversos de la distribución de retornos.
+
+#### 7. Tomar decisiones en tiempo real o casi real
+
+En un sistema dinámico, una buena decisión puede dejar de ser útil si llega tarde. La inferencia de la política debe ajustarse al tiempo disponible entre observaciones y acciones, que en ciertas aplicaciones puede ser de milisegundos.
+
+Este requisito puede limitar el uso de algoritmos de planificación que realizan cálculos costosos antes de elegir una acción. Entre las líneas de investigación relacionadas se encuentran los procesos de decisión de Markov en tiempo real y los algoritmos *anytime*, capaces de entregar una solución válida que mejora si disponen de más tiempo de cómputo.
+
+#### 8. Entrenar *offline* con registros producidos por otra política
+
+En sistemas críticos no siempre es aceptable que un agente aprenda mediante prueba y error durante la operación. Una alternativa es el aprendizaje por refuerzo *offline*, que entrena al agente con un conjunto fijo de transiciones obtenidas de ejecuciones anteriores o de otra política.
+
+El reto principal es la cobertura de los datos. Si ciertas regiones del espacio de estados y acciones están ausentes o poco representadas, el agente puede aprender estimaciones sesgadas y tomar decisiones deficientes. Por otra parte, conservar una cobertura amplia puede requerir conjuntos de datos muy grandes y costosos de procesar. Evaluar si esos registros son suficientes para desplegar una política continúa siendo un problema abierto.
+
+#### 9. Presentar políticas de comportamiento explicables
+
+Una política aprendida puede producir acciones inesperadas aunque optimice la recompensa definida. Por ello, los operadores necesitan comprender por qué el agente tomó una decisión, qué información influyó en ella y cuáles podrían ser sus efectos a largo plazo.
+
+La explicabilidad ayuda a detectar errores en la política, auditar responsabilidades y construir confianza en el sistema. Existen resultados parciales y distintas técnicas de interpretación, pero aún no hay una teoría única y completa que explique el comportamiento de todos los agentes de aprendizaje por refuerzo.
+
+### Síntesis de la lectura
+
+Los nueve retos están conectados. Un agente desplegado en el mundo real puede tener que aprender con pocos datos, observaciones incompletas y recompensas tardías; al mismo tiempo, debe respetar restricciones, responder a tiempo, equilibrar objetivos y explicar sus decisiones. Resolver un reto de manera aislada no garantiza un sistema seguro y útil: la aplicación práctica exige considerar el ciclo completo entre **agente, entorno, estado, acción, recompensa, política, valor y dinámica**.
+
+::: callout-tip
+## Preguntas para comprobar la comprensión
+
+1. ¿Qué diferencia existe entre explorar y explotar, y por qué no siempre pueden separarse en un sistema real?
+2. ¿Cómo puede una demora en la recompensa afectar el aprendizaje de una política?
+3. ¿Qué diferencia hay entre un estado de alta dimensionalidad y un estado parcialmente observable?
+4. ¿Por qué una recompensa aparentemente razonable puede producir un comportamiento no deseado?
+5. ¿Qué riesgos aparecen cuando una política se entrena únicamente con registros históricos?
+:::
 
 ------------------------------------------------------------------------
 
@@ -59,8 +123,8 @@ El código y los ejercicios se encuentran en los notebooks. Aquí se analizan lo
 
 > ¿Qué comportamientos interesantes mostró el agente?
 
--   *Observación 1...*
--   *Observación 2...*
+- *Observación 1...*
+- *Observación 2...*
 
 ------------------------------------------------------------------------
 
@@ -71,14 +135,14 @@ El código y los ejercicios se encuentran en los notebooks. Aquí se analizan lo
 ::: callout-important
 ## 🎥 Grabación de la Clase
 
--   **Enlace a la grabación:** Por completar
--   **Contraseña:** Por completar
--   **Presentación:** Por completar
+- **Enlace a la grabación:** Por completar
+- **Contraseña:** Por completar
+- **Presentación:** Por completar
 :::
 
 ### 🎥 Sesiones complementarias
 
--   **Grabación de la sesión complementaria:** Por completar
+- **Grabación de la sesión complementaria:** Por completar
 
 ### 📺 Videos
 
@@ -87,14 +151,14 @@ El código y los ejercicios se encuentran en los notebooks. Aquí se analizan lo
 | Bienvenida y preparación del curso              | Terminado | ...          |
 | Introducción a la Semana 1                      | Terminado |              |
 | Motivación y Teoría de aprendizaje por refuerzo | Terminado |              |
-| Componentes de aprendizaje con refuerzo         | Teminado  |              |
-| Modelos                                         |           |              |
-| Videojuegos                                     |           |              |
-| Ciudades Inteligentes                           |           |              |
+| Componentes de aprendizaje con refuerzo         | Terminado |              |
+| Modelos                                         | Terminado |              |
+| Videojuegos                                     | Terminado |              |
+| Ciudades Inteligentes                           | Terminado |              |
 
 ### 📖 Lecturas
 
--   [ ] Lectura 1
+- [ ] [Retos del aprendizaje por refuerzo](#sec-retos-aprendizaje-refuerzo)
 
 ------------------------------------------------------------------------
 
