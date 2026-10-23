@@ -1,0 +1,123 @@
+---
+title: "Laboratorio: Bandidos con epsilon decay"
+jupyter: python3
+execute:
+  enabled: false
+---
+
+::: {.callout-note}
+## Actividad calificable
+
+Versión de lectura del [notebook original](originales/bandidos_epsilon.ipynb), conservado sin cambios. El código se muestra sin ejecutarse al renderizar el libro. El banner del original no está incluido porque no se recibió `Banner.jpg`.
+
+Se mantienen los enunciados, el código incompleto y los metadatos de las celdas de código. La conversión a Quarto no conserva todos los metadatos de calificación del notebook; confirma el formato de entrega en la plataforma.
+:::
+
+Para este ejercicio extenderemos la implementación de los bandidos de k-brazos del tutorial de construcción de bandidos, con la estrategia de epsilon decay para permitir al bandido mediar entre la exploración y la explotación de los los brazos a accionar.
+
+La estrategía de &epsilon;-decay extendiende la forma greedy de escoger las acciones del bandido; se escoge la acción con mayor recompensa esperada Q<sub>n</sub>(b) con probabilidad 1-&epsilon; y una acción aleatoria con probabilidad &epsilon;. La extensión que implementaremos debe comenzar con un valor de &epsilon; grande para fomentar la exploración de los brazos y se debe reducir el tamaño de &epsilon; con el paso de los episodios para empezar el proceso de exploración.
+
+En esta implementación particular, utilizaremos un algoritmo que reduce el tamaño de &epsilon; en un 10\% cada 100 episodios ejecutados.
+
+## Implementación del algoritmo
+
+El código base de este ejercicio será la implementación del bandido de k-brazos.
+
+Los cambios que realizaremos sobre el bandido se definen incrementalmente, pero todos se deben realizar sobre la misma celda del notebook. Cada modificación reuqerida estará asociada con sus pruebas correspondientes.
+
+
+### Parámetro epsilon
+
+Para introducir la estrategia de epsilon decay es necesario definir un nuevo atributo (`epsilon`) para la clase `Bandit`. El valor de epsilon se recibe como parámetro en la construcción de la clase y por defecto tendrá un valor de 0.9 (para fomentar la exploración al comienzo de la ejecución.
+
+```{python}
+#| deletable: false
+#| nbgrader: {cell_type: code, checksum: aaddfb2ea518dce27534411dd5256824, grade: false, grade_id: cell-1ce77b3717eaf058, locked: false, schema_version: 3, solution: true, task: false}
+#Implementación del algoritmo
+
+import random
+#Definición de librerias requeridas
+# your code here
+raise NotImplementedError
+
+class Bandit:
+    def __init__(self, num_arms=10, epsilon = 0.9):
+        self.arms = [random.uniform(-3,3) for i in range(num_arms)]
+        self.rewards = [0 for i in range(num_arms)]
+        self.occurrences = [0 for i in range(num_arms)]
+        self.cumulative_rewards = [0 for i in range(num_arms)]
+        # definición nuevos atributos
+        # your code here
+        raise NotImplementedError
+
+    def choose_arm(self) -> int:
+        # your code here
+        raise NotImplementedError
+
+    def expected_reward(self, arm:int) -> float:
+        self.occurrences[arm] += 1
+        reward = self.arms[arm]
+        self.cumulative_rewards[arm] += reward
+        self.rewards[arm] = self.cumulative_rewards[arm]/self.occurrences[arm]
+        return self.rewards[arm]
+
+    def run(self, episodes = 1000) -> float:
+        # your code here
+        raise NotImplementedError
+        return self.rewards
+
+```
+
+```{python}
+#| deletable: false
+#| editable: false
+#| nbgrader: {cell_type: code, checksum: a9a726fff621d334bcb3a0f3e61e7c99, grade: true, grade_id: cell-be89d72f33fbc855, locked: true, points: 3, schema_version: 3, solution: false, task: false}
+#pruebas de la definición del bandido
+
+bandit = Bandit()
+
+```
+
+```{python}
+#Pruebas adicionales
+```
+
+### Agregar la estrategia &epsilon;
+
+Modifique la función `choose_arm` para tenga en cuenta el atributo epsilon del agente, para escoger el brazo a ejecutar aleatoriamente con probabilidad `epsilon` y escoge el brazo con mejor recompensa acumulada total (en la lista de `rewards`) con probabilidad `1-epsilon`.
+
+Si existen varios brazos con el valor máximo de recompensa, se retorna cualquiera de ellos.
+
+Esta función debe retornar el número del brazo del bandito a ejecutar.
+
+```{python}
+#| deletable: false
+#| editable: false
+#| nbgrader: {cell_type: code, checksum: 8b938cd09d8f96d43a22254f75c38a09, grade: true, grade_id: cell-be0109deeb3f465d, locked: true, points: 4, schema_version: 3, solution: false, task: false}
+#pruebas de la función choose_arm
+
+bandit = Bandit()
+
+```
+
+```{python}
+#Pruebas adicionales
+```
+
+### Epsilon decay
+
+Modifique la función `run` que, ahora, debe calcular el decrecimiento del atributo epsilon. Cada 100 episodios ejecutados, la epsilon debe caer un 10\% (se reduce el valor de epsilon en un 10\% del valor actual)
+
+```{python}
+#| deletable: false
+#| editable: false
+#| nbgrader: {cell_type: code, checksum: 81a963a02a71831d6ef37b7ae68b9532, grade: true, grade_id: cell-4f147003e2570d58, locked: true, points: 2, schema_version: 3, solution: false, task: false}
+#Pruebas de la función run
+
+bandit = Bandit(10, 0.9)
+
+```
+
+```{python}
+#Pruebas adicionales
+```

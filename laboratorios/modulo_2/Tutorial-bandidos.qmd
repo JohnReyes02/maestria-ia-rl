@@ -1,0 +1,244 @@
+---
+title: "Tutorial: Construcción de bandidos de K-brazos"
+jupyter: python3
+execute:
+  enabled: false
+---
+
+::: {.callout-note}
+## Tutorial de consulta
+
+Versión de lectura del [notebook original](originales/Tutorial-bandidos.ipynb), conservado sin cambios. El código se muestra sin ejecutarse al renderizar el libro. El banner del original no está incluido porque no se recibió `Banner.jpg`.
+:::
+
+## Introducción
+
+En este tutorial construiremos un agente para el problema de bandidos de k-brazos. Para ello debemos definir:
+1. Un bandido, donde sea posible parametrizar la cantidad de brazos (i.e., las posibilidades a escoger).
+2. La distribución de las recompensas para cada una de las máquinas.
+3. Medir la efectividad del bandido por medio de la ejecución de múltiples escenarios.
+
+Durante este tutorial implementaremos el bandido y el ambiente de pruebas en Jupyter notebooks a medida que se van dando las explicaciones.
+
+(1) Inicialmente crearemos un bandido de k-brazos con un comportamiento constante. (2) Probaremos su comportamiento por medio de una gráfica. (3) Luego le daremos aleatoriedad a las recompensas de escoger cada uno de los brazos y veremos el comportamiento acumulado de cada uno de los brazos, como de la recompensa esperada total del bandido.
+
+
+
+## Un bandido de K-brazos
+
+La definición de los bandidos consiste en crear un agente, como una clase de Python, `Bandit`. Inicialmente crearemos un bandido con una cantidad de brazos dado por parámetro (`num_arms`) (por defecto utilizaremos 10 brazos).
+Cada uno de los brazos del bandido (definidos en una lista como un atributo (`arms` de la clase) tiene su propia recompensa, la cual asignaremos como un número flotante aleatorio en el rango `[-3,3]` (utilizando la función `random.uniform(-3,3)` de la librería random). Adicionalmente, definimos un atributo de la clase (`reward`) para mantener la recompensa que acumula el bandido en cada una de las acciones que escoge. La recompensa inicial debe comenzar en 0.
+
+```{python}
+#| deletable: false
+#| nbgrader: {cell_type: code, checksum: 9ce8e268cc21112a0ee369dc4e39c471, grade: false, grade_id: cell-440b97c8e0367564, locked: false, schema_version: 3, solution: true, task: false}
+# Definición del agente para el problema de los bandidos
+
+#importación de librerías
+import random
+
+
+class Bandit:
+    def __init__(self, num_arms:int = 10):
+        # your code here
+        self.arms = [random.uniform(-3, 3) for i in range(num_arms)]
+        self.rewards = [0 for i in range(num_arms)]
+```
+
+```{python}
+#| deletable: false
+#| editable: false
+#| nbgrader: {cell_type: code, checksum: 5c51df2184cb5bcc46d0603e862d0c2d, grade: true, grade_id: cell-4fc70f0e7cb4cf56, locked: true, points: 4, schema_version: 3, solution: false, task: false}
+bandit = Bandit()
+
+### BEGIN TESTS
+try:
+    bandit.arms
+except:
+    print("El atributo arms no esta definido")
+assert len(bandit.arms) == 10, "Por defecto, el bandido debe tener 10 brazos"
+
+b = Bandit(4)
+assert len(b.arms) == 4, "El bandido se debe definir con la cantidad de brazos que se pasan por parámetro"
+
+try:
+    bandit.rewards
+except:
+    print("El atributo reward no esta definido")
+
+for i in range(len(bandit.arms)):
+    reward = bandit.rewards[i]
+    assert reward == 0, "La recompensa acumulada para cada brazo se debe inicializar en 0"
+### END TESTS
+```
+
+Inicialmente el bandido tiene tres funciones principales `choose_arm`, `expected_reward` y `run`.
+
+La función `choose_arm` no recibe ningun parámetro (excepto el parámetro self por defecto de las clases de Python) y se encarga de escoger un brazo aleatoriamente para ejecutar.
+El resultado de esta función debe ser el número del brazo (i.e., la posición de la lista) a escoger.
+
+Por ejemplo, escoger el brazo 1, debe retornar el valor 0.
+
+```{python}
+#| deletable: false
+#| nbgrader: {cell_type: code, checksum: 2c78cb61da6b3d5a36103ab4f01d5126, grade: false, grade_id: cell-beca8bc793cb27eb, locked: false, schema_version: 3, solution: true, task: false}
+class Bandit(Bandit):
+    def choose_arm(self) -> int:
+        # your code here
+        return random.randrange(len(self.arms))
+```
+
+```{python}
+#| deletable: false
+#| editable: false
+#| nbgrader: {cell_type: code, checksum: aa81beb4595cfd42bbf1b5ec3ec0a01f, grade: true, grade_id: cell-611cadaa013822eb, locked: true, points: 3, schema_version: 3, solution: false, task: false}
+bandit = Bandit()
+
+### BEGIN TEST
+try:
+    bandit.choose_arm()
+except:
+    print("La función choose_arm no se ha implementado")
+
+assert isinstance(bandit.choose_arm(), int), "El valor del brazo a retornar debe ser un entero, el número de brazo a escoger"
+assert 0 <= bandit.choose_arm() and bandit.choose_arm() <= 9, "No se esta escogiendo un brazo dentro de las posibilidades del bandido"
+### END TEST
+```
+
+La función `expected_reward` recibe como parámetro el brazo a escoger. Esta función se encarga de ejecutarel brazo dado y retorna la recompensa recibida de la ejecución, de acuerdo a la fórmula:
+
+$$Q_t(b) = \dfrac{\sum\limits_{i=1}^{t-1} r_i1_{a_t=b}}{\sum\limits_{i=1}^{t-1} 1_{a_t=b}} $$
+
+En la fórmula, la recompensa del brazo a escoger $b$ en el momento de la ejecución $t$ se define por la suma de las recompensas que se han recibido para el brazo hasta el momento, sobre la sumatoria de las veces que se ha escogido el brazo.
+
+### Ejemplo
+Suponga que tenemos un bandido de 4 brazos con recompensas 10, 3, 15 y 7 como se muestra a continuación.
+
+*La imagen `slots.png` mencionada en el original no está disponible en los archivos recibidos.*
+
+El bandido tiene un valor esperado para la recompensa de cada brazo `Q(brazo)` definido por la fórmula dada anteriormente. La tabla a continuación muestra un ejemplo del cálculo de los valores de la reocmpensa para cada brazo.
+
+| **Iteración** | **Brazo 1** | **Brazo 2** | **Brazo 3** | **Brazo 4** |
+| :-----------: | :---------: | :---------: | :---------: | :---------: |
+| 1 | Ocurrencia:1 <br>Q(1) = 10/1 = 10 | | | |
+| 2  | | | | Ocurrencia:1 <br>Q(1) = 7/1 = 7 |
+| 3  | | Ocurrencia:1 <br>Q(1) = 3/1 = 3 | | |
+| 4  | Ocurrencia:2 <br>Q(1) = (10+10)/2 = 10 | | | |
+| 5  | Ocurrencia:3 <br>Q(1) = (10+10+10)/3 = 10 | | | |
+
+
+Para poder realizar el cálculo de la recompensa, debemos llevar la cuenta de la cantidad de veces que ha sido escogido cada brazo y la recompensa acumulada recibida para cada brazo, en cada momento de la ejecución. Esta información la vamos a guardar como atributos de la clase, en las variables `occurrences` y `cumulative_rewards`, respectivamente. Los atributos se definen como una lista de tamaño igual al número de brazos del bandido.
+
+El cálculo de la recompensa primero actualiza las ocurrencias del brazo dado por parámetro. Segundo, obtiene la recompensa del brazo. Tercero, actualiza la recompensa cumulativa del brazo escogido, sumando la recompensa obtenida.
+Finalmente, el cálculo del valor de la recompensa del brazo Q(b) se realiza siguiendo la fórmula y se guarda en la variable `rewards`, como la recompensa cumulativa sobre las ocurrencias para el brazo dado.
+La función retorna el valor de la recompensa acumulada hasta el momento.
+
+
+
+```{python}
+#| deletable: false
+#| nbgrader: {cell_type: code, checksum: c17904bbcd3a7a2ba99c5e18448b9422, grade: false, grade_id: cell-ca9684f6da4b390c, locked: false, schema_version: 3, solution: true, task: false}
+import random
+
+class Bandit:
+    def __init__(self, num_arms=10):
+        #atributos existentes
+        self.arms = [random.uniform(-3,3) for i in range(num_arms)]
+        self.rewards = [0 for i in range(num_arms)]
+        #Definir los nuevos atributos
+        # your code here
+        raise NotImplementedError
+
+
+    def expected_reward(self, arm:int) -> float:
+        # your code here
+        raise NotImplementedError
+
+
+    def choose_arm(self) -> int:
+        return random.randrange(len(self.arms))
+
+```
+
+```{python}
+#| deletable: false
+#| editable: false
+#| nbgrader: {cell_type: code, checksum: ffc639a4fabc1b6707f538c00af654f2, grade: true, grade_id: cell-3bb4fb6e36d7cdd5, locked: true, points: 7, schema_version: 3, solution: false, task: false}
+b = Bandit()
+
+### BEGIN TEST
+from functools import reduce
+
+try:
+    b.occurrences
+except:
+    print("El atributo occurences no esta definido en el programa")
+assert len(b.occurrences) == 10, "Las ocurrencias se deben calcular para cada brazo en una lista de tamaño igual a la cantidad de brazos"
+assert reduce(lambda x, y: x+y, b.occurrences) == 0, "Todas las occurencias se deben inicializar en 0"
+
+try:
+    b.cumulative_rewards
+except:
+    print("El atributo cumuative_rewards no esta definido en el programa")
+assert len(b.cumulative_rewards) == 10, "Las recompensas acumuladas se deben calcular para cada brazo en una lista de tamaño igual a la cantidad de brazos"
+assert reduce(lambda x, y: x+y, b.cumulative_rewards) == 0, "Todos los valores de recompensa se deben inicializar en 0"
+
+try:
+    b.expected_reward
+except:
+    print("La función expected_reward no esta implementada")
+
+b.occurences = [0 for i in range(10)]
+b.cumulative_reward = [0 for i in range(10)]
+b.rewards = [0 for i in range(10)]
+reward = b.expected_reward(2)
+
+assert reduce(lambda x, y: x+y, b.cumulative_rewards) != 0, "La recompensa acumulada debe cambiar para por lo menos un brazo"
+assert reduce(lambda x, y: x+y, b.rewards) == reward, "La recompensa del brazo debe corresponder a la recompensa obtenida"
+
+### END TEST
+```
+
+Por último, para completar el funcionamiento del bandido implementamos la función `run`, que recibe por parámetro la cantidad de episodios (`episodes`) durante los cuales ejecutaremos el agente. Por defecto en nuestro caso ejecutaremos el agente por 1000 episodios. En cada paso, el bandido calcula la recompensa de un brazo utilizando la función `expected_rewards`.
+
+Al finalizar la ejecución de todos los episodios, la función run retorna la lista con las recompensas (`rewards`) calculadas durante la ejecución
+
+```{python}
+#| deletable: false
+#| nbgrader: {cell_type: code, checksum: 58250ad6a24cc24667f09c1f7c8b8cf9, grade: false, grade_id: cell-2e561aa5b58ca2f3, locked: false, schema_version: 3, solution: true, task: false}
+
+class Bandit(Bandit):
+    def run(self, episodes = 1000):
+        # your code here
+        raise NotImplementedError
+```
+
+```{python}
+#| deletable: false
+#| editable: false
+#| nbgrader: {cell_type: code, checksum: 2a36c208809bd69480834f83f50d702a, grade: true, grade_id: cell-c1c62d0993cbba39, locked: true, points: 3, schema_version: 3, solution: false, task: false}
+bandit =  Bandit()
+
+### BEGIN TESTS
+from functools import reduce
+
+try:
+    bandit.run
+except:
+    print("La función run no esta implementada")
+
+bandit.run(10)
+assert reduce(lambda x, y: x+y, bandit.occurrences) == 10, "La cantidad de acción de todos los brazos debe ser igual a la cantidad de episodios"
+
+error = True
+for i in range(len(bandit.arms)):
+    if bandit.occurrences[i] != 0:
+        if bandit.rewards[i] != bandit.arms[i]:
+            error = False
+assert error, "Las recompensas no se calculan apropiadamente. las recompensas obtenidas deben coincidir con el valor de cada brazo"
+### END TESTS
+```
+
+```{python}
+#Pruebas adiionales sobre el bandido
+```

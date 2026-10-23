@@ -1,5 +1,20 @@
 # STATUS.md
 
+## Cierre de sesión y publicación autorizada — 2026-10-22
+
+- **Base:** `main`, `c954f52`; `git fetch --prune origin` correcto y comparación con `origin/main`: `0 0`. Había ocho archivos locales pendientes de la integración del módulo 2; se revisaron y conservaron. El estudiante solicita guardar lo pendiente y actualizar el repositorio antes de descansar, autorizando commit y push. Se comunicó el resumen antes de publicar.
+- Se guardan las tres páginas de lectura de bandidos, su README, la navegación del libro, los enlaces del módulo 2 y la documentación de contexto y seguimiento. No se cambian respuestas, resultados ni estados de finalización académica.
+- **Verificación de cierre:** Quarto 1.8.27; nuevo renderizado completo correcto de las 12 páginas, sin ejecutar el código de los laboratorios. Revisión de los ocho archivos y `git diff --check` correctos. Las salidas generadas permanecen ignoradas; no cambian dependencias.
+- **Pendientes y siguiente paso:** al retomar, sincronizar desde GitHub si se cambia de equipo y continuar el tutorial de construcción de bandidos desde el módulo 2. Desarrollar las evaluaciones de forma independiente, respetando la restricción académica registrada, y confirmar el formato de entrega en plataforma. Se mantienen los pendientes del 27 de octubre; la nota de Pacman y las lecturas finales del módulo 1 siguen pendientes de confirmación.
+
+## Laboratorios del módulo 2 integrados en el libro — 2026-10-22
+
+- **Base:** `main`, `c954f52`; árbol limpio al inicio, `git fetch --prune origin` correcto y comparación con `origin/main`: `0 0`.
+- A solicitud del estudiante, se tomó como referencia la organización de `ml-no-supervisado`: páginas Quarto en la raíz de `laboratorios/modulo_2/` e integración en el menú del módulo. Se añadieron el tutorial de construcción de bandidos, epsilon decay y recompensas no estacionarias; se enlazaron desde `modulo_2.qmd`, junto con las guías existentes de Pen & Paper. Se documentó la organización en el README del módulo y en `PROJECT.md`. Se mantienen los ocho módulos y su orden.
+- Se convirtieron mecánicamente las celdas del tutorial y se reutilizaron las conversiones previas de los dos laboratorios. Las copias de lectura ajustan título, metadatos y avisos sobre imágenes ausentes (`Banner.jpg` y `slots.png`). Los originales, las conversiones previas y los archivos de trabajo permanecen intactos. No se completaron ni corrigieron ejercicios, ni se ejecutó código de los laboratorios; `execute.enabled: false` evita ejecutarlo al renderizar. Se mantiene la restricción académica registrada y ninguna actividad se marca como completada.
+- **Verificación:** Quarto 1.8.27; renderizado completo del libro correcto (12 páginas). Comparación de las 25 celdas de código con los tres notebooks originales: contenido conservado, salvo espacios finales de presentación. Enlaces locales de las páginas a laboratorios, originales y guías comprobados; `git diff --check` y revisión del diff correctos. Sin cambios de dependencias, commit ni push.
+- **Pendientes y siguiente paso:** abrir `quarto preview` y continuar el tutorial; desarrollar las evaluaciones de forma independiente y confirmar el formato de entrega en plataforma, pues Quarto no conserva todos los metadatos `nbgrader`. Los cambios quedan locales para revisión del estudiante.
+
 ## Lectura de retos integrada y publicación autorizada — 2026-10-22
 
 - **Base:** `main`, sincronizada con `origin/main` (`0 0`) y árbol limpio al inicio.

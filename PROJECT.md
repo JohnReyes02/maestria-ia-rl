@@ -44,6 +44,10 @@ El experimento comparativo de Pacman conserva siete configuraciones en `smallGri
 
 El entregable de Pacman se redacta en `laboratorios/modulo_1/reporte/reporte_pacman.qmd`. Su configuración local de Quarto genera un PDF con Typst en `reporte/_salida/`, ignorado por Git, sin modificar el libro del curso. El `.md` previo se conserva como referencia. Consultar `reporte/README.md` para completar y exportar la plantilla.
 
+## Laboratorios del módulo 2
+
+El tutorial de construcción de bandidos y los dos laboratorios (epsilon decay y recompensas no estacionarias) tienen páginas `.qmd` en `laboratorios/modulo_2/`, integradas en el menú del módulo 2 y enlazadas desde `modulo_2.qmd`. Siguen la organización del libro de `ml-no-supervisado`. Se muestran sin ejecutar código; los originales y sus conversiones previas permanecen intactos en `originales/`. Las prácticas Pen & Paper conservan sus directorios separados. Consultar `laboratorios/modulo_2/README.md` para las rutas y la restricción académica vigente.
+
 ## RL Lab de autoaprendizaje
 
 `autoaprendizaje/rl_lab/` es una aplicación web local en español, separada de la navegación y las fuentes Quarto. Incluye fundamentos, análisis de solo lectura de los once casos de Pacman, comparaciones guiadas de bandidos estacionarios y no estacionarios y un sandbox con descargas CSV/JSON generadas en memoria.

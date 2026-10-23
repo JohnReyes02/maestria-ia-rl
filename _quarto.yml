@@ -26,6 +26,9 @@ book:
     - part: "Módulo 2"
       chapters:
         - modulo_2.qmd
+        - laboratorios/modulo_2/Tutorial-bandidos.qmd
+        - laboratorios/modulo_2/bandidos_epsilon.qmd
+        - laboratorios/modulo_2/bandidos-variables.qmd
     - part: "Módulo 3"
       chapters:
         - modulo_3.qmd
