@@ -147,12 +147,16 @@ class Bandit:
         self.rewards = [0 for i in range(num_arms)]
         #Definir los nuevos atributos
         # your code here
-        raise NotImplementedError
+        self.occurrences = [0 for i in range(num_arms)]
+        self.cumulative_rewards = [0 for i in range(num_arms)]
 
 
     def expected_reward(self, arm:int) -> float:
         # your code here
-        raise NotImplementedError
+        self.occurrences[arm] += 1
+        self.cumulative_rewards[arm] += self.arms[arm]
+        self.rewards[arm] = self.cumulative_rewards[arm] / self.occurrences[arm]
+        return self.rewards[arm] 
 
 
     def choose_arm(self) -> int:
@@ -188,7 +192,7 @@ try:
 except:
     print("La función expected_reward no esta implementada")
 
-b.occurences = [0 for i in range(10)]
+b.occurrences = [0 for i in range(10)]
 b.cumulative_reward = [0 for i in range(10)]
 b.rewards = [0 for i in range(10)]
 reward = b.expected_reward(2)
