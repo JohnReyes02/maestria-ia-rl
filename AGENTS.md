@@ -29,6 +29,7 @@ Este repositorio acompaña la materia **Aprendizaje por Refuerzo** de la Maestr�
 - No modifiques resultados generados dentro de `docs/` como si fueran fuentes. Edita los `.qmd` o `styles.css` y vuelve a renderizar.
 - No versiones `.venv/`, `.quarto/`, `docs/`, `_site/`, checkpoints ni archivos temporales.
 - No agregues rutas absolutas, credenciales, tokens ni configuración específica de una máquina.
+- **Excepción autorizada por el estudiante el 2026-10-24:** los enlaces y códigos de acceso de las grabaciones de clase pueden guardarse en los módulos de este repositorio privado para sincronizarlos entre equipos. Esta excepción no incluye credenciales de cuentas ni otros secretos.
 - Preserva cambios ajenos o preexistentes y limita cada edición al objetivo solicitado.
 
 ## Entorno y dependencias

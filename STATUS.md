@@ -1,5 +1,13 @@
 # STATUS.md
 
+## Grabaciones incorporadas al repositorio privado — 2026-10-24
+
+- **Base:** `main`, `5d2f632`; árbol limpio al inicio, fetch correcto y comparación con `origin/main`: `0 0`.
+- Tras explicar las alternativas, el estudiante autoriza incorporar los enlaces y claves de las grabaciones al repositorio privado para sincronizarlos entre equipos. Esta decisión reemplaza el criterio anterior de conservarlos únicamente como archivos locales. Se registra en `AGENTS.md` una excepción limitada a grabaciones de clase.
+- Los módulos 1–3 muestran enlace directo de Zoom y clave de acceso en su sección de sesión síncrona. Los datos se copiaron de los registros locales conservando sus caracteres. Las copias privadas locales permanecen ignoradas como respaldo. Se actualizan `PROJECT.md` y la guía de recursos.
+- **Verificación:** Quarto 1.8.27, renderizado completo correcto de las 12 páginas; tres enlaces y claves comprobados contra el respaldo y el HTML generado. Diff revisado y `git diff --check` correcto. No se verificó el acceso en Zoom. Sin cambios de dependencias ni estados académicos; no se versionan salidas generadas.
+- Se comunica el resumen antes de guardar y sincronizar esta actualización autorizada. **Siguiente paso:** consultar las grabaciones desde cada módulo y continuar los dos laboratorios de bandidos pendientes para el 27 de octubre, respetando la restricción académica registrada.
+
 ## Cierre y publicación autorizada — 2026-10-24
 
 - **Base:** `main`, `922c2a8`; fetch correcto y comparación con `origin/main`: `0 0`. El estudiante solicita guardar y actualizar el repositorio, autorizando commit y push; se comunicó el resumen antes de publicar.

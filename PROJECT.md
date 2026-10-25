@@ -46,7 +46,7 @@ El entregable de Pacman se redacta en `laboratorios/modulo_1/reporte/reporte_pac
 
 ## Presentaciones y grabaciones semanales
 
-Las presentaciones de cada semana se guardan en `recursos/modulo_N/presentaciones/`, siguiendo la organización de Machine Learning No Supervisado. Cada `modulo_N.qmd` incluye los campos para enlazar la presentación y la grabación en «Recursos de la Semana → Sesión Síncrona», y otro espacio para sesiones complementarias. Las carpetas están preparadas para los ocho módulos; las presentaciones de las semanas 1–4 están incorporadas y enlazadas; las de las semanas 5–8 siguen pendientes de aportar. Las grabaciones de los módulos 1–3 se registraron en `recursos_privados/modulo_N/grabaciones.md`, excluido de Git y de los recursos del libro; no se sincronizan mediante GitHub. Consulta `recursos/README.md` para añadirlos.
+Las presentaciones de cada semana se guardan en `recursos/modulo_N/presentaciones/`, siguiendo la organización de Machine Learning No Supervisado. Cada `modulo_N.qmd` incluye los campos para enlazar la presentación y la grabación en «Recursos de la Semana → Sesión Síncrona», y otro espacio para sesiones complementarias. Las carpetas están preparadas para los ocho módulos; las presentaciones de las semanas 1–4 están incorporadas y enlazadas; las de las semanas 5–8 siguen pendientes de aportar. Las grabaciones de los módulos 1–3 y sus códigos de acceso están incorporados directamente en sus páginas, por autorización explícita del estudiante para este repositorio privado; se sincronizan con las fuentes del libro. Las copias locales previas de `recursos_privados/` se conservan ignoradas como respaldo. Consulta `recursos/README.md` para añadirlos.
 
 ## Laboratorios del módulo 2
 

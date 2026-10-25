@@ -24,9 +24,11 @@ Puedes conservar el nombre original del archivo; en ese caso, usa ese mismo nomb
 
 ## Grabaciones
 
-Los enlaces y claves de las grabaciones se guardan localmente en `recursos_privados/modulo_N/grabaciones.md`. Los módulos 1–3 ya tienen los datos proporcionados por el estudiante. Cada módulo indica la ruta correspondiente en su sección de sesión síncrona.
+Los enlaces de Zoom y las claves de acceso se añaden directamente en «Recursos de la Semana → Sesión Síncrona» de cada `modulo_N.qmd`. Los módulos 1–3 ya contienen los datos proporcionados por el estudiante.
 
-Esta carpeta se excluye de Git y de los recursos del libro. Sus archivos no se sincronizan mediante GitHub; para usarlos en otro equipo, consérvalos por un medio privado. No copies las claves en los `.qmd` ni en este README.
+El estudiante autorizó explícitamente el 24 de octubre de 2026 guardar estos datos en el repositorio privado para sincronizarlos entre equipos. Las claves se escriben entre comillas invertidas para conservar sus caracteres especiales. La excepción se limita a grabaciones de clase, según `AGENTS.md`.
+
+Las copias previas de `recursos_privados/` se conservan localmente como respaldo y siguen excluidas de Git y de los recursos Quarto; el libro usa los datos incorporados en los módulos.
 
 Las grabaciones adicionales se enlazan en «Sesiones complementarias». No es necesario descargar ni guardar los videos en este repositorio.
 

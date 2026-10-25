@@ -135,7 +135,8 @@ El código y los ejercicios se encuentran en los notebooks. Aquí se analizan lo
 ::: callout-important
 ## 🎥 Grabación de la Clase
 
-- **Grabación y clave de acceso:** guardadas localmente en `recursos_privados/modulo_1/grabaciones.md`.
+- **Enlace a la grabación:** [Ver grabación de la semana 1](https://uniandes-edu-co.zoom.us/rec/share/zAnPlyPltFDEiP9B03n7LE27D7alAppveXk__TkqHIo0XVcNN3YN6y1_POTUKE59.R0YgXrAURoLF5BI9)
+- **Clave de acceso:** `AY&NT%KK&`
 - **Presentación:** [Ver presentación de la semana 1](recursos/modulo_1/presentaciones/semana1.pdf)
 :::
 

@@ -70,7 +70,8 @@ El tutorial y los dos laboratorios tienen páginas de lectura en el menú de est
 ::: {.callout-important}
 ## 🎥 Grabación de la Clase
 
-- **Grabación y clave de acceso:** guardadas localmente en `recursos_privados/modulo_2/grabaciones.md`.
+- **Enlace a la grabación:** [Ver grabación de la semana 2](https://uniandes-edu-co.zoom.us/rec/share/J6ubRZh38tUzwBrAIYuWTd1wnmsIjl2mgcXuWodL6E8URRDXH-u-sS6DkS_JvlNc._B71TvCbWJ2rszAF)
+- **Clave de acceso:** `ePyXqkY8`
 - **Presentación:** [Ver presentación de la semana 2](recursos/modulo_2/presentaciones/semana2.pdf)
 :::
 

@@ -67,7 +67,8 @@ El código y los ejercicios se encuentran en los notebooks. Aquí se analizan lo
 ::: {.callout-important}
 ## 🎥 Grabación de la Clase
 
-- **Grabación y clave de acceso:** guardadas localmente en `recursos_privados/modulo_3/grabaciones.md`.
+- **Enlace a la grabación:** [Ver grabación de la semana 3](https://uniandes-edu-co.zoom.us/rec/share/duyFyPa5hn2yJxbsjNz4JijhyjG1UG83vxPieHngATxSFWdZmYuPhOvvuJT7HUtk.7Dnp3REaDDd4LMag)
+- **Clave de acceso:** `@Y$aqSF=`
 - **Presentación:** [Ver presentación de la semana 3](recursos/modulo_3/presentaciones/semana3.pdf)
 :::
 
