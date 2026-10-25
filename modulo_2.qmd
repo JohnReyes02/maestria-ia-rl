@@ -70,9 +70,8 @@ El tutorial y los dos laboratorios tienen páginas de lectura en el menú de est
 ::: {.callout-important}
 ## 🎥 Grabación de la Clase
 
-- **Enlace a la grabación:** Por completar
-- **Contraseña:** Por completar
-- **Presentación:** Por completar
+- **Grabación y clave de acceso:** guardadas localmente en `recursos_privados/modulo_2/grabaciones.md`.
+- **Presentación:** [Ver presentación de la semana 2](recursos/modulo_2/presentaciones/semana2.pdf)
 :::
 
 ### 🎥 Sesiones complementarias

@@ -69,7 +69,12 @@ El código y los ejercicios se encuentran en los notebooks. Aquí se analizan lo
 
 - **Enlace a la grabación:** Por completar
 - **Contraseña:** Por completar
-- **Presentación:** Por completar
+- **Presentación:** Pendiente de añadir en `recursos/modulo_7/presentaciones/`.
+
+<!-- Cuando el archivo exista, reemplaza la línea anterior por:
+- **Presentación:** [Ver presentación de la semana 7](recursos/modulo_7/presentaciones/semana-07-presentacion-sincronica.pdf)
+Para la grabación, reemplaza «Por completar» por un enlace Markdown con la URL proporcionada en la plataforma.
+-->
 :::
 
 ### 🎥 Sesiones complementarias

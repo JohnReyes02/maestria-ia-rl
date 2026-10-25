@@ -67,9 +67,8 @@ El código y los ejercicios se encuentran en los notebooks. Aquí se analizan lo
 ::: {.callout-important}
 ## 🎥 Grabación de la Clase
 
-- **Enlace a la grabación:** Por completar
-- **Contraseña:** Por completar
-- **Presentación:** Por completar
+- **Grabación y clave de acceso:** guardadas localmente en `recursos_privados/modulo_3/grabaciones.md`.
+- **Presentación:** [Ver presentación de la semana 3](recursos/modulo_3/presentaciones/semana3.pdf)
 :::
 
 ### 🎥 Sesiones complementarias

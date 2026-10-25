@@ -44,6 +44,10 @@ El experimento comparativo de Pacman conserva siete configuraciones en `smallGri
 
 El entregable de Pacman se redacta en `laboratorios/modulo_1/reporte/reporte_pacman.qmd`. Su configuración local de Quarto genera un PDF con Typst en `reporte/_salida/`, ignorado por Git, sin modificar el libro del curso. El `.md` previo se conserva como referencia. Consultar `reporte/README.md` para completar y exportar la plantilla.
 
+## Presentaciones y grabaciones semanales
+
+Las presentaciones de cada semana se guardan en `recursos/modulo_N/presentaciones/`, siguiendo la organización de Machine Learning No Supervisado. Cada `modulo_N.qmd` incluye los campos para enlazar la presentación y la grabación en «Recursos de la Semana → Sesión Síncrona», y otro espacio para sesiones complementarias. Las carpetas están preparadas para los ocho módulos; las presentaciones de las semanas 1–4 están incorporadas y enlazadas; las de las semanas 5–8 siguen pendientes de aportar. Las grabaciones de los módulos 1–3 se registraron en `recursos_privados/modulo_N/grabaciones.md`, excluido de Git y de los recursos del libro; no se sincronizan mediante GitHub. Consulta `recursos/README.md` para añadirlos.
+
 ## Laboratorios del módulo 2
 
 El tutorial de construcción de bandidos y los dos laboratorios (epsilon decay y recompensas no estacionarias) tienen páginas `.qmd` en `laboratorios/modulo_2/`, integradas en el menú del módulo 2 y enlazadas desde `modulo_2.qmd`. Siguen la organización del libro de `ml-no-supervisado`. Se muestran sin ejecutar código; los originales y sus conversiones previas permanecen intactos en `originales/`. Las prácticas Pen & Paper conservan sus directorios separados. Consultar `laboratorios/modulo_2/README.md` para las rutas y la restricción académica vigente.

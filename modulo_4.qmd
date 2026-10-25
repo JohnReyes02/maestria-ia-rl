@@ -69,7 +69,7 @@ El código y los ejercicios se encuentran en los notebooks. Aquí se analizan lo
 
 - **Enlace a la grabación:** Por completar
 - **Contraseña:** Por completar
-- **Presentación:** Por completar
+- **Presentación:** [Ver presentación de la semana 4](recursos/modulo_4/presentaciones/semana4.pdf)
 :::
 
 ### 🎥 Sesiones complementarias

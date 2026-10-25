@@ -1,5 +1,45 @@
 # STATUS.md
 
+## Cierre y publicación autorizada — 2026-10-24
+
+- **Base:** `main`, `922c2a8`; fetch correcto y comparación con `origin/main`: `0 0`. El estudiante solicita guardar y actualizar el repositorio, autorizando commit y push; se comunicó el resumen antes de publicar.
+- Se guardan el avance académico confirmado, la organización de recursos para ocho semanas, las referencias locales a las grabaciones 1–3 y su exclusión de Git y de los recursos Quarto. Se encontraron cuatro presentaciones aportadas por el estudiante (`semana1.pdf` a `semana4.pdf`), conservadas sin alterar y enlazadas desde sus módulos. Las semanas 5–8 mantienen su espacio pendiente.
+- **Verificación de cierre:** cuatro archivos con cabecera PDF válida y enlaces a rutas existentes; Quarto 1.8.27, renderizado completo de 12 páginas correcto; presentaciones copiadas a la salida y datos privados ausentes. Revisión del diff y `git diff --check` correctos. Sin cambios de dependencias; no se incluyen salidas generadas ni archivos privados.
+- **Siguiente paso:** completar los dos laboratorios de bandidos para el 27 de octubre de forma independiente conforme a la restricción registrada; después MDPs para el 3 de noviembre. Las grabaciones y claves permanecen únicamente en este equipo y requieren traslado privado para consultarlas en otro.
+
+## Grabaciones de los módulos 1–3 registradas — 2026-10-24
+
+- **Base:** `main`, `922c2a8`; fetch correcto y comparación con `origin/main`: `0 0`. Se preservan los cambios locales de seguimiento y organización de recursos.
+- Se registraron los enlaces y claves aportados por el estudiante en `recursos_privados/modulo_1/grabaciones.md` a `recursos_privados/modulo_3/grabaciones.md`, con permisos de lectura/escritura solo para el propietario. La entidad HTML final de la clave del módulo 1 se interpretó como espacio de formato, conservando el ampersand anterior como parte de la clave. No se verificó el acceso en Zoom.
+- Las tres páginas del libro indican la ubicación local correspondiente. Se excluyó la carpeta privada mediante `.gitignore` y de los recursos Quarto; documentación de uso actualizada. Los archivos privados no se sincronizan mediante GitHub y deben trasladarse por un medio privado si se necesitan en otro equipo.
+- **Verificación:** Quarto 1.8.27, renderizado completo de 12 páginas correcto; tres archivos ignorados por Git, carpeta privada no copiada a `docs/` y ausencia de enlaces y claves en las salidas textuales del libro. Diff revisado y `git diff --check` correcto. Sin commit ni push.
+- **Siguiente paso:** comprobar personalmente el acceso a las grabaciones y añadir las presentaciones de cada semana. Se mantienen los pendientes académicos registrados.
+
+## Organización de presentaciones y grabaciones — 2026-10-24
+
+- **Base:** `main`, `922c2a8`; fetch correcto y comparación con `origin/main`: `0 0`. Se conservan las dos entradas locales anteriores de seguimiento.
+- A solicitud del estudiante, se revisó la organización de otras materias y se preparó `recursos/modulo_1/presentaciones/` a `recursos/modulo_8/presentaciones/`, siguiendo el patrón de Machine Learning No Supervisado. Se añadieron instrucciones generales y por carpeta y se documentó la convención en `PROJECT.md`.
+- Los ocho módulos conservan su sección de sesión síncrona y sus campos de grabación y sesiones complementarias; ahora indican dónde guardar la presentación e incluyen un ejemplo comentado para enlazarla cuando exista. No se añadieron enlaces activos a archivos inexistentes, presentaciones ni grabaciones inventadas. Se mantienen los ocho módulos y su orden.
+- **Verificación:** Quarto 1.8.27; renderizado completo correcto de las 12 páginas. Diff revisado y `git diff --check` correcto; salidas generadas ignoradas. Sin cambios de dependencias, commit ni push.
+- **Pendiente y siguiente paso:** guardar las presentaciones reales en su carpeta y completar los enlaces de grabaciones en el módulo correspondiente. Se mantienen los pendientes académicos de la entrada siguiente.
+
+## Avance confirmado mediante captura — 2026-10-24
+
+- **Base:** `main`, `922c2a8`; `git fetch --prune origin` correcto y comparación con `origin/main`: `0 0`. Se conserva la actualización local anterior de este archivo.
+- **Fuente:** captura de calificaciones aportada por el estudiante hoy. Tipos de aprendizaje, Exploración v. Explotación y Ética en la evaluación de instrucciones aparecen calificadas con **100 %** cada una (peso individual: 1 %). Reemplaza el registro anterior de cinco evaluaciones pendientes del módulo 2.
+- **Pendientes del 27 de octubre, 23:59 (-05):** K-Bandidos con epsilon decay y K-bandidos no estacionarios, peso 6 % cada uno; ambos sin estado de envío ni calificación visibles. Se mantiene la restricción académica registrada para su desarrollo independiente.
+- Uso de agentes de aprendizaje por refuerzo (Pacman) y Conformación equipos de trabajo aparecen como **Enviado**, todavía sin calificación. Definición y Caracterización del aprendizaje por refuerzo mantienen **100 %** cada una.
+- Para el **3 de noviembre, 23:59 (-05)**, Aprendizaje por refuerzo o no? (1 %) y Laboratorio MDPs (5 %) aparecen sin estado de envío ni calificación. La captura no confirma avance en tutoriales, prácticas o lecturas. Las fechas no muestran año; se mantiene la interpretación provisional de 2026.
+- **Verificación:** transcripción contrastada con la captura, revisión del diff y `git diff --check` correctos; cambio de seguimiento únicamente, sin renderizado, commit ni push.
+- **Siguiente paso:** priorizar los dos laboratorios de bandidos y confirmar su formato de entrega; después continuar con MDPs. Permanecen pendientes de confirmar las notas de los dos envíos y las lecturas finales del módulo 1.
+
+## Revisión de sincronización y pendientes — 2026-10-24
+
+- **Base:** `main`, `922c2a8`; árbol limpio al inicio. `git fetch --prune origin` correcto y comparación `HEAD...origin/main`: `0 0`, sin commits por traer ni publicar.
+- Se revisaron las instrucciones, el contexto y el seguimiento, priorizando las confirmaciones más recientes sobre las entradas históricas. Continúan registradas cinco evaluaciones del módulo 2 para el 27 de octubre: Tipos de aprendizaje, Exploración v. Explotación, Ética en la evaluación de instrucciones y los dos laboratorios de bandidos. El formulario del equipo ya fue enviado y Pacman ya fue entregado; sus calificaciones siguen sin confirmar. No se consultó nuevamente la plataforma ni se modificaron estados académicos.
+- **Verificación:** revisión documental y del diff; `git diff --check` correcto. Solo se actualiza este seguimiento local, sin renderizado, commit ni push.
+- **Siguiente paso:** continuar el tutorial de construcción de bandidos y completar las evaluaciones del módulo 2 de forma independiente, conforme a la restricción registrada; confirmar formato de entrega y pendientes reales en plataforma. Después siguen MDPs (3 de noviembre) y Planeación (10 de noviembre). Las lecturas finales del módulo 1 siguen pendientes de identificación y confirmación.
+
 ## Cierre de sesión y publicación autorizada — 2026-10-22
 
 - **Base:** `main`, `c954f52`; `git fetch --prune origin` correcto y comparación con `origin/main`: `0 0`. Había ocho archivos locales pendientes de la integración del módulo 2; se revisaron y conservaron. El estudiante solicita guardar lo pendiente y actualizar el repositorio antes de descansar, autorizando commit y push. Se comunicó el resumen antes de publicar.
