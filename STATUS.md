@@ -1,5 +1,12 @@
 # STATUS.md
 
+## Avance del tutorial de bandidos sincronizado — 2026-10-25
+
+- **Base:** `main`, `7ee8549`; árbol limpio y comparación con `origin/main`: `0 0` después de publicar el avance solicitado por el estudiante.
+- En `laboratorios/modulo_2/Tutorial-bandidos.qmd` están implementados los atributos `occurrences` y `cumulative_rewards`, junto con `expected_reward`; también se corrigió el uso de `occurrences` en la prueba correspondiente. La construcción inicial del bandido y la selección aleatoria de brazos ya estaban implementadas. No se marca el tutorial como terminado.
+- **Verificación:** pruebas funcionales de `__init__`, `choose_arm` y `expected_reward` correctas; renderizado individual con Quarto 1.10.18 correcto. Antes del commit se detectó un espacio final en la línea 159, conservado porque el estudiante pidió no modificar su contenido. Sin cambios de dependencias ni resultados generados versionados.
+- El avance fue guardado en el commit `7ee8549` (`Guardar avance del tutorial de bandidos`) y publicado en `origin/main` para retomarlo desde el Mac mini. **Siguiente paso:** implementar `run`, comprobar que el total de ocurrencias coincida con el número de episodios y completar las pruebas adicionales del final del tutorial.
+
 ## Grabaciones incorporadas al repositorio privado — 2026-10-24
 
 - **Base:** `main`, `5d2f632`; árbol limpio al inicio, fetch correcto y comparación con `origin/main`: `0 0`.
