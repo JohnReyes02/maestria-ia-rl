@@ -1,5 +1,42 @@
 # STATUS.md
 
+## Cierre de sesión y publicación autorizada — 2026-10-25
+
+- **Base:** `main`, `7ee8549`; fetch correcto y comparación con `origin/main`: `0 0`. El estudiante solicita guardar y actualizar el repositorio, autorizando commit y push de los tres archivos pendientes; se comunica el resumen antes de publicar.
+- Se conserva el avance del tutorial con `run` implementado y una prueba adicional de un solo brazo durante cinco turnos, añadida por el estudiante. Se guardan los cinco videos del módulo 2 con los tres primeros vistos y el punto de continuación de Pen & Paper 1: horas 11 y 12, usando su tabla de horas por filas y caminos por columnas. La tabla no está en el repositorio.
+- **Verificación de cierre:** nueve celdas del tutorial ejecutadas correctamente mediante `uv run --no-sync python` con semilla 0, incluida la prueba adicional; se conserva el diagnóstico previo de fallos ocasionales por igualdad exacta de flotantes en la prueba original. Renderizado completo de las 12 páginas ya validado con Quarto 1.8.27 para las fuentes actuales. Diff revisado; se conserva el espacio final en la línea 218 señalado por `git diff --check`, sin alterar el contenido del estudiante. Sin cambios de dependencias ni salidas generadas versionadas.
+- **Siguiente paso:** retomar esta noche desde las horas 11 y 12 de Pen & Paper 1 y luego continuar con epsilon decay. Los dos laboratorios calificables mantienen la restricción académica registrada y su envío sigue sin confirmar.
+
+## Pausa de estudio: Pen & Paper Bandidos 1 — 2026-10-25
+
+- **Base:** `main`, `7ee8549`; comparación con `origin/main`: `0 0` tras fetch. Se preservan los cambios locales del tutorial, el listado de videos y el seguimiento; sin commit ni push.
+- El estudiante leyó el primer ejercicio y está resolviéndolo con una tabla propia: horas en las filas y caminos en las columnas. La tabla fue descrita en la conversación; no se recibió ni se creó una copia en el repositorio.
+- Se razonaron correctamente las horas 7–10: 7 → c1, recompensa 18; 8 → c3, recompensa 0 por cierre del puente; 9 → c2, recompensa 8; 10 → c2, recompensa 8. Se distinguió recompensa acumulada de promedio y que una elección con recompensa cero sí cuenta en el denominador.
+- **Verificación:** seguimiento basado en las respuestas del estudiante y el enunciado transcrito localmente; no se ejecutaron ejercicios ni se modificaron fuentes académicas durante esta pausa. Diff de seguimiento revisado y comprobación de espacios correcta para `STATUS.md`.
+- **Siguiente paso concreto:** retomar esta noche desde las horas 11 y 12, usando la tabla del estudiante; continuar las horas restantes y luego obtener el promedio por camino. Distinguir las celdas sin elección de las recompensas cero. Sigue pendiente confirmar si el intervalo 7–20 incluye ambos extremos. Después continuar con el laboratorio epsilon decay; no se confirma que se haya visto el video de bandidos no estacionarios.
+
+## Videos vistos del módulo 2 confirmados — 2026-10-25
+
+- **Base:** `main`, `7ee8549`; fetch correcto y comparación con `origin/main`: `0 0`; cambios locales anteriores preservados.
+- El estudiante confirma que ya vio Introducción, Problemas de optimización de escogencia y Exploración vs explotación. Se añadió la columna Estado en `modulo_2.qmd` con esos tres videos como vistos; Bandidos no estacionarios y Cierre quedan pendientes. Los enlaces individuales siguen por completar.
+- **Verificación:** renderizado completo correcto con Quarto 1.8.27; diff revisado y comprobación de espacios correcta para los archivos de esta actualización. Se conserva el aviso previo de espacios finales en el tutorial. Sin commit ni push.
+- **Siguiente paso:** ver Bandidos no estacionarios (4 min) y después Cierre (2 min); completar las pruebas adicionales del tutorial.
+
+## Listado de videos del módulo 2 — 2026-10-25
+
+- **Base:** `main`, `7ee8549`; fetch correcto y comparación con `origin/main`: `0 0`. Se preservaron las ediciones locales del tutorial y el seguimiento de su revisión.
+- Se reemplazó el marcador de videos en `modulo_2.qmd` por los cinco títulos y duraciones registrados a partir de las capturas del 14 de octubre: Introducción (1 min), Problemas de optimización de escogencia (8 min), Exploración vs explotación (5 min), Bandidos no estacionarios (4 min) y Cierre (2 min). Los enlaces individuales y el estado de visualización quedan pendientes de confirmar.
+- **Verificación:** renderizado completo correcto de las 12 páginas con Quarto 1.8.27. Diff revisado; comprobación de espacios correcta para `modulo_2.qmd` y `STATUS.md`; permanece el aviso previo de espacios finales en el retorno de `run`, sin modificar. Sin cambios de dependencias, commit ni push.
+- **Siguiente paso:** completar los enlaces reales de los videos y confirmar cuáles ha visto el estudiante; continuar el estudio de exploración y explotación.
+
+## Revisión funcional del tutorial de bandidos — 2026-10-25
+
+- **Base:** `main`, `7ee8549`; fetch correcto y comparación con `origin/main`: `0 0`. Se encontraron y preservaron cambios del estudiante en `laboratorios/modulo_2/Tutorial-bandidos.qmd`, incluida la implementación de `run`.
+- La lógica de construcción, selección aleatoria, actualización de estadísticas y ejecución de turnos es correcta en los casos comprobados. La celda final de pruebas adicionales sigue vacía; no se completó ni modificó contenido académico durante esta revisión.
+- **Verificación:** ejecución secuencial de las nueve celdas mediante `uv run --no-sync python`, con semilla 42; falla únicamente la prueba original de `run` por igualdad exacta entre decimales (diferencia observada: `2.22e-16`). Al repetir las pruebas originales con semillas 0–99 hubo tres fallos en esa misma comprobación. Otros 500 escenarios en memoria, con 100 semillas y comparación mediante `math.isclose`, pasaron: cero turnos, un brazo, cuatro brazos, 1000 turnos y llamadas consecutivas. No se guardaron scripts ni resultados de estas comprobaciones.
+- Renderizado completo correcto de las 12 páginas con Quarto 1.8.27, sin ejecutar código durante el renderizado. Diff revisado; `git diff --check` detecta espacios finales añadidos en la línea de retorno de `run`, conservados sin alterar. Sin cambios de dependencias, commit ni push.
+- **Siguiente paso:** que el estudiante añada sus pruebas adicionales y tenga presente la limitación numérica de la prueba original; no cambiar la implementación correcta para satisfacer una igualdad exacta entre flotantes. La revisión corresponde al tutorial, no a los dos laboratorios calificables.
+
 ## Avance del tutorial de bandidos sincronizado — 2026-10-25
 
 - **Base:** `main`, `7ee8549`; árbol limpio y comparación con `origin/main`: `0 0` después de publicar el avance solicitado por el estudiante.

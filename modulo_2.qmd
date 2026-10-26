@@ -81,9 +81,15 @@ El tutorial y los dos laboratorios tienen páginas de lectura en el menú de est
 
 ### 📺 Videos
 
-| Concepto | Enlace | Notas breves |
-| :--- | :---: | :--- |
-| Video 1 | Por completar | ... |
+Listado registrado a partir de las capturas de la plataforma del curso compartidas el 14 de octubre de 2026. El estudiante confirmó el 25 de octubre de 2026 que ya vio los tres primeros videos. Los enlaces individuales siguen pendientes de completar.
+
+| Video | Duración | Enlace | Estado |
+| :--- | :---: | :---: | :--- |
+| Introducción | 1 min | Por completar | Visto |
+| Problemas de optimización de escogencia | 8 min | Por completar | Visto |
+| Exploración vs explotación | 5 min | Por completar | Visto |
+| Bandidos no estacionarios | 4 min | Por completar | Pendiente |
+| Cierre | 2 min | Por completar | Pendiente |
 
 ### 📖 Lecturas
 
