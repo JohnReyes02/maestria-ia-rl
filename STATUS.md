@@ -1,5 +1,12 @@
 # STATUS.md
 
+## Laboratorio de epsilon decay entregado y calificado — 2026-10-26
+
+- **Base:** `main`, `f2facb7`; fetch correcto y comparación con `origin/main`: `0 0`. El estudiante confirma que presentó «K-Bandidos con epsilon decay» y obtuvo **100 %**, y solicita actualizar el repositorio, autorizando commit y push.
+- `laboratorios/modulo_2/bandidos_epsilon.qmd` conserva la implementación presentada: parámetro `epsilon`, selección epsilon-greedy con desempate aleatorio, actualización de recompensas y reducción del 10 % de epsilon al completar cada bloque de 100 episodios. `modulo_2.qmd` marca únicamente esta actividad como completada con 100 %.
+- **Verificación:** constructor, exploración, explotación con máximo único, desempate, conteo de ocurrencias, retorno y límites de decay para 0, 99, 100, 200, 250 y 1000 episodios correctos mediante `uv run --no-sync python`. Renderizado completo correcto de las 12 páginas con Quarto 1.10.18; diff revisado y `git diff --check` correcto. Sin cambios de dependencias ni salidas generadas versionadas.
+- **Siguiente paso:** continuar los pendientes del módulo 2, en particular «K-bandidos no estacionarios», y mantener sin marcar los recursos cuyo avance o calificación no se ha confirmado.
+
 ## Cierre de sesión y publicación autorizada — 2026-10-25
 
 - **Base:** `main`, `7ee8549`; fetch correcto y comparación con `origin/main`: `0 0`. El estudiante solicita guardar y actualizar el repositorio, autorizando commit y push de los tres archivos pendientes; se comunica el resumen antes de publicar.

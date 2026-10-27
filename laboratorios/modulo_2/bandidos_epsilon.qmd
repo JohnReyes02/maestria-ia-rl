@@ -38,7 +38,6 @@ Para introducir la estrategia de epsilon decay es necesario definir un nuevo atr
 import random
 #Definición de librerias requeridas
 # your code here
-raise NotImplementedError
 
 class Bandit:
     def __init__(self, num_arms=10, epsilon = 0.9):
@@ -48,11 +47,20 @@ class Bandit:
         self.cumulative_rewards = [0 for i in range(num_arms)]
         # definición nuevos atributos
         # your code here
-        raise NotImplementedError
+        self.epsilon = epsilon
 
     def choose_arm(self) -> int:
         # your code here
-        raise NotImplementedError
+        if random.random() < self.epsilon: # random.random() genera un valor [0, 1)
+            return random.randrange(len(self.arms)) # brazo aleatorio < epsilon
+
+        mejor_recompensa = max(self.rewards)
+        mejores_brazos = []
+
+        for i, recompensa in enumerate(self.rewards):
+            if recompensa == mejor_recompensa:
+                mejores_brazos.append(i)
+        return random.choice(mejores_brazos) # escoge el brazo mayor recompensa
 
     def expected_reward(self, arm:int) -> float:
         self.occurrences[arm] += 1
@@ -63,7 +71,12 @@ class Bandit:
 
     def run(self, episodes = 1000) -> float:
         # your code here
-        raise NotImplementedError
+        for i in range(episodes):
+            brazo = self.choose_arm()
+            self.expected_reward(brazo)
+
+            if (i + 1) % 100 == 0:
+                self.epsilon -= 0.1 * self.epsilon
         return self.rewards
 
 ```
@@ -76,10 +89,21 @@ class Bandit:
 
 bandit = Bandit()
 
+
 ```
 
 ```{python}
 #Pruebas adicionales
+bandit_default = Bandit()
+assert bandit_default.epsilon == 0.9
+assert len(bandit_default.arms) == 10
+
+bandit_custom = Bandit(4, 0.25)
+assert bandit_custom.epsilon == 0.25
+assert len(bandit_custom.arms) == 4
+assert len(bandit_custom.rewards) == 4
+
+print("Constructor correcto")
 ```
 
 ### Agregar la estrategia &epsilon;
