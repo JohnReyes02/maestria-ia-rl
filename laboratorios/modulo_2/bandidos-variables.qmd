@@ -39,9 +39,10 @@ Adicionalmente, eliminamos el atributo `occurrences` de la implementación del b
 #Implementación del algoritmo
 
 import random
+import math
 #Definición de librerias requeridas
 # your code here
-raise NotImplementedError
+# raise NotImplementedError
 class Bandit:
     def __init__(self, num_arms=10, epsilon = 0.9, alpha=0.1):
         self.epsilon = epsilon
@@ -49,23 +50,47 @@ class Bandit:
         self.rewards = [0 for i in range(num_arms)]
         # definición nuevos atributos
         # your code here
-        raise NotImplementedError
+        self.episode_rewards = [[] for i in range(num_arms)]
+        self.alpha = alpha
 
     def choose_arm(self) -> int:
         # your code here
-        raise NotImplementedError
+        if random.random() < self.epsilon:
+            return random.randrange(len(self.arms))
+
+        mejor_recompensa = max(self.rewards)
+        mejores_brazos = []
+        for i, recompensa in enumerate(self.rewards):
+            if recompensa == mejor_recompensa:
+                mejores_brazos.append(i)
+        return random.choice(mejores_brazos)
 
     def expected_reward(self, arm:int , episode:int) -> float:
         # your code here
-        raise NotImplementedError
+        reward = self.arms[arm] * math.sin(episode)
+        self.episode_rewards[arm].append(reward)
+        return reward
 
     def calculate_expected_reward(self, arm:int) -> float:
         # your code here
-        raise NotImplementedError
+        if len(self.episode_rewards[arm]) == 0:
+            return self.rewards[arm]
+
+        n = len(self.episode_rewards[arm])
+        estimacion = (1 - self.alpha) ** n * self.episode_rewards[arm][0]
+        for i in range(1, n):
+            estimacion += self.alpha * (1 - self.alpha) ** (n - i) * self.episode_rewards[arm][i]
+        self.rewards[arm] = estimacion
+        return self.rewards[arm]
 
     def run(self, episodes = 1000) -> float:
         # your code here
-        raise NotImplementedError
+        for episode in range(episodes):
+            arm = self.choose_arm()
+            self.expected_reward(arm, episode)
+            self.calculate_expected_reward(arm)
+            if (episode + 1) % 100 == 0:
+                self.epsilon -= 0.1 * self.epsilon
         return self.rewards
 ```
 

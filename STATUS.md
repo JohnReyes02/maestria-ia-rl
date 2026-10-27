@@ -1,11 +1,67 @@
 # STATUS.md
 
+## Cierre y sincronización autorizada — 2026-10-27
+
+- **Base:** `main`, `7eba7c5`; fetch correcto y comparación con `origin/main`: `0 0`. El estudiante solicita guardar y actualizar el repositorio, autorizando commit y push de los dos archivos pendientes; se comunica el resumen antes de publicar.
+- Se guardan la implementación de bandidos no estacionarios confirmada por el estudiante como aprobada en todas las celdas de evaluación y el seguimiento local acumulado, conservando las notas previas de sincronización. No se confirma envío final ni nota numérica.
+- **Verificación:** renderizado completo de las 12 páginas correcto con Quarto 1.10.19 para las fuentes actuales; diff revisado y `git diff --check` correcto. Sin cambios de dependencias ni salidas generadas versionadas.
+- **Siguiente paso:** confirmar envío y calificación de bandidos no estacionarios; después retomar los pendientes del módulo 2 y MDPs. Sincronizar desde GitHub al cambiar de equipo.
+
+## Bandidos no estacionarios: versión validada en plataforma — 2026-10-27
+
+- **Base:** `main`, `7eba7c5`. Se preservan los cambios locales preexistentes. El estudiante confirma que la última versión compartida pasó todas las celdas de evaluación y solicita incorporarla al archivo local.
+- Se ajusta `laboratorios/modulo_2/bandidos-variables.qmd` a esa implementación: `n = len(episode_rewards[arm])`, sumatoria con `range(1, n)` y acceso `[i]`, sin caso especial para una observación. Se conservan `enumerate` en selección y la llamada a actualización de estimaciones en `run`. Se retiran los comentarios de variantes descartadas; el notebook original permanece intacto.
+- Esta confirmación reemplaza la hipótesis anterior con `[i-1]` y las comprobaciones basadas en otra convención de índices. La validación en plataforma es informada por el estudiante; no se confirma nota numérica ni envío final.
+- **Verificación local:** diff revisado, `git diff --check` correcto y renderizado completo de las 12 páginas correcto con Quarto 1.10.19. Sin cambios de dependencias ni salidas generadas versionadas.
+- **Siguiente paso:** confirmar envío y calificación, y guardar o sincronizar los cambios solo con autorización. Sin commit ni push.
+
+## Inicio de orientación conceptual: bandidos no estacionarios — 2026-10-27
+
+- **Base:** `main`, `7eba7c5`; fetch correcto y comparación con `origin/main`: `0 0`. Se conserva el seguimiento local preexistente.
+- El estudiante solicita comenzar `laboratorios/modulo_2/bandidos-variables.qmd` con orientación, desarrollando él mismo el laboratorio. Se revisaron el enunciado y la restricción académica histórica; el acompañamiento comienza con conceptos generales y ejemplos independientes, sin completar ni modificar el material evaluable.
+- **Avance observado durante la orientación:** el estudiante añadió `episode_rewards` como listas vacías independientes, guardó `alpha` y retiró la asignación duplicada de `self.epsilon`. Implementó `choose_arm` con exploración uniforme, explotación del máximo en `rewards` y desempate aleatorio. Revisión de lectura coherente con epsilon-greedy para al menos un brazo; sin ejecución de pruebas ni cambios a su código. Los otros métodos siguen pendientes.
+- **Avance adicional:** el estudiante completó `expected_reward` con el cálculo sinusoidal, `append` al historial del brazo y retorno de `reward`. Revisión de lectura coherente con esas tres responsabilidades. `calculate_expected_reward` quedó sin cuerpo ejecutable: requiere un marcador mientras se implementa para que la clase tenga sintaxis válida. Sin ejecución ni modificación de su código; `git diff --check` señala espacios finales en la línea vacía de ese método, conservados.
+- **Avance en la estimación:** el estudiante incorporó en `calculate_expected_reward` el retorno de la estimación actual para historial vacío y la asignación y retorno de la primera recompensa para historial de longitud uno. Revisión de lectura; falta el cálculo para dos o más observaciones, que actualmente retorna `None` implícitamente. Sin ejecución de pruebas ni cambios a su código. `git diff --check` señala espacios finales en la línea 80, conservados.
+- **Caso general en desarrollo:** se trabajó la interpretación de la primera recompensa como estimación inicial y las restantes como actualizaciones, con `n = len(historial) - 1`; comprobación manual `[2, 4]`, `alpha=0.1` → `2.2`. El estudiante escribió el término inicial y la suma ponderada. Revisión de lectura: el límite del bucle usa por error el método `expected_reward` en lugar del historial `episode_rewards`; faltan almacenar y retornar la estimación al terminar el bucle. La ambigüedad del enunciado sobre los índices sigue pendiente de contrastar con el curso. Sin pruebas ejecutadas ni cambios al código; espacios finales detectados en línea 85.
+- **Última revisión de lectura:** el estudiante corrigió el bucle para recorrer `episode_rewards` y almacena `estimacion` fuera del `for`. Falta ajustar el retorno del caso general: devuelve la lista completa `self.rewards`, mientras los otros casos y la firma esperan un valor por brazo. `git diff --check` correcto; sin ejecución de pruebas ni cambios al código del estudiante.
+- **Verificación antes de continuar:** retorno corregido a `self.rewards[arm]`. Comprobaciones mediante `uv run --no-sync python` correctas para constructor, independencia de historiales, recompensa sinusoidal, estimación con 0–3 observaciones y selección epsilon-greedy con empate. La suma coincide con la actualización incremental usando la primera observación como estimación inicial; esto no confirma los criterios ocultos de la plataforma. `run` sigue pendiente y no se ejecutó. Sin modificaciones al código del estudiante; `git diff --check` correcto.
+- **`run` implementado por el estudiante:** conecta selección, recompensa y estimación; reduce epsilon un 10 % tras cada bloque de 100 episodios y retorna las estimaciones fuera del bucle. Comprobaciones con `uv run --no-sync python`, semilla 42, un brazo y 0, 1, 5, 99, 100, 101, 200 y 250 episodios correctas para historial sinusoidal, estimación y decay. Con tres brazos y 250 episodios se comprobaron el total de observaciones y las estimaciones por brazo. Sin cambios al código del estudiante. La anotación heredada `run -> float` no coincide con su retorno de lista.
+- **Verificación final:** renderizado completo de las 12 páginas correcto con Quarto 1.10.19 y `git diff --check` correcto. Sin commit ni push; no se versionan salidas generadas.
+- **Revisión previa a entrega solicitada:** diff completo revisado; implementación sin cambios respecto de las comprobaciones anteriores, sin métodos pendientes. Las celdas locales calificadas solo instancian `Bandit` y no demuestran compatibilidad con pruebas ocultas. El archivo trabajado es `.qmd`; no se preparó ni alteró el notebook original. Confirmar formato en plataforma y conservar sus metadatos si exige `.ipynb`. Las pruebas adicionales del estudiante siguen vacías.
+- **Resultado informado en plataforma:** falla una o más pruebas de `calculate_expected_reward`; la pista pide respetar la fórmula de `Q_i`. Las verificaciones locales anteriores solo respaldaban la interpretación incremental elegida, no la del evaluador. Se identifica como hipótesis la lectura literal de «primeros n-1 valores»: `n` como longitud total, sumatoria con índices matemáticos de 1 a n-1 y acceso Python `i-1`, sin excepción para una observación. Se indican cambios al estudiante a petición explícita; no se aplican ni se confirma que pasen el evaluador.
+- **Hipótesis aplicada por el estudiante:** revisión de lectura confirma `n = len(historial)`, término inicial con exponente `n`, bucle `range(1, n)` y acceso `historial[i-1]`. El caso especial para longitud uno quedó comentado. `git diff --check` correcto. No se ejecutaron nuevas pruebas ni se confirma que esta variante coincida con el evaluador.
+- **Siguiente paso:** que el estudiante vuelva a ejecutar la celda de definición de la clase, cree una instancia nueva y contraste esta variante con las pruebas de la plataforma; no marcar el laboratorio como validado ni entregado. No se confirma calificación.
+- **Verificación:** revisión documental y del diff; sin ejecución del laboratorio, cambios de dependencias, renderizado, commit ni push.
+
+## Sincronización VPS — 2026-10-27
+
+- **Base actual:** `main`, `7eba7c5`. Se incorporó un commit desde `f2facb7` mediante `git pull --ff-only origin main`; comparación final con `origin/main`: `0 0`, sin divergencia.
+- Se incorporaron la implementación presentada de epsilon decay y su calificación confirmada de 100 %. Se conservaron todas las notas locales de seguimiento, con respaldo adicional en el stash `preserve VPS checkpoint before sync 7eba7c5 2026-10-27`. Se combinaron las entradas locales y remotas de `STATUS.md` conservando ambas.
+- **Verificación:** renderizado completo correcto de las 12 páginas con Quarto 1.10.19; diff revisado y `git diff --check` correcto. Sin cambios de dependencias, ejecución de experimentos, commit ni push. Solo este seguimiento queda modificado localmente.
+- **Pendientes y siguiente paso:** continuar Pen & Paper Bandidos 2 desde el cliente 1 y el laboratorio de bandidos no estacionarios, respetando la restricción académica registrada. Epsilon decay ya está entregado y calificado; después siguen MDPs para el 3 de noviembre.
+
 ## Laboratorio de epsilon decay entregado y calificado — 2026-10-26
 
 - **Base:** `main`, `f2facb7`; fetch correcto y comparación con `origin/main`: `0 0`. El estudiante confirma que presentó «K-Bandidos con epsilon decay» y obtuvo **100 %**, y solicita actualizar el repositorio, autorizando commit y push.
 - `laboratorios/modulo_2/bandidos_epsilon.qmd` conserva la implementación presentada: parámetro `epsilon`, selección epsilon-greedy con desempate aleatorio, actualización de recompensas y reducción del 10 % de epsilon al completar cada bloque de 100 episodios. `modulo_2.qmd` marca únicamente esta actividad como completada con 100 %.
 - **Verificación:** constructor, exploración, explotación con máximo único, desempate, conteo de ocurrencias, retorno y límites de decay para 0, 99, 100, 200, 250 y 1000 episodios correctos mediante `uv run --no-sync python`. Renderizado completo correcto de las 12 páginas con Quarto 1.10.18; diff revisado y `git diff --check` correcto. Sin cambios de dependencias ni salidas generadas versionadas.
 - **Siguiente paso:** continuar los pendientes del módulo 2, en particular «K-bandidos no estacionarios», y mantener sin marcar los recursos cuyo avance o calificación no se ha confirmado.
+
+## Inicio de Pen & Paper Bandidos 2 — 2026-10-26
+
+- **Base:** `main`, `f2facb7`; fetch correcto, sin nuevos commits remotos. Se conserva el seguimiento local preexistente.
+- En la conversación anterior se trabajaron ambos ejercicios de Bandidos 1 incluyendo las 20:00 como supuesto explícito. Se revisaron los promedios y la alternancia del segundo ejercicio; no se confirmó envío ni resultado en plataforma. Sigue pendiente validar el extremo horario y el valor inicial de brazos no elegidos.
+- El estudiante solicita comenzar Bandidos 2 paso a paso. Se revisaron el README y el archivo de trabajo: cuatro películas con valor inicial 10, 20 clientes y paso constante `alpha = 0.1`. No se completaron respuestas ni se modificaron archivos académicos.
+- **Siguiente paso:** construir la tabla cliente–película–recompensa–valor actualizado, comenzando por el cliente 1 y la película 4; confirmar la interpretación de recompensa como 10 más propina cuando la película gusta. Mantener precisión hasta el redondeo final.
+- **Verificación:** revisión documental del seguimiento y `git diff --check`; sin ejecución de ejercicios, renderizado, commit ni push.
+
+## Actualización VPS y punto de continuación — 2026-10-25
+
+- **Base actual:** `main`, `f2facb7`. Se integraron tres commits desde `ddeb04c` mediante `git pull --ff-only origin main`; comparación con `origin/main`: `0 0`, sin divergencia.
+- Se preservaron todas las notas locales de seguimiento, con respaldo adicional en el stash `preserve VPS checkpoint before sync f2facb7 2026-10-25`. Se incorporaron los avances del tutorial y los estados de videos publicados desde el otro equipo. Sin cambios de dependencias ni ejecución de experimentos.
+- **Punto vigente:** retomar Pen & Paper Bandidos 1 desde las horas 11 y 12, usando la tabla propia del estudiante, que no está en el repositorio. El tutorial tiene `run` implementado y una prueba adicional de un brazo durante cinco turnos. Los tres primeros videos están vistos; Bandidos no estacionarios y Cierre siguen pendientes.
+- **Pendientes:** dos laboratorios calificables para el 27 de octubre, 23:59 (-05), con envío sin confirmar y la restricción académica vigente; después MDPs para el 3 de noviembre. Los tres cuestionarios del módulo 2 tienen 100 % confirmado; Pacman y el formulario del equipo están enviados, con calificaciones sin confirmar.
+- **Verificación:** renderizado completo correcto de las 12 páginas con Quarto 1.10.19; revisión del diff y `git diff --check` correctos. Este seguimiento queda local, sin commit ni push.
 
 ## Cierre de sesión y publicación autorizada — 2026-10-25
 
@@ -50,6 +106,13 @@
 - En `laboratorios/modulo_2/Tutorial-bandidos.qmd` están implementados los atributos `occurrences` y `cumulative_rewards`, junto con `expected_reward`; también se corrigió el uso de `occurrences` en la prueba correspondiente. La construcción inicial del bandido y la selección aleatoria de brazos ya estaban implementadas. No se marca el tutorial como terminado.
 - **Verificación:** pruebas funcionales de `__init__`, `choose_arm` y `expected_reward` correctas; renderizado individual con Quarto 1.10.18 correcto. Antes del commit se detectó un espacio final en la línea 159, conservado porque el estudiante pidió no modificar su contenido. Sin cambios de dependencias ni resultados generados versionados.
 - El avance fue guardado en el commit `7ee8549` (`Guardar avance del tutorial de bandidos`) y publicado en `origin/main` para retomarlo desde el Mac mini. **Siguiente paso:** implementar `run`, comprobar que el total de ocurrencias coincida con el número de episodios y completar las pruebas adicionales del final del tutorial.
+
+## Sincronización VPS — 2026-10-25
+
+- **Base actual:** `main`, `ddeb04c`. Actualización desde `922c2a8` mediante `git pull --ff-only origin main`: dos commits entrantes, sin divergencia; comparación final con `origin/main`: `0 0`.
+- Se incorporaron la organización de recursos, cuatro presentaciones y los enlaces de grabaciones autorizados. Se conservaron las notas locales del 16, 18 y 23 de octubre y la confirmación de los cuestionarios, sin reemplazar el avance más reciente del remoto. Respaldo adicional en el stash `preserve VPS checkpoint before sync 2026-10-25`.
+- **Verificación:** Quarto 1.10.19, renderizado completo correcto de las 12 páginas en `docs/`; revisión del diff y `git diff --check` correctos. Sin cambios de dependencias, experimentos, commit ni push. Solo este seguimiento queda modificado localmente.
+- **Pendientes y siguiente paso:** continuar los dos laboratorios de bandidos para el 27 de octubre conforme a la restricción académica registrada; después MDPs para el 3 de noviembre. Ética ya figura con 100 % en la confirmación del 24 de octubre; las notas de Pacman y del formulario del equipo siguen pendientes de confirmar.
 
 ## Grabaciones incorporadas al repositorio privado — 2026-10-24
 
@@ -98,6 +161,34 @@
 - Se revisaron las instrucciones, el contexto y el seguimiento, priorizando las confirmaciones más recientes sobre las entradas históricas. Continúan registradas cinco evaluaciones del módulo 2 para el 27 de octubre: Tipos de aprendizaje, Exploración v. Explotación, Ética en la evaluación de instrucciones y los dos laboratorios de bandidos. El formulario del equipo ya fue enviado y Pacman ya fue entregado; sus calificaciones siguen sin confirmar. No se consultó nuevamente la plataforma ni se modificaron estados académicos.
 - **Verificación:** revisión documental y del diff; `git diff --check` correcto. Solo se actualiza este seguimiento local, sin renderizado, commit ni push.
 - **Siguiente paso:** continuar el tutorial de construcción de bandidos y completar las evaluaciones del módulo 2 de forma independiente, conforme a la restricción registrada; confirmar formato de entrega y pendientes reales en plataforma. Después siguen MDPs (3 de noviembre) y Planeación (10 de noviembre). Las lecturas finales del módulo 1 siguen pendientes de identificación y confirmación.
+
+## Cuestionarios del módulo 2 realizados — 2026-10-23
+
+- **Base:** `main`, `922c2a8`; consulta al remoto correcta y comparación con `origin/main`: `0 0`. Se conservan las notas locales de sincronización preexistentes.
+- **Confirmación del estudiante:** ya realizó «Tipos de aprendizaje» y «Exploración v. Explotación», con **100 % en cada uno**. Ambas actividades quedan completadas y sus calificaciones confirmadas por el estudiante.
+- **Pendientes para el 27 de octubre, 23:59 (-05):** «Ética en la evaluación de instrucciones» (20 min), «K-Bandidos con epsilon decay» (3 h) y «K-bandidos no estacionarios» (3 h). Duración nominal de plataforma: 6 h 20 min, sin preparación ni margen de depuración. El formulario del equipo ya fue enviado.
+- **Siguiente paso:** continuar el tutorial de construcción de bandidos como preparación de los dos laboratorios y completar la evaluación de ética, respetando la restricción académica registrada.
+- **Verificación:** actualización documental de este archivo, calendario y continuación ajustados; diff revisado y `git diff --check` correcto. Sin renderizado, commit ni push.
+
+## Sincronización VPS — 2026-10-23
+
+- **Base actual:** `main`, `922c2a8`. Actualización desde `f6c2d10` mediante `git pull --ff-only origin main`, tras consultar el remoto: seis commits entrantes y ninguno divergente.
+- Se conservaron las dos notas locales de sincronización del 16 y 18 de octubre, reproducidas abajo; respaldo adicional en el stash `preserve VPS checkpoint before sync 2026-10-23`. El resto del contenido proviene de GitHub.
+- **Verificación:** comparación `HEAD...origin/main`: `0 0`; `uv lock --check`, `uv sync --locked --dry-run` y sincronización efectiva con `uv sync --locked` correctos. Quarto 1.10.19: renderizado completo correcto de las 12 páginas en `docs/`. Diff local revisado y `git diff --check` correcto; solo queda modificado este archivo. Sin commit ni push.
+- **Pendientes y siguiente paso:** continuar el tutorial de bandidos del módulo 2 y los pendientes del 27 de octubre, respetando la restricción académica registrada. La nota de Pacman y las lecturas finales del módulo 1 siguen pendientes de confirmación. No se ejecutaron laboratorios ni experimentos durante la sincronización.
+
+## Sincronización VPS — 2026-10-18
+
+- Base actual: `main`, `f6c2d10` (`docs: update course progress and planning`). Actualización desde `2a44caa` mediante `git pull --ff-only origin main`, después de consultar el remoto; un commit entrante y ninguno divergente.
+- Se conservó la nota local de sincronización del 16 de octubre, reproducida abajo, y su respaldo en el stash `preserve VPS checkpoint before sync 2026-10-18`.
+- Verificación: `HEAD...origin/main`: `0 0`; `git diff --check` correcto y diff revisado. Solo cambió `STATUS.md`; no fue necesario renderizar ni verificar dependencias. Este registro queda local, sin commit ni push.
+- Siguiente paso: retomar la planeación conjunta registrada abajo, recibir los turnos laborales y confirmar el pendiente histórico de Deep Learning para preparar un calendario viable.
+
+## Sincronización VPS — 2026-10-16
+
+- Base actual: `main`, `2a44caa` (`docs: review Pacman experiment results`). Se actualizó desde `143d312` mediante `git pull --ff-only origin main`, después de `git fetch --prune origin`, con árbol inicialmente limpio y sin divergencia.
+- Verificación: `HEAD...origin/main` coincide (`0 0`); `git diff --check` correcto y diff revisado. Solo se recibió la revisión de resultados en este archivo; no fue necesario renderizar ni verificar dependencias.
+- Pendiente y siguiente paso: completar las observaciones visuales y el análisis propio del reporte de Pacman. Este registro de sincronización queda local, sin commit ni push.
 
 ## Cierre de sesión y publicación autorizada — 2026-10-22
 
@@ -593,8 +684,8 @@
 | 20 oct. | Definición del aprendizaje por refuerzo | Tarea calificable | 1 % | Calificado: 100 % |
 | 20 oct. | Caracterización del aprendizaje por refuerzo | Tarea calificable | 1 % | Calificado: 100 % |
 | 20 oct. | Uso de agentes de aprendizaje por refuerzo | Tarea calificable | 1 % | Entregado, confirmado por el estudiante el 20 oct.; calificación pendiente de confirmación |
-| 27 oct. | Tipos de aprendizaje | Tarea calificable | 1 % | Sin calificación visible |
-| 27 oct. | Exploración v. Explotación | Tarea calificable | 1 % | Sin calificación visible |
+| 27 oct. | Tipos de aprendizaje | Tarea calificable | 1 % | Calificado: 100 %, confirmado por el estudiante el 23 oct. |
+| 27 oct. | Exploración v. Explotación | Tarea calificable | 1 % | Calificado: 100 %, confirmado por el estudiante el 23 oct. |
 | 27 oct. | Ética en la evaluación de instrucciones | Tarea calificable | 1 % | Sin calificación visible |
 | 27 oct. | K-Bandidos con epsilon decay | Actividad de programación | 6 % | Sin calificación visible |
 | 27 oct. | K-bandidos no estacionarios | Actividad de programación | 6 % | Sin calificación visible |
@@ -636,4 +727,4 @@
 
 ## Siguiente paso
 
-El estudiante confirmó el 2026-10-20 que entregó el informe de Pacman del módulo 1; no queda pendiente subirlo. La calificación no está confirmada. Retomar los pendientes del módulo 2 para el 27 de octubre, con los notebooks originales ya conservados y convertidos mecánicamente a Quarto; respetar la restricción registrada de no usar IA para resolver los laboratorios calificables. El formulario de conformación del equipo ya fue enviado. Las lecturas finales del módulo 1 siguen pendientes de identificar y confirmar. Consultar las entradas más recientes para el estado vigente y actualizar desde GitHub al retomar en otro equipo.
+Retomar Pen & Paper Bandidos 1 desde las horas 11 y 12 usando la tabla del estudiante; después continuar con epsilon decay y los dos laboratorios de bandidos para el 27 de octubre, respetando la restricción académica registrada. Luego siguen MDPs para el 3 de noviembre. Tipos de aprendizaje, Exploración v. Explotación y Ética tienen 100 % confirmado. Pacman y el formulario del equipo están enviados, con notas pendientes de confirmar. Las lecturas finales del módulo 1 siguen pendientes de identificar y confirmar. Consultar las entradas más recientes y sincronizar desde GitHub al cambiar de equipo.
