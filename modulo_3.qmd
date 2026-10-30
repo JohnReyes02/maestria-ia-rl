@@ -45,12 +45,12 @@ $$
 
 ## 🔬 Práctica y Experimentación
 
-El código y los ejercicios se encuentran en los notebooks. Aquí se analizan los resultados.
+El tutorial y el laboratorio tienen páginas de lectura en el menú de este módulo, como en el módulo 2. Los notebooks originales y sus imágenes se conservan en `laboratorios/modulo_3/originales/`; las páginas muestran el código sin ejecutarlo.
 
 | Recurso | Enlace | ¿Completado? |
 | :--- | :---: | :---: |
-| **Laboratorio** | Próximamente | ⬜ |
-| **Taller** | Próximamente | ⬜ |
+| Tutorial: Definición de un MDP para Gridworld | [Ver tutorial](laboratorios/modulo_3/gridworld_mdps_tutorial.qmd) | ⬜ |
+| Laboratorio MDPs: Construcción de MDPs | [Ver laboratorio](laboratorios/modulo_3/car.qmd) | ⬜ |
 
 ### 🧠 Hallazgos del Laboratorio
 

@@ -1,5 +1,37 @@
 # STATUS.md
 
+## Integración del Laboratorio MDPs al libro — 2026-10-30
+
+- **Base:** `main`, `2d36463`. Al iniciar, `origin/main` tenía un commit nuevo (`0 1`); se guardó el seguimiento local en el stash `preserve Mac mini checkpoint before sync 2d36463 2026-10-30`, se avanzó con `git pull --ff-only` y se combinaron en `STATUS.md` las entradas locales y remotas conservando ambas. Comparación final con `origin/main`: `0 0`.
+- El estudiante descargó el Laboratorio MDPs (calificable, 5 %, 3 nov.) en `laboratorios/modulo_3/originales/`: `car.ipynb`, `Banner.jpg`, `cars_mdp.png` y `table.png`, conservados sin modificar.
+- Siguiendo el patrón del módulo 2 se creó la página de lectura `laboratorios/modulo_3/car.qmd` («Laboratorio: Construcción de MDPs»): `execute.enabled: false`, aviso de actividad calificable, enunciados y código incompleto idénticos al original (14/14 celdas de código comprobadas), metadatos `deletable`, `editable` y `nbgrader` de las celdas de código, y rutas de imágenes hacia `originales/`. Se añadió al menú del módulo 3 en `_quarto.yml`, se enlazó desde «Práctica y Experimentación» de `modulo_3.qmd` (sin marcar como completado) y se creó `laboratorios/modulo_3/README.md`. No se completó ni corrigió el contenido académico; rige la restricción de trabajo independiente.
+- **Observaciones del enunciado por contrastar con el curso, sin resolverlas:** la sección de codificación nombra `warm=1` mientras la figura usa `hot`; `is_terminal` habla de «casillas con recompensa 1 o -1», texto que no corresponde al MDP del motor (en la tabla de pruebas el estado 2 tiene `[None, None]`); el mensaje de la celda de prueba de `get_current_state` menciona `do_action`. Puntos de las pruebas visibles: 6 + 6 + 3 + 4 + 1 + 3 + 1 = 24.
+- **Tutorial previo incorporado:** el estudiante descargó `gridworld_mdps_tutorial.ipynb` y `gridworld.png` en `originales/`, conservados sin modificar. Se creó `laboratorios/modulo_3/gridworld_mdps_tutorial.qmd` («Tutorial: Definición de un MDP para Gridworld») con el mismo criterio del tutorial de bandidos: aviso «Tutorial de consulta», código sin ejecutar e idéntico al original (13/13 celdas), metadatos conservados y rutas de imágenes a `originales/`. Va antes del laboratorio en el menú del módulo 3, en la tabla de `modulo_3.qmd` (sin marcar) y en el README. Sus celdas de prueba tienen 0 puntos. El texto de `is_terminal` del laboratorio («casillas con recompensa 1 o -1») coincide con el de este tutorial, lo que sugiere que se heredó de Gridworld; sigue pendiente de contrastar con el curso.
+- **Verificación:** validación estructural (bloques de código balanceados, imágenes existentes, código idéntico al notebook), diff revisado y `git diff --check` correcto. Quarto no está disponible en el entorno usado: falta `quarto render` en el Mac mini. Sin commit ni push.
+- **Siguiente paso:** renderizar y revisar la página; desarrollar el laboratorio de forma independiente y confirmar el formato de entrega (`.ipynb`) en la plataforma; tarea «Aprendizaje por refuerzo o no?» para el 3 de noviembre.
+
+## Revisión de avance — 2026-10-30
+
+- **Base:** `main`, `8d1bc94`; fetch correcto y comparación con `origin/main`: `0 0`. No hay nuevos commits remotos. Se conservan las notas locales del 27 de octubre.
+- **Estado confirmado:** Definición y Caracterización del aprendizaje por refuerzo, los tres cuestionarios del módulo 2 y epsilon decay tienen 100 %. Pacman y el formulario del equipo están enviados, con notas sin confirmar. Bandidos no estacionarios pasó todas las celdas de evaluación según el estudiante; envío final y nota siguen sin confirmar. El plazo registrado del 27 de octubre ya pasó; esto no demuestra que no se haya enviado.
+- **Siguiente paso:** confirmar ese envío y su calificación; continuar con «Aprendizaje por refuerzo o no?» y Laboratorio MDPs para el 3 de noviembre, 23:59 (-05), según el calendario guardado. Después siguen iteración de valores e iteración de políticas para el 10 de noviembre. No se consultó la plataforma ni se confirmó avance nuevo del módulo 3.
+- **Verificación:** revisión del seguimiento, calendario, estado remoto y diff; `git diff --check` correcto. Solo seguimiento documental, sin cambios académicos, renderizado, commit ni push.
+
+## Sincronización en Mac mini completada — 2026-10-27
+
+- **Base actual:** `main`, `8d1bc94`. Se incorporaron dos commits desde `f2facb7` mediante avance directo; comparación con `origin/main`: `0 0`, sin divergencia.
+- Se incorporaron las implementaciones y el seguimiento publicados de epsilon decay y bandidos no estacionarios. La nota local de revisión se conserva íntegra junto con las entradas remotas; respaldo adicional en el stash `preserve Mac mini checkpoint before sync 8d1bc94 2026-10-27`.
+- **Verificación:** renderizado completo de las 12 páginas correcto con Quarto 1.8.27; revisión del diff y `git diff --check` correctos. Sin cambios de dependencias ni ejecución de experimentos. Solo este seguimiento queda modificado localmente, sin commit ni push.
+- **Pendientes y siguiente paso:** confirmar envío final y calificación de bandidos no estacionarios; continuar con MDPs para el 3 de noviembre. Epsilon decay está entregado y calificado con 100 %.
+
+## Revisión de pendientes y sincronización en Mac mini — 2026-10-27
+
+- **Base local:** `main`, `f2facb7`. Tras `git fetch --prune origin`, `origin/main` está en `8d1bc94`: comparación `HEAD...origin/main` = `0 2`. El árbol estaba limpio; faltan dos commits remotos y no hay divergencia. Se consultaron sus cambios sin integrarlos durante esta revisión.
+- **Estado más reciente en GitHub:** epsilon decay entregado y calificado con 100 %; bandidos no estacionarios pasó todas las celdas de evaluación según confirmación del estudiante, pero su envío final y nota numérica siguen sin confirmar. Los tres cuestionarios del módulo 2 ya tenían 100 % confirmado; Pacman y el formulario del equipo están enviados, con notas sin confirmar.
+- **Prioridad:** confirmar el envío final de bandidos no estacionarios antes del plazo registrado del 27 de octubre, 23:59 (-05). Después, preparar «Aprendizaje por refuerzo o no?» y Laboratorio MDPs para el 3 de noviembre; iteración de valores y de políticas para el 10 de noviembre. Fechas basadas en el calendario guardado; no se consultó la plataforma en esta revisión.
+- **Verificación:** estado de Git, historial entrante y diferencias revisados; diff local inicialmente vacío y `git diff --check` correcto. Sin cambios académicos, dependencias, ejecución de laboratorios ni renderizado; solo se añade este seguimiento, sin commit ni push.
+- **Siguiente paso:** incorporar los dos commits de GitHub preservando esta nota y confirmar el envío y calificación de bandidos no estacionarios; continuar con MDPs.
+
 ## Listado de videos del módulo 3 — 2026-10-29
 
 - **Base:** `main`, `8d1bc94`; árbol limpio al inicio.

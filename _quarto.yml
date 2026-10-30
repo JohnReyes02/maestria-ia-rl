@@ -34,6 +34,8 @@ book:
     - part: "Módulo 3"
       chapters:
         - modulo_3.qmd
+        - laboratorios/modulo_3/gridworld_mdps_tutorial.qmd
+        - laboratorios/modulo_3/car.qmd
     - part: "Módulo 4"
       chapters:
         - modulo_4.qmd
