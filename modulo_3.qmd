@@ -1,5 +1,5 @@
 ---
-title: "Módulo 3"
+title: "Módulo 3: MDPs"
 week: 3
 course: "Aprendizaje por Refuerzo"
 bibliography: references_modulo_3.bib
@@ -12,8 +12,9 @@ nocite: "@*"
 
 > ¿Qué debo ser capaz de hacer al finalizar esta semana?
 
-- [ ] Objetivo 1
-- [ ] Objetivo 2
+- [ ] Definición de los sistemas de recompensas y su uso dentro de los MDP
+- [ ] Expresar el aprendizaje y el objetivo de un agente como un problema de recompensa.
+- [ ] Deefinir el problema de aprendizaje como un proceso de Markov.
 
 ## Fechas y entregables
 
@@ -78,13 +79,19 @@ El código y los ejercicios se encuentran en los notebooks. Aquí se analizan lo
 
 ### 📺 Videos
 
-| Concepto | Enlace | Notas breves |
-| :--- | :---: | :--- |
-| Video 1 | Por completar | ... |
+Listado de videos proporcionado por el estudiante el 29 de octubre de 2026; las duraciones provienen de las capturas de la plataforma del curso registradas previamente. Los enlaces individuales y el estado de visualización siguen pendientes de completar.
+
+| Video | Duración | Enlace | Estado |
+| :--- | :---: | :---: | :--- |
+| Introducción | 1 min | Por completar | Pendiente |
+| Procesos de decisión de Markov | 6 min | Por completar | Pendiente |
+| MDPs y recompensas | 12 min | Por completar | Pendiente |
+| Construcción de agentes | 8 min | Por completar | Pendiente |
+| Cierre | 2 min | Por completar | Pendiente |
 
 ### 📖 Lecturas
 
-- [ ] Lectura 1
+- [ ] Capítulo 3 de *Reinforcement Learning: An Introduction* [@sutton2018reinforcement], secciones 3.3, 3.5 y 3.6.
 
 ------------------------------------------------------------------------
 

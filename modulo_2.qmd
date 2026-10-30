@@ -48,10 +48,10 @@ El tutorial y los dos laboratorios tienen páginas de lectura en el menú de est
 
 | Recurso | Enlace | ¿Completado? |
 | :--- | :---: | :---: |
-| Tutorial: Construcción de bandidos de K-brazos | [Ver tutorial](laboratorios/modulo_2/Tutorial-bandidos.qmd) | ⬜ |
+| Tutorial: Construcción de bandidos de K-brazos | [Ver tutorial](laboratorios/modulo_2/Tutorial-bandidos.qmd) | ✅ |
 | K-Bandidos con epsilon decay | [Ver laboratorio](laboratorios/modulo_2/bandidos_epsilon.qmd) | ✅ (100 %) |
-| K-bandidos no estacionarios | [Ver laboratorio](laboratorios/modulo_2/bandidos-variables.qmd) | ⬜ |
-| Pen & Paper: Bandidos 1 | [Guía de trabajo](laboratorios/modulo_2/pen_and_paper_bandidos_1/README.md) | ⬜ |
+| K-bandidos no estacionarios | [Ver laboratorio](laboratorios/modulo_2/bandidos-variables.qmd) | ✅ (100 %) |
+| Pen & Paper: Bandidos 1 | [Guía de trabajo](laboratorios/modulo_2/pen_and_paper_bandidos_1/README.md) | ✅ |
 | Pen & Paper: Bandidos 2 | [Guía de trabajo](laboratorios/modulo_2/pen_and_paper_bandidos_2/README.md) | ⬜ |
 
 ### 🧠 Hallazgos del Laboratorio
@@ -81,15 +81,15 @@ El tutorial y los dos laboratorios tienen páginas de lectura en el menú de est
 
 ### 📺 Videos
 
-Listado registrado a partir de las capturas de la plataforma del curso compartidas el 14 de octubre de 2026. El estudiante confirmó el 25 de octubre de 2026 que ya vio los tres primeros videos. Los enlaces individuales siguen pendientes de completar.
+Listado registrado a partir de las capturas de la plataforma del curso compartidas el 14 de octubre de 2026. El estudiante confirmó el 25 de octubre de 2026 que ya vio los tres primeros videos y el 29 de octubre de 2026 los dos restantes. Los enlaces individuales siguen pendientes de completar.
 
 | Video | Duración | Enlace | Estado |
 | :--- | :---: | :---: | :--- |
 | Introducción | 1 min | Por completar | Visto |
 | Problemas de optimización de escogencia | 8 min | Por completar | Visto |
 | Exploración vs explotación | 5 min | Por completar | Visto |
-| Bandidos no estacionarios | 4 min | Por completar | Pendiente |
-| Cierre | 2 min | Por completar | Pendiente |
+| Bandidos no estacionarios | 4 min | Por completar | Visto |
+| Cierre | 2 min | Por completar | Visto |
 
 ### 📖 Lecturas
 

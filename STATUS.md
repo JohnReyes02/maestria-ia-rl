@@ -1,5 +1,15 @@
 # STATUS.md
 
+## Listado de videos del módulo 3 — 2026-10-29
+
+- **Base:** `main`, `8d1bc94`; árbol limpio al inicio.
+- Se reemplazó el marcador de videos en `modulo_3.qmd` por los cinco títulos indicados por el estudiante: Introducción (1 min), Procesos de decisión de Markov (6 min), MDPs y recompensas (12 min), Construcción de agentes (8 min) y Cierre (2 min), con el mismo formato del módulo 2. Duraciones tomadas de las capturas registradas del módulo 3. Enlaces y estado de visualización pendientes; todos figuran como pendientes.
+- **Verificación:** diff revisado y `git diff --check` correcto. Quarto no estaba disponible en el entorno usado; falta `quarto render` en un equipo con Quarto. Sin commit ni push.
+- Se añadió en Lecturas de `modulo_3.qmd` el capítulo 3 de Sutton y Barto (2.ª ed., MIT Press, 2018), secciones 3.3, 3.5 y 3.6, con su entrada en `references_modulo_3.bib`. El estudiante indicó «3.3, 3.3, 3.5, 3.6»; se eliminó el duplicado y queda por confirmar si la intención era incluir 3.4.
+- **Estado académico confirmado por el estudiante el 29 oct.:** K-bandidos no estacionarios entregado y calificado con **100 %** (marcado en `modulo_2.qmd`); informe de Pacman del módulo 1 («Uso de agentes de aprendizaje por refuerzo») calificado con **100 %**. Pen & Paper Bandidos 2 quedó sin entregar. Pen & Paper Bandidos 1 entregado y aprobado sin problemas (sin nota numérica informada); marcado como completado en `modulo_2.qmd`. El estudiante pidió marcar como completado el tutorial de bandidos y confirmó haber visto los dos videos restantes del módulo 2 (Bandidos no estacionarios y Cierre); los cinco figuran como vistos.
+- **Cierre autorizado — 2026-10-30:** el estudiante solicita actualizar el repositorio para continuar desde el Mac mini; fetch correcto y comparación con `origin/main`: `0 0`; `git diff --check` correcto. Se guardan y publican `modulo_2.qmd`, `modulo_3.qmd`, `references_modulo_3.bib` y este seguimiento. Renderizado Quarto pendiente en un equipo con Quarto.
+- **Siguiente paso:** confirmar videos vistos y continuar con el Laboratorio MDPs y la tarea «Aprendizaje por refuerzo o no?» para el 3 de noviembre.
+
 ## Cierre y sincronización autorizada — 2026-10-27
 
 - **Base:** `main`, `7eba7c5`; fetch correcto y comparación con `origin/main`: `0 0`. El estudiante solicita guardar y actualizar el repositorio, autorizando commit y push de los dos archivos pendientes; se comunica el resumen antes de publicar.
@@ -683,12 +693,12 @@
 |---|---|---|---:|---|
 | 20 oct. | Definición del aprendizaje por refuerzo | Tarea calificable | 1 % | Calificado: 100 % |
 | 20 oct. | Caracterización del aprendizaje por refuerzo | Tarea calificable | 1 % | Calificado: 100 % |
-| 20 oct. | Uso de agentes de aprendizaje por refuerzo | Tarea calificable | 1 % | Entregado, confirmado por el estudiante el 20 oct.; calificación pendiente de confirmación |
+| 20 oct. | Uso de agentes de aprendizaje por refuerzo | Tarea calificable | 1 % | Calificado: 100 % (informe de Pacman), confirmado por el estudiante el 29 oct. |
 | 27 oct. | Tipos de aprendizaje | Tarea calificable | 1 % | Calificado: 100 %, confirmado por el estudiante el 23 oct. |
 | 27 oct. | Exploración v. Explotación | Tarea calificable | 1 % | Calificado: 100 %, confirmado por el estudiante el 23 oct. |
 | 27 oct. | Ética en la evaluación de instrucciones | Tarea calificable | 1 % | Sin calificación visible |
 | 27 oct. | K-Bandidos con epsilon decay | Actividad de programación | 6 % | Sin calificación visible |
-| 27 oct. | K-bandidos no estacionarios | Actividad de programación | 6 % | Sin calificación visible |
+| 27 oct. | K-bandidos no estacionarios | Actividad de programación | 6 % | Calificado: 100 %, confirmado por el estudiante el 29 oct. |
 | 27 oct. | Conformación equipos de trabajo | Tarea calificable | 1 % | Formulario enviado por Deisy, confirmado por el estudiante el 18 oct.; calificación no confirmada |
 | 3 nov. | Aprendizaje por refuerzo o no? | Tarea calificable | 1 % | Pendiente, visible en captura del 18 oct. |
 | 3 nov. | Laboratorio MDPs | Actividad de programación | 5 % | Pendiente, visible en captura del 18 oct. |
