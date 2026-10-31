@@ -1,5 +1,17 @@
 # STATUS.md
 
+## Disponibilidad reducida y continuación autorizada — 2026-10-31
+
+- **Base y Git:** `main`, `d126ac0`; árbol inicialmente limpio, fetch correcto y comparación `HEAD...origin/main`: `0 0`. Las notas y los contenidos de los módulos 5 y 6 ya están publicados. El estudiante solicita actualizar todo lo tratado y sincronizarlo, autorizando commit y push de este seguimiento.
+- **Disponibilidad confirmada:** el trabajo de la otra materia se extendió. El estudiante podría disponer de **dos horas o menos en el trabajo**; el espacio y su duración no están garantizados. Esta información reemplaza la disponibilidad propuesta para la mañana, sin asumir que se ejecutaron los bloques ni que hubo avance académico nuevo.
+- **Plan sugerido para ese espacio:** primer bloque de 45–60 min para retomar Gridworld desde `do_action` y comprobar movimientos, bordes y obstáculos; si queda tiempo, continuar los métodos pendientes. Solo si termina el tutorial, pasar al enunciado del Laboratorio MDPs e identificar estados, acciones y recompensas. Si no puede ejecutar código, revisar el enunciado y dibujar transiciones. Ajustar el alcance al tiempo real, sin prometer completar el laboratorio en ese bloque.
+- **Prioridad:** Laboratorio MDPs (5 %), 3 nov., 23:59 (-05); el seguimiento previo reserva margen antes de salir al turno a las 13:10 de ese día. Mantener en cuenta los compromisos de Deep Learning, cuyo estado no se ha vuelto a verificar. Después siguen iteración de valores e iteración de políticas, 10 nov., 6 % cada una.
+- **Ubicación en el ciclo:** semana 4, del 26 oct. al 1 nov., inferida de la confirmación previa de inicio de semana 3 el 19 oct.; no es una nueva verificación del aula. El punto de trabajo sigue en módulo 3, sin nueva implementación ni entrega confirmadas.
+- **Avance del proyecto:** «Ambiente, estados y acciones», en equipo con Deisy, vence el 17 nov., 23:59 (-05), y vale 13 %. Se conversó sobre aprovechar MDPs/Gridworld para preparar estados, acciones, dinámica, terminación y recompensas justificadas; observación del agente y reglas de obstáculos aún requieren precisión. No se creó un entregable ni se acordaron decisiones técnicas con el equipo.
+- **Hitos propuestos, no compromisos confirmados:** primer borrador de estados, acciones y reglas entre el 4 y el 8 nov.; recompensas y documento entre el 9 y el 13; revisión del 14 al 16. La viabilidad depende de reservar tiempo con Deisy y conciliar ambas materias y turnos. Mantener el proyecto fuera del bloque inmediato si desplaza MDPs.
+- **Verificación:** revisión documental del diff y `git diff --check`; sin cambios de fuentes Quarto, dependencias ni resultados, por lo que no se requiere renderizado. Publicación autorizada por el estudiante; comprobar sincronización después del push.
+- **Siguiente paso concreto:** cuando se confirme el espacio en el trabajo, retomar `do_action` desde el avance real. Antes de ejecutar Python, `uv sync --locked` por la incidencia de entorno ya registrada.
+
 ## Cierre autorizado — 2026-10-31
 
 - El estudiante autoriza actualizar el repositorio: se incluyen los cambios locales de seguimiento, calificaciones, planificación conjunta y contenido de los módulos 5 y 6. Base `7ba3819`; fetch correcto, sin divergencia con `origin/main`.
