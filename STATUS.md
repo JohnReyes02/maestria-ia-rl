@@ -1,5 +1,13 @@
 # STATUS.md
 
+## Tutorial Gridworld: constructor completado — 2026-10-31
+
+- **Base:** `main`, `8142f3c`; fetch correcto y comparación con `origin/main`: `0 0`. Publicado previamente el commit de integración del tutorial Gridworld y el Laboratorio MDPs (push hecho por el estudiante).
+- El estudiante trabaja sobre `laboratorios/modulo_3/gridworld_mdps_tutorial.qmd` (tutorial de consulta, 0 puntos). Implementó él mismo `__init__` con orientación por preguntas guía: `nrows`/`ncols` desde `dimensions`, construcción fila a fila de `grid` con `'#'` → `None`, `' '` y `'S'` → `0` y recompensas convertidas con `int()`, `initial_state` en la posición de `'S'` y `state = initial_state` tras los bucles.
+- El editor visual había reformateado el Markdown del archivo (listas fusionadas en un párrafo, callout y bloques de código). Se reconstruyó el archivo desde `HEAD` con solo el `__init__` del estudiante, sin modificar su código; respaldo de la versión previa fuera del repositorio. Recomendación: editar en modo fuente.
+- **Verificación:** celdas de la clase y de «Pruebas estructura del ambiente» ejecutadas con `python3` (matplotlib simulado, sin graficar): correctas; `grid` = `[[0, 0, -1], [0, None, 0], [0, 0, 1]]`, `initial_state` = `state` = `(1, 0)`. `git diff --check` correcto. Sin renderizado Quarto.
+- **Siguiente paso:** sección 2 del tutorial, `do_action` (movimientos determinísticos, bordes y obstáculos); luego `get_current_state`, `get_possible_actions`, `reset` e `is_terminal`, y aplicar lo aprendido al Laboratorio MDPs (calificable, 3 nov., 23:59 −05) de forma independiente.
+
 ## Integración del Laboratorio MDPs al libro — 2026-10-30
 
 - **Base:** `main`, `2d36463`. Al iniciar, `origin/main` tenía un commit nuevo (`0 1`); se guardó el seguimiento local en el stash `preserve Mac mini checkpoint before sync 2d36463 2026-10-30`, se avanzó con `git pull --ff-only` y se combinaron en `STATUS.md` las entradas locales y remotas conservando ambas. Comparación final con `origin/main`: `0 0`.

@@ -72,7 +72,26 @@ import matplotlib.patches as patches
 class Gridworld:
     def __init__(self, board : list[list[str]], dimensions: tuple[int,int]):
         # your code here
-        raise NotImplementedError
+        self.nrows = dimensions[0]
+        self.ncols = dimensions[1]
+        self.grid = []
+
+        for i in range(self.nrows):
+            nueva_fila = []
+            for j in range(self.ncols):
+                if board[i][j] == ' ':
+                    nueva_fila.append(0)
+                elif board[i][j] == '#':
+                    nueva_fila.append(None)
+                elif board[i][j] == 'S':
+                    self.initial_state = (i, j)
+                    nueva_fila.append(0)
+                else:
+                    nueva_fila.append(int(board[i][j]))
+            self.grid.append(nueva_fila)
+
+        self.state = self.initial_state
+
 
     def get_current_state(self) -> tuple[int,int]:
         # your code here
