@@ -1,5 +1,14 @@
 # STATUS.md
 
+## Tarea «Aprendizaje por refuerzo o no?» calificada y plan del 31 oct. — 2026-10-31
+
+- **Base:** `main`, `76b1e79`; el estudiante hizo el push y la comparación con `origin/main` es `0 0`.
+- **Estado académico confirmado por el estudiante:** «Aprendizaje por refuerzo o no?» (1 %, 3 nov.) entregada y calificada con **100 %**. Actualizadas las tablas de actividades y del calendario; se corrige además la fila de K-Bandidos con epsilon decay, que seguía «sin calificación visible» pese al 100 % confirmado el 26 oct.
+- **Pendiente del 3 nov. en Refuerzo:** Laboratorio MDPs (5 %), de forma independiente; antes, terminar el tutorial Gridworld desde `do_action`. Pen & paper: MDPs (práctica, 15 min) sigue sin estado confirmado.
+- **Planificación:** del 31 oct. al 3 nov. el estudiante tiene turno de tarde (T1–T4, traslado 13:10–23:20), por lo que las entregas del 3 nov. deben quedar listas antes de las 13:10 de ese día. Las mismas mañanas deben cubrir Deep Learning (Miniproyecto 1, cuestionario RNN y Laboratorio RNN Parte 2 para el 3 nov., según el calendario conjunto registrado). El estudiante pide considerar siempre ambas materias al planificar.
+- **Verificación:** solo seguimiento documental; `git diff --check` correcto. Sin renderizado.
+- **Siguiente paso:** mañana del 31 oct.: tutorial Gridworld (`do_action` en adelante) y Laboratorio MDPs; reservar tiempo para Deep Learning.
+
 ## Tutorial Gridworld: constructor completado — 2026-10-31
 
 - **Base:** `main`, `8142f3c`; fetch correcto y comparación con `origin/main`: `0 0`. Publicado previamente el commit de integración del tutorial Gridworld y el Laboratorio MDPs (push hecho por el estudiante).
@@ -517,7 +526,7 @@
 | MDPs | Procesos de decisión de Markov | Video, 6 min | Sin marca de completado visible |
 | MDPs | Pen & paper: MDPs | Práctica, 15 min | Sin calificación visible |
 | MDPs | MDPs y recompensas | Video, 12 min | Sin marca de completado visible |
-| MDPs | Aprendizaje por refuerzo o no? | Tarea calificable, 20 min | Pendiente; 3 nov., 23:59 (-05); peso previo: 1 % |
+| MDPs | Aprendizaje por refuerzo o no? | Tarea calificable, 20 min | Calificado: 100 %, confirmado por el estudiante el 31 oct.; plazo 3 nov., 23:59 (-05); peso previo: 1 % |
 | Ejercicios Practicos | Construcción de Agentes | Video, 8 min | Sin marca de completado visible |
 | Ejercicios Practicos | Tutorial construcción de MDPs: ambiente de Gridworld | Laboratorio, 2 h | Sin marca de completado visible |
 | Ejercicios Practicos | Laboratorio MDPs | Programación, 3 h | Pendiente; 3 nov., 23:59 (-05); peso previo: 5 % |
@@ -737,10 +746,10 @@
 | 27 oct. | Tipos de aprendizaje | Tarea calificable | 1 % | Calificado: 100 %, confirmado por el estudiante el 23 oct. |
 | 27 oct. | Exploración v. Explotación | Tarea calificable | 1 % | Calificado: 100 %, confirmado por el estudiante el 23 oct. |
 | 27 oct. | Ética en la evaluación de instrucciones | Tarea calificable | 1 % | Sin calificación visible |
-| 27 oct. | K-Bandidos con epsilon decay | Actividad de programación | 6 % | Sin calificación visible |
+| 27 oct. | K-Bandidos con epsilon decay | Actividad de programación | 6 % | Calificado: 100 %, confirmado por el estudiante el 26 oct. |
 | 27 oct. | K-bandidos no estacionarios | Actividad de programación | 6 % | Calificado: 100 %, confirmado por el estudiante el 29 oct. |
 | 27 oct. | Conformación equipos de trabajo | Tarea calificable | 1 % | Formulario enviado por Deisy, confirmado por el estudiante el 18 oct.; calificación no confirmada |
-| 3 nov. | Aprendizaje por refuerzo o no? | Tarea calificable | 1 % | Pendiente, visible en captura del 18 oct. |
+| 3 nov. | Aprendizaje por refuerzo o no? | Tarea calificable | 1 % | Calificado: 100 %, confirmado por el estudiante el 31 oct. |
 | 3 nov. | Laboratorio MDPs | Actividad de programación | 5 % | Pendiente, visible en captura del 18 oct. |
 | 10 nov. | Ejercicio iteración de valores | Actividad de programación | 6 % | Pendiente, visible en captura del 18 oct. |
 | 10 nov. | Ejercicio iteración de políticas | Actividad de programación | 6 % | Pendiente, visible en captura del 18 oct. |
