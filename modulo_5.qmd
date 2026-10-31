@@ -1,5 +1,5 @@
 ---
-title: "Módulo 5"
+title: "Módulo 5: Modelos de aprendizaje por refuerzo"
 week: 5
 course: "Aprendizaje por Refuerzo"
 bibliography: references_modulo_5.bib
@@ -10,27 +10,34 @@ nocite: "@*"
 
 ## 🎯 Objetivos de la Semana
 
-> ¿Qué debo ser capaz de hacer al finalizar esta semana?
-
-- [ ] Objetivo 1
-- [ ] Objetivo 2
+- [ ] Desarrollar los métodos de Montecarlo para resolver problemas de aprendizaje por refuerzo y analizar las ventajas y desventajas de cada uno.
+- [ ] Aplicar las técnicas de aprendizaje por refuerzo libres de modelos.
+- [ ] Aplicar las técnicas de aprendizaje por refuerzo basadas en modelos.
 
 ## Fechas y entregables
 
-- **Semana:** Por completar
-- **Entregables:** Por completar
+- **Semana:** 5; fechas de inicio y fin por confirmar.
+- **Fuente:** dos capturas de la plataforma aportadas el 31 de octubre de 2026. Las fechas de entrega no muestran el año; se interpreta provisionalmente 2026. Los pesos proceden del calendario previamente registrado.
+- **Resumen mostrado:** quedan 25 min de videos, 3 h 20 min de lecturas y 3 evaluaciones calificadas pendientes.
+
+| Entregable | Peso | Fecha límite | Estado observado |
+| :--- | ---: | :--- | :--- |
+| Diferencias entre enfoques basados en modelos y libres de modelos | 1 % | 17 nov., 23:59 (-05) | Sin calificación visible |
+| Agentes de Monte Carlo | 5 % | 17 nov., 23:59 (-05) | Sin calificación visible |
+| Ambiente, estados y acciones | 13 % | 17 nov., 23:59 (-05) | Comenzado; sin calificación visible |
+
+La captura no confirma envío de las evaluaciones ni finalización de los recursos.
 
 ------------------------------------------------------------------------
 
 ## 📚 Fundamentos Teóricos
 
-### Conceptos Clave
+### Temas registrados en la plataforma
 
-::: {.callout-note}
-## Definición
-
-Espacio para definir términos.
-:::
+- Clasificación de modelos de aprendizaje.
+- Aprendizaje basado en modelos y libre de modelos.
+- Métodos de Monte Carlo.
+- Toma de decisiones y escenarios morales para agentes de aprendizaje por refuerzo.
 
 ### 🧮 Matemáticas del Modelo
 
@@ -44,12 +51,15 @@ $$
 
 ## 🔬 Práctica y Experimentación
 
-El código y los ejercicios se encuentran en los notebooks. Aquí se analizan los resultados.
+Los enunciados detallados y archivos del tutorial y de la actividad de programación están pendientes de aportar.
 
-| Recurso | Enlace | ¿Completado? |
-| :--- | :---: | :---: |
-| **Laboratorio** | Próximamente | ⬜ |
-| **Taller** | Próximamente | ⬜ |
+| Sección | Recurso | Tipo | Duración | Estado observado |
+| :--- | :--- | :--- | :--- | :--- |
+| Introducción | Clasificación de modelos de aprendizaje | Complemento no calificado | 1 h | Sin marca de completado visible |
+| Modelos | Diferencias entre enfoques basados en modelos y libres de modelos | Tarea calificable | 15 min | Sin calificación visible |
+| Montecarlo | Tutorial métodos de Montecarlo | Laboratorio | 2 h | Sin marca de completado visible |
+| Montecarlo | Agentes de Monte Carlo | Actividad de programación | 4 h | Sin calificación visible |
+| Proyecto | Ambiente, estados y acciones | Tarea en equipo calificable | No indicada | Comenzado; sin calificación visible |
 
 ### 🧠 Hallazgos del Laboratorio
 
@@ -83,13 +93,28 @@ Para la grabación, reemplaza «Por completar» por un enlace Markdown con la UR
 
 ### 📺 Videos
 
-| Concepto | Enlace | Notas breves |
-| :--- | :---: | :--- |
-| Video 1 | Por completar | ... |
+| Concepto | Duración | Enlace | Estado observado |
+| :--- | :--- | :--- | :--- |
+| Introducción | 2 min | Por completar | Sin marca de completado visible |
+| Aprendizaje basado en modelos | 13 min | Por completar | Sin marca de completado visible |
+| Métodos de Monte Carlo | 7 min | Por completar | Sin marca de completado visible |
+| Cierre | 1 min | Por completar | Sin marca de completado visible |
+
+Los videos listados suman 23 min; el resumen de la plataforma indica 25 min. Se conservan ambos valores sin inferir la causa.
 
 ### 📖 Lecturas
 
-- [ ] Lectura 1
+| Sección | Lectura | Duración | Estado observado |
+| :--- | :--- | :--- | :--- |
+| Introducción | Lecturas de referencia de la semana | 1 h | Sin marca de completado visible |
+| Modelos | Comprensión de la Toma de Decisiones Morales Dinámicas: Aprendizaje Libre de Modelo y Basado en Modelo | 1 h | Sin marca de completado visible |
+| Montecarlo | Solución Assignment Iteración de Valores | 10 min | Sin marca de completado visible |
+| Montecarlo | Solución Assignment Iteración de Políticas | 10 min | Sin marca de completado visible |
+| Cierre de la semana | Escenarios Morales para Agentes de Aprendizaje por Refuerzo | 40 min | Sin marca de completado visible |
+| Cierre de la semana | Sesiones de discusión | 10 min | Sin marca de completado visible |
+| Cierre de la semana | Grabación Sesión 5 | 10 min | Sin marca de completado visible |
+
+Las lecturas listadas suman 3 h 20 min, coincidentes con el resumen. Sus enlaces y las referencias bibliográficas específicas quedan por aportar.
 
 ------------------------------------------------------------------------
 

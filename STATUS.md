@@ -1,5 +1,70 @@
 # STATUS.md
 
+## Cierre autorizado — 2026-10-31
+
+- El estudiante autoriza actualizar el repositorio: se incluyen los cambios locales de seguimiento, calificaciones, planificación conjunta y contenido de los módulos 5 y 6. Base `7ba3819`; fetch correcto, sin divergencia con `origin/main`.
+- Comprobaciones: Quarto 1.10.18 genera correctamente las 14 páginas del libro; diff revisado y `git diff --check` correcto. Salidas generadas ignoradas; sin cambios de dependencias ni nuevos resultados académicos. Se procede con commit y push autorizados; verificar sincronización al retomar.
+- Siguiente paso: mañana de tutoría según el plan conjunto; continuar Gridworld y el laboratorio MDPs. Ejecutar `uv sync --locked` antes de retomar Python, según la incidencia de entorno registrada.
+
+## Contenido del módulo 6 incorporado — 2026-10-31
+
+- **Base y Git:** `main`, `7ba3819`; fetch correcto y comparación con `origin/main`: `0 0`. Se conservan los cambios locales previos de calificaciones, planificación y módulo 5.
+- **Fuente:** captura aportada por el estudiante hoy. Título: «Diferencia temporal». Objetivos: evaluar las técnicas on policy y las técnicas de diferencia temporal.
+- **Actualización:** `modulo_6.qmd` incorpora los objetivos, predicción con diferencia temporal, reducción del bias, SARSA, cinco videos, cuatro lecturas, Tutorial SARSA (Actividad de Programación Práctica, 2 h) y Aprendizaje utilizando SARSA (programación, 3 h). Enunciados, archivos, enlaces y bibliografía específica pendientes de aportar; no se confirma finalización por el resaltado de una lectura.
+- **Entregable:** Aprendizaje utilizando SARSA, sin calificación visible ni envío confirmado; vence el 24 nov., 23:59 (-05). Peso de 6 % tomado del calendario previo; año provisional 2026. Se reemplaza el estado histórico «Bloqueado» en el calendario.
+- **Duraciones:** resumen de plataforma: 28 min de videos, 2 h 30 min de lecturas y una evaluación pendiente. Los cinco videos suman 26 min; se conserva la diferencia sin explicación. Las cuatro lecturas suman 2 h 30 min.
+- **Verificación:** Quarto 1.8.27, renderizado completo de las 14 páginas correcto; transcripción y diff revisados, `git diff --check` correcto. Salidas generadas ignoradas, sin cambios de dependencias, commit ni push.
+- **Siguiente paso:** aportar los enunciados y archivos de SARSA y los recursos de referencia del módulo 6; conservar la prioridad de las entregas previas de MDPs, iteraciones y módulo 5.
+
+## Contenido del módulo 5 incorporado — 2026-10-31
+
+- **Base y Git:** `main`, `7ba3819`; fetch correcto y comparación con `origin/main`: `0 0`. Se conservan los cambios locales previos de planificación y calificaciones en este seguimiento.
+- **Fuente:** dos capturas aportadas por el estudiante hoy. Título: «Modelos de aprendizaje por refuerzo». Objetivos: desarrollar métodos de Montecarlo y analizar sus ventajas y desventajas; aplicar técnicas libres de modelos y basadas en modelos.
+- **Actualización:** `modulo_5.qmd` incorpora los objetivos, temas, cuatro videos, siete lecturas, complemento de clasificación (1 h), tutorial de Montecarlo (2 h), tarea de comparación (15 min), programación de agentes de Monte Carlo (4 h) y entrega en equipo. No se inventaron enlaces, bibliografía específica, enunciados ni estados de finalización.
+- **Entregables:** comparación de enfoques (1 %) y agentes de Monte Carlo (5 %), sin calificación visible; «Ambiente, estados y acciones» (13 %) aparece **Comenzado**, sin calificación visible. Los tres vencen el 17 nov., 23:59 (-05); pesos tomados del calendario previo y año provisional 2026. Se reemplaza el estado histórico «Bloqueado» en el calendario, sin asumir envío.
+- **Duraciones:** resumen de plataforma: 25 min de videos, 3 h 20 min de lecturas, tres evaluaciones pendientes. Los cuatro videos suman 23 min, diferencia conservada sin explicación; las siete lecturas suman 3 h 20 min. No se indica duración del proyecto.
+- **Verificación:** Quarto 1.8.27, renderizado completo de las 14 páginas correcto; transcripción y diff revisados, `git diff --check` correcto. Salidas generadas ignoradas, sin cambios de dependencias, commit ni push.
+- **Siguiente paso:** aportar enunciados y archivos del tutorial y de agentes de Monte Carlo, recursos de referencia y presentación/grabación del módulo 5; mantener MDPs para el 3 nov. e iteraciones para el 10 nov. como entregas previas.
+
+## Calificaciones actualizadas desde captura — 2026-10-31
+
+- **Base y Git:** `main`, `7ba3819`; fetch correcto y comparación `HEAD...origin/main`: `0 0`. Se conservan las 26 líneas locales previas de planificación.
+- **Fuente:** captura de calificaciones aportada por el estudiante hoy; no se consultó directamente la plataforma. El año no aparece en la captura y se mantiene la interpretación provisional de 2026.
+- **Calificadas con 100 %:** Definición del aprendizaje por refuerzo (1 %), Caracterización del aprendizaje por refuerzo (1 %), Uso de agentes de aprendizaje por refuerzo/Pacman (1 %), Tipos de aprendizaje (1 %), Exploración v. Explotación (1 %), Ética en la evaluación de instrucciones (1 %), K-Bandidos con epsilon decay (6 %), K-bandidos no estacionarios (6 %) y Aprendizaje por refuerzo o no? (1 %).
+- **Balance calculado:** nueve actividades calificadas, todas con 100 %; pesos sumados: `7 × 1 % + 2 × 6 % = 19 %`. Aportan **19 puntos porcentuales de los 100 de la nota final**; promedio ponderado sobre lo ya calificado: **100 %**. El 81 % restante no tiene nota confirmada en este seguimiento; no se interpreta como cero.
+- **Enviado, sin calificación visible:** Conformación equipos de trabajo (1 %, 27 oct.).
+- **Sin estado de envío ni calificación visibles (`--`):** Laboratorio MDPs (5 %, 3 nov.), Ejercicio iteración de valores (6 %, 10 nov.) y Ejercicio iteración de políticas (6 %, 10 nov.). Todos vencen a las 23:59 (-05). La captura no confirma avance de implementación ni actualiza actividades posteriores al 10 nov.
+- **Actualización:** corregida la fila de Ética del calendario y renovada la evidencia de los otros doce elementos visibles. Las entradas anteriores se conservan como historial.
+- **Verificación:** transcripción contrastada con la captura, suma de pesos comprobada, diff revisado y `git diff --check` correcto. Solo cambia este seguimiento; sin renderizado, commit ni push.
+- **Entorno local:** al ejecutar la actualización documental con `uv run --no-sync python`, uv detectó que `.venv` apuntaba a un intérprete inexistente de otro equipo y lo recreó con Python 3.12.15. No se sincronizaron dependencias; ejecutar `uv sync --locked` antes de retomar laboratorios. Los archivos de dependencias versionados permanecen intactos.
+- **Siguiente paso concreto:** terminar el tutorial Gridworld y continuar de forma independiente el Laboratorio MDPs para el 3 nov.; confirmar la nota del formulario de equipos cuando se publique. Después, iteración de valores y de políticas para el 10 nov.
+
+## Distribución conjunta con tutoría de una hora — 2026-10-31
+
+- **Base y Git:** `main`, `7ba3819`; `git fetch --prune origin` correcto y comparación `HEAD...origin/main`: `0 0`. Se conservan las 17 líneas locales previas de este seguimiento. Sin cambios a archivos académicos ni ejecución de ejercicios.
+- **Dato nuevo del estudiante:** la tutoría de Deep Learning de las 09:00 probablemente dure una hora; se reserva provisionalmente 09:00–10:00. Se toma como referencia la mañana del sábado 31 registrada en la corrección de agenda anterior.
+- **Estado contrastado en fuentes:** Gridworld tiene el constructor implementado y cinco métodos sin implementar; `car.qmd` mantiene los métodos pendientes. MDPs (5 %) sigue pendiente para el 3 nov. según el seguimiento, sin consultar de nuevo el aula. Deep Learning: RNN sin comenzar, según el estudiante; experimentos e informe del Miniproyecto 1 presentes en el repositorio hermano.
+- **Propuesta, pendiente de ejecución:** 07:00–08:40 fundamentos RNN/LSTM y tutorial; 08:40–09:00 preparar preguntas; 09:00–10:00 tutoría; 10:00–10:15 pausa y apuntes; 10:15–11:15 continuar Gridworld desde `do_action`; 11:15–11:30 pausa; 11:30–12:30 iniciar de forma independiente MDPs; 12:30–13:10 comida y preparación para el turno. Si Gridworld requiere más tiempo, priorizar su comprensión y reducir el inicio de MDPs. Meta: aprovechar tutoría y avanzar ambas materias, sin prometer cerrar todos los laboratorios en una mañana.
+- **Continuación propuesta:** 1 nov., completar MDPs y avanzar RNN Parte 1; 2 nov., RNN Parte 2 y cuestionario; 3 nov. antes de salir a las 13:10, margen de comprobación y envíos, incluido cierre del Miniproyecto 1. Distribución orientativa, sujeta al progreso real.
+- **Verificación:** diff revisado y `git diff --check` correcto; solo STATUS modificado, sin renderizado, commit ni push.
+
+## Corrección de agenda: tutoría de Deep Learning hoy — 2026-10-31
+
+- **Base:** `main`, `7ba3819`; se conserva la revisión local anterior de este seguimiento.
+- **Confirmación del estudiante:** tutoría de Técnicas de Deep Learning hoy sábado 31 de octubre a las **09:00, America/Bogota**, por el festivo del lunes. Corrige su referencia inicial a «mañana». No se informó duración ni enlace.
+- **Ajuste del plan propuesto:** antes de las 09:00, preparar dudas de RNN y del informe del Miniproyecto 1; asistir a la tutoría; después, retomar Gridworld desde `do_action` y avanzar MDPs según el tiempo restante. Reservar comida y preparación antes de salir a las 13:10. Los bloques anteriores deben adaptarse a la duración real de la tutoría.
+- **Verificación:** cambio documental y revisión del diff con `git diff --check`; sin cambios académicos, renderizado, commit ni push.
+- **Siguiente paso:** preparar las dudas para la tutoría de hoy a las 09:00.
+
+## Revisión conjunta y propuesta para la mañana — 2026-10-31
+
+- **Base:** `main`, `7ba3819`; árbol inicialmente limpio, fetch correcto y comparación con `origin/main`: `0 0`.
+- **Avance contrastado:** Gridworld tiene `__init__` completado y cinco métodos pendientes; `car.qmd` conserva los métodos sin implementar. Pacman, los tres cuestionarios del módulo 2, ambos laboratorios de bandidos y «Aprendizaje por refuerzo o no?» tienen 100 % confirmado en el seguimiento. La fila histórica de Ética del calendario aún dice «Sin calificación visible», pero la confirmación del 24 oct. la reemplaza. No se consultó la plataforma.
+- **Deep Learning:** revisados contexto, seguimiento y cambios locales del repositorio hermano. Fetch correcto y comparación `0 0`; existen cambios locales del informe, PDF, referencias, plantilla y ResNet18, además de dos figuras nuevas y un log. Se preservan sin editar ni integrar. El miniproyecto tiene experimentos y borrador avanzado; las modificaciones recientes del informe aún requieren revisión, por lo que no se asumen vigentes todos los pendientes del STATUS anterior. RNN no tiene entrega confirmada en el seguimiento consultado.
+- **Propuesta, no ejecución confirmada:** 75 min para terminar y comprobar Gridworld; 75 min para iniciar de forma independiente el Laboratorio MDPs; 90 min para fundamentos/práctica RNN y revisar el alcance de la Parte 2, con pausas y margen de comida antes de salir a las 13:10. Si queda tiempo, revisar el informe del miniproyecto con el grupo. Meta: dejar MDPs iniciado y conocer el pendiente real de RNN para repartir las mañanas del 1–3 nov.
+- **Verificación:** revisión de fuentes y seguimiento, sin ejecutar código académico ni renderizar; diff revisado y `git diff --check` correcto. Solo se actualiza este seguimiento; sin commit ni push.
+- **Siguiente paso concreto:** retomar `do_action` del tutorial Gridworld y comprobar movimientos válidos, bordes y obstáculos antes de continuar con los otros métodos.
+
 ## Tarea «Aprendizaje por refuerzo o no?» calificada y plan del 31 oct. — 2026-10-31
 
 - **Base:** `main`, `76b1e79`; el estudiante hizo el push y la comparación con `origin/main` es `0 0`.
@@ -733,30 +798,30 @@
 
 ## Calendario de entregables
 
-- **Fuente:** dos capturas de la plataforma del curso aportadas por el estudiante el 2026-10-14.
+- **Fuente:** dos capturas de la plataforma del curso aportadas el 2026-10-14; estados de las primeras trece filas actualizados con la captura del 2026-10-31.
 - Las capturas no muestran el año. Se interpreta provisionalmente que corresponden al ciclo actual de 2026; el año queda pendiente de confirmación.
 - Todas las horas están expresadas en el huso `-05` mostrado por la plataforma. Salvo una excepción indicada abajo, la hora límite es 23:59.
 - Los pesos observados suman 100 %.
 
 | Fecha límite | Entregable | Tipo | Peso | Estado observado |
 |---|---|---|---:|---|
-| 20 oct. | Definición del aprendizaje por refuerzo | Tarea calificable | 1 % | Calificado: 100 % |
-| 20 oct. | Caracterización del aprendizaje por refuerzo | Tarea calificable | 1 % | Calificado: 100 % |
-| 20 oct. | Uso de agentes de aprendizaje por refuerzo | Tarea calificable | 1 % | Calificado: 100 % (informe de Pacman), confirmado por el estudiante el 29 oct. |
-| 27 oct. | Tipos de aprendizaje | Tarea calificable | 1 % | Calificado: 100 %, confirmado por el estudiante el 23 oct. |
-| 27 oct. | Exploración v. Explotación | Tarea calificable | 1 % | Calificado: 100 %, confirmado por el estudiante el 23 oct. |
-| 27 oct. | Ética en la evaluación de instrucciones | Tarea calificable | 1 % | Sin calificación visible |
-| 27 oct. | K-Bandidos con epsilon decay | Actividad de programación | 6 % | Calificado: 100 %, confirmado por el estudiante el 26 oct. |
-| 27 oct. | K-bandidos no estacionarios | Actividad de programación | 6 % | Calificado: 100 %, confirmado por el estudiante el 29 oct. |
-| 27 oct. | Conformación equipos de trabajo | Tarea calificable | 1 % | Formulario enviado por Deisy, confirmado por el estudiante el 18 oct.; calificación no confirmada |
-| 3 nov. | Aprendizaje por refuerzo o no? | Tarea calificable | 1 % | Calificado: 100 %, confirmado por el estudiante el 31 oct. |
-| 3 nov. | Laboratorio MDPs | Actividad de programación | 5 % | Pendiente, visible en captura del 18 oct. |
-| 10 nov. | Ejercicio iteración de valores | Actividad de programación | 6 % | Pendiente, visible en captura del 18 oct. |
-| 10 nov. | Ejercicio iteración de políticas | Actividad de programación | 6 % | Pendiente, visible en captura del 18 oct. |
-| 17 nov. | Diferencias entre enfoques basados en modelos y libres de modelos | Tarea calificable | 1 % | Bloqueado |
-| 17 nov. | Agentes de Monte Carlo | Actividad de programación | 5 % | Bloqueado |
-| 17 nov. | Ambiente, estados y acciones | Tarea en equipo calificable | 13 % | Bloqueado |
-| 24 nov. | Aprendizaje utilizando SARSA | Actividad de programación | 6 % | Bloqueado |
+| 20 oct. | Definición del aprendizaje por refuerzo | Tarea calificable | 1 % | Calificado: 100 % (captura del 31 oct.) |
+| 20 oct. | Caracterización del aprendizaje por refuerzo | Tarea calificable | 1 % | Calificado: 100 % (captura del 31 oct.) |
+| 20 oct. | Uso de agentes de aprendizaje por refuerzo | Tarea calificable | 1 % | Calificado: 100 % (captura del 31 oct.) |
+| 27 oct. | Tipos de aprendizaje | Tarea calificable | 1 % | Calificado: 100 % (captura del 31 oct.) |
+| 27 oct. | Exploración v. Explotación | Tarea calificable | 1 % | Calificado: 100 % (captura del 31 oct.) |
+| 27 oct. | Ética en la evaluación de instrucciones | Tarea calificable | 1 % | Calificado: 100 % (captura del 31 oct.) |
+| 27 oct. | K-Bandidos con epsilon decay | Actividad de programación | 6 % | Calificado: 100 % (captura del 31 oct.) |
+| 27 oct. | K-bandidos no estacionarios | Actividad de programación | 6 % | Calificado: 100 % (captura del 31 oct.) |
+| 27 oct. | Conformación equipos de trabajo | Tarea calificable | 1 % | Enviado; sin calificación visible (captura del 31 oct.) |
+| 3 nov. | Aprendizaje por refuerzo o no? | Tarea calificable | 1 % | Calificado: 100 % (captura del 31 oct.) |
+| 3 nov. | Laboratorio MDPs | Actividad de programación | 5 % | Sin estado de envío ni calificación visibles (captura del 31 oct.) |
+| 10 nov. | Ejercicio iteración de valores | Actividad de programación | 6 % | Sin estado de envío ni calificación visibles (captura del 31 oct.) |
+| 10 nov. | Ejercicio iteración de políticas | Actividad de programación | 6 % | Sin estado de envío ni calificación visibles (captura del 31 oct.) |
+| 17 nov. | Diferencias entre enfoques basados en modelos y libres de modelos | Tarea calificable | 1 % | Sin calificación visible (capturas del 31 oct.); envío sin confirmar |
+| 17 nov. | Agentes de Monte Carlo | Actividad de programación | 5 % | Sin calificación visible (capturas del 31 oct.); envío sin confirmar |
+| 17 nov. | Ambiente, estados y acciones | Tarea en equipo calificable | 13 % | Comenzado; sin calificación visible (capturas del 31 oct.) |
+| 24 nov. | Aprendizaje utilizando SARSA | Actividad de programación | 6 % | Sin calificación visible (captura del 31 oct.); envío sin confirmar |
 | 1 dic. | Implementación agentes de q-learning | Actividad de programación | 6 % | Bloqueado; vence 23:48 -05 |
 | 1 dic. | Evaluación agentes de q-learning | Tarea calificable | 1 % | Bloqueado |
 | 4 dic. | Entrega final del proyecto | Tarea en equipo calificable | 31 % | Bloqueado |

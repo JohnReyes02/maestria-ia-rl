@@ -1,5 +1,5 @@
 ---
-title: "Módulo 6"
+title: "Módulo 6: Diferencia temporal"
 week: 6
 course: "Aprendizaje por Refuerzo"
 bibliography: references_modulo_6.bib
@@ -10,27 +10,30 @@ nocite: "@*"
 
 ## 🎯 Objetivos de la Semana
 
-> ¿Qué debo ser capaz de hacer al finalizar esta semana?
-
-- [ ] Objetivo 1
-- [ ] Objetivo 2
+- [ ] Evaluar las técnicas on policy.
+- [ ] Evaluar las técnicas de diferencia temporal.
 
 ## Fechas y entregables
 
-- **Semana:** Por completar
-- **Entregables:** Por completar
+- **Semana:** 6; fechas de inicio y fin por confirmar.
+- **Fuente:** captura de la plataforma aportada el 31 de octubre de 2026. La fecha de entrega no muestra el año; se interpreta provisionalmente 2026. El peso procede del calendario previamente registrado.
+- **Resumen mostrado:** quedan 28 min de videos, 2 h 30 min de lecturas y 1 evaluación calificada pendiente.
+
+| Entregable | Peso | Fecha límite | Estado observado |
+| :--- | ---: | :--- | :--- |
+| Aprendizaje utilizando SARSA | 6 % | 24 nov., 23:59 (-05) | Sin calificación visible; envío sin confirmar |
+
+La captura no confirma finalización de los recursos. El resaltado de «Lecturas de referencia de la semana» no se interpreta como completado.
 
 ------------------------------------------------------------------------
 
 ## 📚 Fundamentos Teóricos
 
-### Conceptos Clave
+### Temas registrados en la plataforma
 
-::: {.callout-note}
-## Definición
-
-Espacio para definir términos.
-:::
+- Predicción con diferencia temporal.
+- Reducción del bias.
+- Técnicas on-policy y SARSA.
 
 ### 🧮 Matemáticas del Modelo
 
@@ -44,12 +47,12 @@ $$
 
 ## 🔬 Práctica y Experimentación
 
-El código y los ejercicios se encuentran en los notebooks. Aquí se analizan los resultados.
+Los enunciados detallados y archivos de las actividades están pendientes de aportar.
 
-| Recurso | Enlace | ¿Completado? |
-| :--- | :---: | :---: |
-| **Laboratorio** | Próximamente | ⬜ |
-| **Taller** | Próximamente | ⬜ |
+| Sección | Recurso | Tipo | Duración | Estado observado |
+| :--- | :--- | :--- | :--- | :--- |
+| On-policy | Tutorial SARSA | Actividad de Programación Práctica | 2 h | Sin marca de completado visible |
+| On-policy | Aprendizaje utilizando SARSA | Actividad de programación | 3 h | Sin calificación visible; envío sin confirmar |
 
 ### 🧠 Hallazgos del Laboratorio
 
@@ -83,13 +86,26 @@ Para la grabación, reemplaza «Por completar» por un enlace Markdown con la UR
 
 ### 📺 Videos
 
-| Concepto | Enlace | Notas breves |
-| :--- | :---: | :--- |
-| Video 1 | Por completar | ... |
+| Concepto | Duración | Enlace | Estado observado |
+| :--- | :--- | :--- | :--- |
+| Introducción | 1 min | Por completar | Sin marca de completado visible |
+| Predicción con diferencia temporal | 8 min | Por completar | Sin marca de completado visible |
+| Reducción del bias | 7 min | Por completar | Sin marca de completado visible |
+| SARSA | 9 min | Por completar | Sin marca de completado visible |
+| Cierre | 1 min | Por completar | Sin marca de completado visible |
+
+Los videos listados suman 26 min; el resumen de la plataforma indica 28 min. Se conservan ambos valores sin inferir la causa.
 
 ### 📖 Lecturas
 
-- [ ] Lectura 1
+| Sección | Lectura | Duración | Estado observado |
+| :--- | :--- | :--- | :--- |
+| Introducción | Lecturas de referencia de la semana | 40 min | Sin marca de completado visible |
+| On-policy | Solución Assignment Métodos de Montecarlo | 10 min | Sin marca de completado visible |
+| Cierre de la semana | Sesión de discusión | 1 h 30 min | Sin marca de completado visible |
+| Cierre de la semana | Grabación Sesión 6 | 10 min | Sin marca de completado visible |
+
+Las lecturas listadas suman 2 h 30 min, coincidentes con el resumen. Sus enlaces y las referencias bibliográficas específicas quedan por aportar.
 
 ------------------------------------------------------------------------
 
