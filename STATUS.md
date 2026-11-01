@@ -1,5 +1,26 @@
 # STATUS.md
 
+## Avance de Gridworld y sincronización solicitada — 2026-11-01
+
+- **Base:** `main`, `9372637`; fetch correcto y comparación con `origin/main`: `0 0`. El estudiante solicita actualizar el repositorio; se incluyen el seguimiento local previo y sus cambios en el tutorial Gridworld.
+- **Avance observado en el archivo:** implementados `do_action`, `get_current_state`, `get_possible_actions`, `reset` e `is_terminal`. Se conserva la implementación y el formato existentes; únicamente se eliminan espacios al final de tres líneas. No se modifican el notebook original ni el Laboratorio MDPs.
+- **Verificaciones:** `uv sync --locked` correcto, sin cambios de dependencias; ejecución mediante `uv run --no-sync python` de las 13 celdas Python del tutorial, con los seis grupos de pruebas originales superados. Renderizado completo de las 14 páginas correcto con Quarto 1.10.18; diff revisado y `git diff --check` correcto. Las pruebas originales son mínimas y no equivalen a una validación exhaustiva. Salidas generadas ignoradas.
+- **Pendientes y siguiente paso:** revisar las preguntas de reflexión del tutorial, sin respuestas nuevas observadas, y continuar de forma independiente el Laboratorio MDPs (5 %, 3 nov., 23:59 −05). No hay nueva entrega ni calificación confirmada. Guardar y publicar los dos archivos conforme a la solicitud, comprobando sincronización al terminar.
+
+## Dos horas disponibles en el trabajo — 2026-10-31
+
+- **Base:** `main`, `9372637`; fetch correcto y comparación con `origin/main`: `0 0`. Se conservan las notas locales preexistentes de este archivo.
+- El estudiante confirma dos horas libres en el trabajo. Propuesta, aún sin ejecución confirmada: 10 min de preparación, 45 min para `do_action` y sus comprobaciones, 5 min de pausa, 35 min para los métodos restantes del tutorial y 25 min para leer el Laboratorio MDPs si el tutorial queda terminado; en caso contrario, dedicar el cierre a Gridworld y registrar dudas.
+- **Prioridad y siguiente paso:** retomar `do_action`; Laboratorio MDPs (5 %) para el 3 nov., 23:59 (-05), según el calendario registrado. Ejecutar `uv sync --locked` antes de usar Python. Si no puede ejecutar código, trabajar movimientos y transiciones en papel. No se confirma avance académico nuevo ni aceptación del plan.
+- **Verificación:** revisión documental y del diff, `git diff --check`; sin cambios académicos ni dependencias. Sin commit ni push.
+
+## Carpeta local actualizada y conflicto resuelto — 2026-10-31
+
+- **Base:** `main`, `2d36463`; fetch correcto, cinco commits entrantes y ninguno local divergente. Se incorporaron mediante avance directo hasta `9372637`; comparación con `origin/main`: `0 0`.
+- Se respaldaron los cambios locales de este seguimiento en el stash `Respaldo de seguimiento local antes de sincronizar 2026-10-31`. Al reaplicarlos hubo un conflicto en el calendario: se conserva la tabla remota con evidencia del 31 de octubre y la nota local del 30 de octubre sobre videos vistos, estudio de cadenas de Markov y tarea calificada con 100 %. El respaldo se conserva.
+- **Verificación:** renderizado completo de las 14 páginas correcto con Quarto 1.10.18; diff revisado y comprobación de espacios y marcadores de conflicto. Sin cambios de dependencias ni ejecución de ejercicios. Solo este seguimiento queda modificado localmente, sin commit ni push.
+- **Siguiente paso:** retomar el tutorial Gridworld desde `do_action` y después el Laboratorio MDPs, según el avance y la disponibilidad registrados; sincronizar el entorno con `uv sync --locked` antes de retomar Python por la incidencia documentada.
+
 ## Disponibilidad reducida y continuación autorizada — 2026-10-31
 
 - **Base y Git:** `main`, `d126ac0`; árbol inicialmente limpio, fetch correcto y comparación `HEAD...origin/main`: `0 0`. Las notas y los contenidos de los módulos 5 y 6 ya están publicados. El estudiante solicita actualizar todo lo tratado y sincronizarlo, autorizando commit y push de este seguimiento.
@@ -134,6 +155,7 @@
 - Se añadió en Lecturas de `modulo_3.qmd` el capítulo 3 de Sutton y Barto (2.ª ed., MIT Press, 2018), secciones 3.3, 3.5 y 3.6, con su entrada en `references_modulo_3.bib`. El estudiante indicó «3.3, 3.3, 3.5, 3.6»; se eliminó el duplicado y queda por confirmar si la intención era incluir 3.4.
 - **Estado académico confirmado por el estudiante el 29 oct.:** K-bandidos no estacionarios entregado y calificado con **100 %** (marcado en `modulo_2.qmd`); informe de Pacman del módulo 1 («Uso de agentes de aprendizaje por refuerzo») calificado con **100 %**. Pen & Paper Bandidos 2 quedó sin entregar. Pen & Paper Bandidos 1 entregado y aprobado sin problemas (sin nota numérica informada); marcado como completado en `modulo_2.qmd`. El estudiante pidió marcar como completado el tutorial de bandidos y confirmó haber visto los dos videos restantes del módulo 2 (Bandidos no estacionarios y Cierre); los cinco figuran como vistos.
 - **Cierre autorizado — 2026-10-30:** el estudiante solicita actualizar el repositorio para continuar desde el Mac mini; fetch correcto y comparación con `origin/main`: `0 0`; `git diff --check` correcto. Se guardan y publican `modulo_2.qmd`, `modulo_3.qmd`, `references_modulo_3.bib` y este seguimiento. Renderizado Quarto pendiente en un equipo con Quarto.
+- **Avance 2026-10-30:** el estudiante vio los videos Introducción, Procesos de decisión de Markov y MDPs y recompensas; trabajó matriz de transición y cadenas de Markov con ejemplos guiados. Tarea «Aprendizaje por refuerzo o no?» entregada y calificada con **100 %**.
 - **Siguiente paso:** confirmar videos vistos y continuar con el Laboratorio MDPs y la tarea «Aprendizaje por refuerzo o no?» para el 3 de noviembre.
 
 ## Cierre y sincronización autorizada — 2026-10-27

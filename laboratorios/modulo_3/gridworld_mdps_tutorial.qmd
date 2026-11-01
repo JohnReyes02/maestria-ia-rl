@@ -5,7 +5,7 @@ execute:
   enabled: false
 ---
 
-::: {.callout-note}
+::: callout-note
 ## Tutorial de consulta
 
 Versión de lectura del [notebook original](originales/gridworld_mdps_tutorial.ipynb), conservado sin cambios. El código se muestra sin ejecutarse al renderizar el libro. Las imágenes se toman de `originales/`.
@@ -13,8 +13,7 @@ Versión de lectura del [notebook original](originales/gridworld_mdps_tutorial.i
 
 ![](originales/Banner.jpg)
 
-En este tutorial vamos a definir un ambiente de prueba comúnmente utilizado en el aprendizaje por refuerzo; el ambiente de Gridworld. Vamos a definir el ambiente de Gridworld como un Markov Decision Process (MDP) para luego establecer solución con los diferentes métodos basados en modelos y libres de modelos.
-Gridworld es un ambiente clásico de prueba dentro del aprendizaje por refuerzo. Durante este tutorial definiremos el modelo básico del ambiente, que extenderemos incrementalmente de acuerdo con las necesidades de los algoritmos específicos de solución que desarrollaremos a lo largo del curso.
+En este tutorial vamos a definir un ambiente de prueba comúnmente utilizado en el aprendizaje por refuerzo; el ambiente de Gridworld. Vamos a definir el ambiente de Gridworld como un Markov Decision Process (MDP) para luego establecer solución con los diferentes métodos basados en modelos y libres de modelos. Gridworld es un ambiente clásico de prueba dentro del aprendizaje por refuerzo. Durante este tutorial definiremos el modelo básico del ambiente, que extenderemos incrementalmente de acuerdo con las necesidades de los algoritmos específicos de solución que desarrollaremos a lo largo del curso.
 
 Los ambientes de aprendizaje por refuerzo se pueden definir en dos (ambiente, agente) o tres (ambiente, agente, aprendizaje) módulos. Por simplicidad, dentro de nuestra implementación de Gridworld (e implementaciones posteriores) utilizaremos dos módulos. Sin embargo, cabe notar que una implementación utilizando tres módulos ofrece una mejor división de las características y por lo tanto una implementación más fácil de mantener y modificar.
 
@@ -30,27 +29,24 @@ En este ejemplo del ambiente la casilla de inicio es la casilla inferior izquier
 
 #### ¿Cómo podemos codificar el ambiente?
 
-La definición del ambiente de Gridworld esta definida por:
-1. Una cuadrícula rectangular (`grid`), con dimensiones `(n,m)` dadas por parámetro, donde la casilla superior izquierda esta en la posición (0,0). Definiremos las casillas por las que puede pasar el agente como espacios en blanco y las casillas por las que no puede pasar el agente con un `'#'`.
-2. Las recompensas de cada casilla de la cuadrícula estan definidas dentro de la definición de `grid`.
-    - +1 para la casilla objetivo
-    - -1 para las casillas de trampa
-3. Un atributo con el estado actual (`state`) en el que se encuentra el agente. Por defecto este estado será la posición marcada como `S`.
+La definición del ambiente de Gridworld esta definida por: 1. Una cuadrícula rectangular (`grid`), con dimensiones `(n,m)` dadas por parámetro, donde la casilla superior izquierda esta en la posición (0,0). Definiremos las casillas por las que puede pasar el agente como espacios en blanco y las casillas por las que no puede pasar el agente con un `'#'`. 2. Las recompensas de cada casilla de la cuadrícula estan definidas dentro de la definición de `grid`. - +1 para la casilla objetivo - -1 para las casillas de trampa 3. Un atributo con el estado actual (`state`) en el que se encuentra el agente. Por defecto este estado será la posición marcada como `S`.
 
 Un ejemplo de una cuadrícula de 3x4, como se mostró anteriormente, sería así:
 
- ```python
-    board = [[' ', ' ', ' ',  +1],
-            [' ', '#', ' ',  -1],
-             ['S', ' ', ' ', ' ']]
+``` python
+#| eval: false
+board = [[' ', ' ', ' ',  +1],
+        [' ', '#', ' ',  -1],
+        ['S', ' ', ' ', ' ']]
 ```
 
 La definición del ambiente un ejemplo de recompensas se vería así:
 
-```python
-    def __init__(self, board):
-        # layout
-        self.grid = copy_elements_from_the_board
+``` python
+#| eval: false
+def __init__(self, board):
+    # layout
+    self.grid = copy_elements_from_the_board
 ```
 
 #### 1. Estructura del ambiente
@@ -95,23 +91,70 @@ class Gridworld:
 
     def get_current_state(self) -> tuple[int,int]:
         # your code here
-        raise NotImplementedError
+        return self.state
 
     def get_possible_actions(self, state:tuple[int,int]) -> list[str]:
         # your code here
-        raise NotImplementedError
+        # Se obtiene la fila y columna del estado
+        i, j = state
+
+        # Se obtiene el tipo de casilla en la posición del tablero
+        casilla = self.grid[i][j]
+
+        # Se clasifican las acciones dependiendo de la casilla
+        if casilla in [1, -1]:
+            return ['exit']
+
+        elif casilla == None:
+            return []
+
+        else:
+            return ['up', 'down', 'left', 'right']
 
     def do_action(self, action:str) -> tuple[float, tuple[int,int]]:
         # your code here
-        raise NotImplementedError
+        i, j = self.state
+        # Diccionario para calcular el cambio en fila (di) y columna (dj)
+        movimiento = {
+            'up': (-1, 0),
+            'down': (1, 0),
+            'right': (0, 1),
+            'left': (0, -1)
+        }
+
+        di, dj = movimiento[action]
+        ni, nj = i + di, j + dj
+
+        # Validar (ni, nj)
+        # 1. Está dentro de los límites de la cuadrícula?
+        if 0 <= ni < self.nrows and 0 <= nj < self.ncols:
+            # 2. La casilla no es un obstáculo?
+            if self.grid[ni][nj] != None:
+                self.state = (ni, nj)
+
+        # Si no entra en el condicional self.state no se modifica
+        final_i, final_j = self.state
+        valor_casilla = self.grid[final_i][final_j]
+        return valor_casilla, self.state
+
 
     def reset(self):
         # your code here
-        raise NotImplementedError
+        self.state = self.initial_state
+
 
     def is_terminal(self) -> bool:
         # your code here
-        raise NotImplementedError
+        i, j = self.state
+        casilla = self.grid[i][j]
+
+        if casilla in [-1, 1]:
+            terminal = True
+        else:
+            terminal = False
+
+        return terminal
+
 
     #Funciones auxiliares
     def get_action_index(self, action:str) -> int:
@@ -354,8 +397,7 @@ assert grid.get_current_state() == grid.initial_state, f"No se esta retornando a
 
 #### 6. Estados terminales
 
-Defina la función `is_terminal` que determina si el agente está en un estado final o no. En nuestro caso los estados finales o los estados de salida estarán determinados por las casillas con recompensa 1 o -1.
-Esta función no recibe parámetros y retorna un booleano determinando si el agente está en un estado final o no.
+Defina la función `is_terminal` que determina si el agente está en un estado final o no. En nuestro caso los estados finales o los estados de salida estarán determinados por las casillas con recompensa 1 o -1. Esta función no recibe parámetros y retorna un booleano determinando si el agente está en un estado final o no.
 
 ```{python}
 #| deletable: false
@@ -398,7 +440,6 @@ for i in range(grid.nrows):
 
 Considere las siguientes situaciones y piense cual debería ser el resultado del MDP.
 
-1. Plantee el problema de MDP para cada una de las casillas. Especifique el estado de inicio, las transiciones y su probabilidad. Para cada acción suponga una probabilidad de éxito de 0.25 (el 0.75 restante se resuelve uniformemente entre las acciones restantes).
-¿Cómo serían las recompensas esperadas para cada estado?
+1.  Plantee el problema de MDP para cada una de las casillas. Especifique el estado de inicio, las transiciones y su probabilidad. Para cada acción suponga una probabilidad de éxito de 0.25 (el 0.75 restante se resuelve uniformemente entre las acciones restantes). ¿Cómo serían las recompensas esperadas para cada estado?
 
-2. Bajo la definción del problema anterior, suponga que ahora cada acción tiene una probabilidad de éxito de 60%, con probabilidad de 30% que se ejecutará la sigiente acción (en dirección de las manesillas del reloj) y con probabilidad de 10% que no se ejecute ninguna acción (el agente se queda quieto). Bajo estas condiciones, ¿Cómo serían las recompensas esperadas para cada estado?
+2.  Bajo la definción del problema anterior, suponga que ahora cada acción tiene una probabilidad de éxito de 60%, con probabilidad de 30% que se ejecutará la sigiente acción (en dirección de las manesillas del reloj) y con probabilidad de 10% que no se ejecute ninguna acción (el agente se queda quieto). Bajo estas condiciones, ¿Cómo serían las recompensas esperadas para cada estado?
