@@ -103,7 +103,7 @@ class Gridworld:
         lista = []
 
         # Se clasifican las acciones dependiendo de la casilla
-        if (casilla is not None) and (casilla is not 0):
+        if (casilla is not None) and (casilla != 0):
             lista = ['exit']
 
         elif casilla is None:
@@ -152,7 +152,7 @@ class Gridworld:
         casilla = self.grid[i][j]
 
         # if casilla in [-1, 1]:
-        if (casilla is not None) and (casilla is not 0):
+        if (casilla is not None) and (casilla != 0):
             terminal = True
         else:
             terminal = False
