@@ -1,5 +1,12 @@
 # STATUS.md
 
+## Reparación del entorno local de librerías — 2026-11-01
+
+- **Base:** `main`, `0fa0d71`, sincronizado con `origin/main` y árbol limpio después del push del tutorial y su seguimiento.
+- El estudiante informa problemas con librerías, sin aportar un error específico. El diagnóstico local detectó un entorno incompleto: `uv sync --locked --dry-run` proponía instalar 118 paquetes y retirar siete versiones distintas de las fijadas. Se ejecutó `uv sync --locked` correctamente, conservando los archivos canónicos de dependencias.
+- **Verificaciones:** `uv lock --check` correcto; nueva simulación de sincronización sin cambios necesarios; `uv pip check` comprueba 141 paquetes sin incompatibilidades.
+- **Siguiente paso:** ejecutar Jupyter con `uv run jupyter lab`, o los scripts con `uv run python archivo.py`; en VS Code seleccionar el intérprete/kernel de `.venv` y reiniciar la sesión abierta. Si persiste el fallo, recoger el mensaje exacto y comprobar el intérprete activo. La incidencia sintáctica del tutorial registrada abajo continúa pendiente.
+
 ## Sincronización del trabajo en curso de Gridworld — 2026-11-01
 
 - **Base:** `main`, `8b50d33`; fetch correcto, sin commits entrantes ni divergencia con `origin/main` (`0 0`). El estudiante solicita sincronizar el repositorio, autorizando guardar y publicar el avance local. Se conserva íntegramente su edición del tutorial Gridworld.
