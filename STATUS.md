@@ -1,5 +1,12 @@
 # STATUS.md
 
+## Sincronización del trabajo en curso de Gridworld — 2026-11-01
+
+- **Base:** `main`, `8b50d33`; fetch correcto, sin commits entrantes ni divergencia con `origin/main` (`0 0`). El estudiante solicita sincronizar el repositorio, autorizando guardar y publicar el avance local. Se conserva íntegramente su edición del tutorial Gridworld.
+- **Cambios observados:** uso de una lista de acciones, nuevo orden de movimientos y modificación de las condiciones de `get_possible_actions` e `is_terminal`. No se corrige ni completa el ejercicio durante esta sincronización.
+- **Verificaciones:** inspección sintáctica de las 13 celdas Python mediante `uv run --no-sync python`: la primera celda contiene sintaxis inválida en `casilla in not None`, expresión presente en ambos métodos. El tutorial queda como trabajo en curso y no se ejecutan sus pruebas. Renderizado completo de las 14 páginas correcto con Quarto 1.8.27; el tutorial tiene ejecución deshabilitada, por lo que el renderizado no valida su código. Diff revisado y `git diff --check` correcto; sin cambios de dependencias.
+- **Pendientes y siguiente paso:** revisar las dos condiciones, distinguiendo comprobación de `None`, comparación numérica e identidad; volver a comprobar la sintaxis y ejecutar las pruebas del tutorial antes de continuar el Laboratorio MDPs. La validación satisfactoria de la entrada anterior corresponde a la versión previa. Comprobar igualdad con `origin/main` y árbol limpio después de publicar.
+
 ## Avance de Gridworld y sincronización solicitada — 2026-11-01
 
 - **Base:** `main`, `9372637`; fetch correcto y comparación con `origin/main`: `0 0`. El estudiante solicita actualizar el repositorio; se incluyen el seguimiento local previo y sus cambios en el tutorial Gridworld.

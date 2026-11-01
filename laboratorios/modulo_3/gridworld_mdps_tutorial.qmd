@@ -100,16 +100,19 @@ class Gridworld:
 
         # Se obtiene el tipo de casilla en la posición del tablero
         casilla = self.grid[i][j]
+        lista = []
 
         # Se clasifican las acciones dependiendo de la casilla
-        if casilla in [1, -1]:
-            return ['exit']
+        if (casilla is not None) and (casilla is not 0):
+            lista = ['exit']
 
-        elif casilla == None:
-            return []
+        elif casilla is None:
+            lista = []
 
         else:
-            return ['up', 'down', 'left', 'right']
+            lista = ['up', 'right', 'down', 'left']
+
+        return lista
 
     def do_action(self, action:str) -> tuple[float, tuple[int,int]]:
         # your code here
@@ -148,7 +151,8 @@ class Gridworld:
         i, j = self.state
         casilla = self.grid[i][j]
 
-        if casilla in [-1, 1]:
+        # if casilla in [-1, 1]:
+        if (casilla is not None) and (casilla is not 0):
             terminal = True
         else:
             terminal = False
