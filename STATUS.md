@@ -1,5 +1,69 @@
 # STATUS.md
 
+## Cierre de sesión y referencias para el proyecto — 2026-11-03
+
+- **Base:** `main`, `62f209c`; fetch correcto, sin commits entrantes ni divergencia con `origin/main` (`0 0`). El estudiante solicita guardar y actualizar el repositorio, autorizando commit y push de los avances locales de `car.qmd` y de este seguimiento.
+- **Cierre académico:** Laboratorio MDPs completado en Coursera con **100/100**, según confirmación del estudiante. La implementación local conserva los seis métodos y la nota Quarto sobre el criterio de terminación. El notebook final de Coursera no se ha descargado y la reflexión explicada en la conversación no se ha incorporado al QMD.
+- **Idea propuesta por el estudiante para el proyecto:** cada obstáculo se mueve aleatoriamente una casilla por paso hacia norte, sur, este u oeste, sin diagonales. Es una propuesta pendiente de acordar con Deisy y contrastar con el enunciado; siguen por definir bordes, conflictos entre obstáculos y colisiones durante movimientos simultáneos. La observación completa del tablero se usó como ejemplo, no como decisión adoptada.
+- **Referencias seleccionadas por el estudiante:**
+  - [MiniGrid — Dynamic Obstacles](https://minigrid.farama.org/environments/minigrid/DynamicObstaclesEnv/): habitación con obstáculos móviles, meta, orientación y acciones de girar/avanzar; incluye configuración 8 × 8 y ejemplo visual. Es la referencia más cercana al problema. Su observación parcial y sus reglas son propias de ese entorno, no requisitos del curso.
+  - [Gymnasium — Create a Custom Environment](https://gymnasium.farama.org/introduction/create_custom_env/): ejemplo GridWorld y preguntas de diseño sobre observación, acciones, recompensas, reinicio y terminación; útil para estructurar la caracterización del PDF.
+  - [Gymnasium — FrozenLake](https://gymnasium.farama.org/environments/toy_text/frozen_lake/): tablero con meta y agujeros fijos, con movimiento potencialmente resbaladizo; útil para distinguir acción elegida y transición aleatoria. No modela obstáculos móviles.
+- **Verificaciones de la sesión:** implementación ejecutada y comprobada, render completo de 14 páginas correcto; dependencias sin cambios necesarios. Revisión final del diff y `git diff --check` antes de guardar. Las referencias se consultaron en la documentación oficial; no se instalaron nuevas dependencias.
+- **Punto de continuación:** tras descansar, iniciar iteración de valores y luego iteración de políticas (10 nov., 23:59, 6 % cada una, según calendario registrado). En paralelo, revisar Dynamic Obstacles con Deisy y acordar estados, acciones y `R(s, a, s')` para el PDF del proyecto (17 nov., 23:59, 13 %). No se confirma disponibilidad ni se comprometen horarios nuevos.
+
+## Instrucciones específicas del avance del proyecto — 2026-11-03
+
+- **Base:** `main`, `62f209c`; fetch correcto y comparación con `origin/main`: `0 0`. Se preservan los cambios locales previos.
+- **Fuente:** dos capturas aportadas por el estudiante de la sección de entrega de «Ambiente, estados y acciones». Confirman que debe cargarse un archivo **PDF**. No muestran una nueva fecha; se conserva el plazo registrado del 17 nov., 23:59 (-05), y el peso del 13 %.
+- **Contenido obligatorio observado:** definición del conjunto de estados que describa todos los estados del ambiente; conjunto de acciones del agente con aplicabilidad por estado; modelo de recompensas definido para las tripletas `(s, a, s')`, donde `s` es origen, `a` la acción y `s'` el destino. Esto precisa la descripción anterior: las recompensas deben considerar también el estado de llegada.
+- **Criterios visibles:** completitud de los estados respecto a la aplicación y al objetivo, incluyendo todas las variables; correspondencia de las acciones con el comportamiento esperado; incentivos positivos y negativos del modelo de recompensas en las situaciones necesarias. Las capturas no especifican extensión, plantilla ni código para este avance.
+- **Verificación:** revisión de las capturas y del diff; `git diff --check`. Solo se actualiza el seguimiento, sin cambios académicos, renderizado, commit ni push.
+- **Siguiente paso concreto:** acordar con Deisy las reglas y representación del estado; preparar el PDF con definición de estados, acciones aplicables y función `R(s, a, s')`, distinguiendo requisitos del curso y decisiones del equipo.
+
+## Laboratorio MDPs calificado — 2026-11-03
+
+- **Base:** `main`, `62f209c`; fetch correcto y comparación con `origin/main`: `0 0`. Se preservan los cambios locales previos en este archivo y en `car.qmd`.
+- **Confirmación del estudiante:** el código se escribe y evalúa en el notebook de Coursera. Informa una nota inicial de 96/100 con observación sobre `reset`; tras cambiarlo a `self.state = self.initial_state`, obtuvo **100/100**. Laboratorio MDPs (5 %) completado y calificado según su confirmación; no se consultó directamente el aula ni se conoce la versión anterior de `reset` enviada allí.
+- **Copia local:** `car.qmd` ya contiene esa asignación correcta en `reset`; no fue necesario modificar el código. La respuesta a la reflexión fue explicada y propuesta en la conversación; no se ha incorporado al QMD ni se ha descargado el notebook final de Coursera.
+- **Verificación:** revisión del método local, diff y `git diff --check`; sin cambios de código, dependencias, nuevo render, commit ni push.
+- **Siguiente paso concreto:** continuar con iteración de valores e iteración de políticas (6 % cada una, plazo registrado del 10 nov.); al sincronizar, guardar y publicar el avance solo con autorización del estudiante.
+
+## Verificación del laboratorio del vehículo — 2026-11-03
+
+- **Base:** `main`, `62f209c`; fetch correcto, comparación con `origin/main`: `0 0`. Se preservan los cambios locales previos. Revisión solicitada por el estudiante, sin modificar su implementación.
+- **Resultado:** los seis métodos de `MDP` están implementados en `car.qmd` y funcionan para la tabla del laboratorio con acciones válidas. Se comprobaron dimensiones, tablas completas, acciones de los tres estados, todos los destinos y recompensas posibles, actualización del estado, reinicio desde cada estado inicial y terminación. Para cubrir cada rama de transición se controló temporalmente el resultado de `random.choices` y se verificaron sus destinos y pesos de entrada.
+- **Ejecución reproducible de comprobación:** los 14 bloques Python se extrajeron del QMD y ejecutaron en orden mediante `uv run python`, con `random.seed(42)`: la ejecución final dio 12 pasos y recompensa acumulada 4. En 1000 episodios adicionales desde estado 0, con política uniforme entre acciones válidas y semilla 42 reiniciada al comienzo del conjunto, todos terminaron en estado 2 (longitudes 2–57; límite de comprobación de 10000 pasos por episodio). Estos resultados son verificaciones, no respuestas redactadas a la reflexión.
+- **Muestreo:** con una tabla auxiliar de dos estados, acción `slow` desde 0 y transiciones `(0.9, 0, 3)` y `(0.1, 1, 7)`, el ambiente reiniciado antes de cada uno de 10000 pasos y semilla 42 produjo 9020 destinos 0 y 980 destinos 1, con recompensas correspondientes correctas. No se guardaron experimentos ni se alteró la tabla académica.
+- **Otras verificaciones:** las siete celdas de código bloqueadas coinciden con las del notebook original; `uv lock --check`, `uv sync --locked --dry-run`, render completo con Quarto 1.8.27 y `git diff --check` correctos. Revisión del diff completa. Sin commit ni push.
+- **Pendiente:** la pregunta final de reflexión no tiene respuesta en el QMD. Confirmar el formato de envío y trasladar el trabajo al notebook de entrega si el aula requiere `.ipynb`, preservando los metadatos de calificación y el original. No se ejecutó el calificador de la plataforma ni se confirmó envío.
+- **Siguiente paso concreto:** interpretar ejecuciones con distintas semillas para responder la reflexión con palabras del estudiante y preparar el archivo aceptado por el aula.
+
+## Nota de terminación en el Laboratorio MDPs — 2026-11-03
+
+- **Base:** `main`, `62f209c`; fetch correcto y comparación con `origin/main`: `0 0`. Se preservan las actualizaciones previas de seguimiento y las implementaciones locales del estudiante en `car.qmd`.
+- **Cambio solicitado:** nota Quarto (`callout-note`) después del enunciado del punto 6; aclara la contradicción de las recompensas `1` o `-1` con el ambiente del vehículo. La descripción inicial define `overheated` como terminal por carecer de acciones; la posible procedencia del texto de Gridworld se presenta como inferencia. Se retiraron espacios finales de una línea vacía del bloque editado por el estudiante.
+- **Verificación:** Quarto 1.8.27; `quarto render` completo correcto (14 páginas, sin ejecutar el laboratorio); revisión de diff y `git diff --check`. Sin cambios al notebook original, commit ni push.
+- **Siguiente paso concreto:** continuar con `do_action`, aún sin implementar, y comprobar el comportamiento del ambiente antes de preparar la entrega.
+
+## Retoma del Laboratorio MDPs — 2026-11-03
+
+- **Base:** `main`, `62f209c`; fetch correcto y comparación con `origin/main`: `0 0`. Se conserva la actualización local previa de este archivo del 2 de noviembre.
+- **Disponibilidad informada:** el estudiante quiere dedicar dos horas ahora al entregable de hoy y prefería terminar antes del mediodía. Indica las 12:36, sin precisar a. m./p. m.; no se asume que siga vigente la salida a las 13:10 registrada anteriormente.
+- **Estado observado:** `laboratorios/modulo_3/car.qmd` mantiene las seis funciones pendientes; no se confirma el estado de trabajo o envío en la plataforma. El plazo registrado del Laboratorio MDPs (5 %) es hoy a las 23:59 (-05), sin consulta nueva al aula.
+- **Verificación:** revisión documental y de Git; sin modificaciones académicas ni ejecución del laboratorio. Sin commit ni push.
+- **Siguiente paso concreto:** concentrar el bloque en el laboratorio del vehículo: revisar el formato de entrega, comprender la tabla de transiciones, implementar por cuenta del estudiante y reservar tiempo para comprobar y enviar.
+
+## Revisión de pendientes — 2026-11-02
+
+- **Base:** `main`, `62f209c`; árbol inicialmente limpio, fetch correcto y comparación con `origin/main`: `0 0`.
+- **Avance observado:** los commits posteriores al último seguimiento corrigen las expresiones de `get_possible_actions` e `is_terminal` de Gridworld y añaden respuestas a las dos preguntas de reflexión. Esto reemplaza el pendiente histórico de sintaxis y de respuestas ausentes; no se ejecutaron las pruebas ni se evaluó la corrección académica de las respuestas en esta revisión.
+- **Prioridad:** Laboratorio MDPs (5 %), plazo registrado del 3 nov., 23:59 (-05). La página `laboratorios/modulo_3/car.qmd` conserva los seis métodos sin implementar; no hay nueva confirmación de entrega. Según la disponibilidad registrada, conviene cerrar antes de salir a las 13:10 del 3 nov.
+- **Después:** iteración de valores e iteración de políticas (6 % cada una, 10 nov.); diferencias entre enfoques (1 %), Monte Carlo (5 %) y avance del proyecto «Ambiente, estados y acciones» (13 %), 17 nov.; SARSA (6 %, 24 nov.); implementación y evaluación de Q-learning (6 % y 1 %, 1 dic.; implementación a las 23:48); entrega final del proyecto (31 %, 4 dic.). Fechas del calendario guardado, sin consulta nueva al aula; año interpretado provisionalmente como 2026.
+- **Por confirmar o recuperar:** nota del formulario de equipos ya enviado; Pen & Paper Bandidos 2 sin entregar según confirmación del 29 oct.; Pen & Paper MDPs y lecturas finales del módulo 1 sin finalización confirmada. Los nueve entregables con 100 % confirmado aportan 19 puntos porcentuales; el 81 % restante incluye el formulario enviado (1 %).
+- **Verificación:** revisión documental, historial y fuentes actuales; diff revisado y `git diff --check`. Sin cambios académicos, dependencias, ejecución de ejercicios, renderizado, commit ni push.
+- **Siguiente paso concreto:** comprobar el tutorial Gridworld actual y continuar el Laboratorio MDPs de forma independiente, verificando en el aula el formato y el envío antes del plazo.
+
 ## Reparación del entorno local de librerías — 2026-11-01
 
 - **Base:** `main`, `0fa0d71`, sincronizado con `origin/main` y árbol limpio después del push del tutorial y su seguimiento.
@@ -863,7 +927,7 @@
 | 27 oct. | K-bandidos no estacionarios | Actividad de programación | 6 % | Calificado: 100 % (captura del 31 oct.) |
 | 27 oct. | Conformación equipos de trabajo | Tarea calificable | 1 % | Enviado; sin calificación visible (captura del 31 oct.) |
 | 3 nov. | Aprendizaje por refuerzo o no? | Tarea calificable | 1 % | Calificado: 100 % (captura del 31 oct.) |
-| 3 nov. | Laboratorio MDPs | Actividad de programación | 5 % | Sin estado de envío ni calificación visibles (captura del 31 oct.) |
+| 3 nov. | Laboratorio MDPs | Actividad de programación | 5 % | Calificado: 100/100 (confirmación del estudiante, 3 nov.; corregido `reset` tras 96/100 inicial) |
 | 10 nov. | Ejercicio iteración de valores | Actividad de programación | 6 % | Sin estado de envío ni calificación visibles (captura del 31 oct.) |
 | 10 nov. | Ejercicio iteración de políticas | Actividad de programación | 6 % | Sin estado de envío ni calificación visibles (captura del 31 oct.) |
 | 17 nov. | Diferencias entre enfoques basados en modelos y libres de modelos | Tarea calificable | 1 % | Sin calificación visible (capturas del 31 oct.); envío sin confirmar |

@@ -44,34 +44,94 @@ Note también que el estado `overheated` no tienen ninguna acción asociada a é
 #Definición del ambiente de motores
 
 #Librerias requeridas
+import random
 # your code here
-raise NotImplementedError
+# raise NotImplementedError
 
 #Definición de la clase principal
 class MDP:
     def __init__(self, table : list[list[tuple]], dimensions:tuple[int, int], initial_state:int):
         # your code here
-        raise NotImplementedError
+        self.nrows = dimensions[0]
+        self.ncols = dimensions[1]
+        self.initial_state = initial_state
+        self.state = initial_state
+
+        self.transitions = []
+        for i in range(self.nrows):
+            nueva_fila = []
+            for j in range(self.ncols):
+                celda = table[i][j]
+                if celda is None:
+                    nueva_fila.append(celda)
+                else:
+                    transiciones_celda = []
+                    for probabilidad, destino, recompensa in celda:
+                        transiciones_celda.append((probabilidad, destino))
+                    nueva_fila.append(transiciones_celda)
+            self.transitions.append(nueva_fila)
+
+        self.rewards = []
+        for i in range(self.nrows):
+            nueva_fila = []
+            for j in range(self.ncols):
+                celda = table[i][j]
+                if celda is None:
+                    nueva_fila.append(celda)
+                else:
+                    recompensa_celda = []
+                    for probabilidad, destino, recompensa in celda:
+                        recompensa_celda.append((recompensa, destino))
+                    nueva_fila.append(recompensa_celda)
+            self.rewards.append(nueva_fila)
 
     def get_current_state(self) -> int:
         # your code here
-        raise NotImplementedError
+        return self.state
 
     def get_possible_actions(self, state:int) -> list[str]:
         # your code here
-        raise NotImplementedError
+        acciones = []
+        if self.transitions[state][0] is not None:
+            acciones.append('slow')
+        if self.transitions[state][1] is not None:
+            acciones.append('fast')
+
+        return acciones
 
     def do_action(self, action:str) -> tuple[float,int]:
         # your code here
-        raise NotImplementedError
+        columnas = {
+            'slow': 0,
+            'fast': 1
+        }
+        columna = columnas[action]
+        opciones = self.transitions[self.state][columna]
+
+        probabilidad_lista = []
+        destino_lista = []
+        for probabilidad, destino in opciones:
+            probabilidad_lista.append(probabilidad)
+            destino_lista.append(destino)
+
+        nuevo_estado = random.choices(
+            destino_lista,
+            weights=probabilidad_lista,
+            k=1
+        )[0]
+
+        for recompensa, destino in self.rewards[self.state][columna]:
+            if destino == nuevo_estado:
+                self.state = nuevo_estado
+                return recompensa, self.state
 
     def reset(self):
         # your code here
-        raise NotImplementedError
+        self.state = self.initial_state
 
     def is_terminal(self) -> bool:
         # your code here
-        raise NotImplementedError
+        return self.get_possible_actions(self.state) == []
 
 
 ```
@@ -221,6 +281,14 @@ except:
 
 Defina la función `is_terminal` que determina si el agente está en un estado final o no. En nuestro caso los estados finales o los estados de salida estarán determinados por las casillas con recompensa 1 o -1.
 Esta función no recibe parámetros y retorna un booleano determinando si el agente está en un estado final o no.
+
+::: {.callout-note}
+## Aclaración sobre el criterio de terminación
+
+La referencia a «casillas con recompensa 1 o -1» es inconsistente con el ambiente del vehículo y parece provenir del enunciado de Gridworld. Según la descripción inicial de este laboratorio, el estado terminal es `overheated` (estado `2`), porque no tiene acciones disponibles: su fila en la tabla es `[None, None]`.
+
+La terminación no depende de recibir una recompensa de `1` o `-1`. Por ejemplo, ejecutar `slow` desde `cold` produce una recompensa de `1` y mantiene el motor en un estado no terminal.
+:::
 
 ```{python}
 #| deletable: false
